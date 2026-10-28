@@ -1,0 +1,20 @@
+{
+  "updated_at": "2026-10-28T09:26:20.527265+00:00",
+  "market": "US",
+  "language": "en",
+  "stats": {
+    "seeds": 5,
+    "suggest_queries": 31,
+    "suggest_candidates": 209,
+    "suggest_errors": 0,
+    "trend_points": 5,
+    "trends_degraded": false,
+    "keywords": 270,
+    "opportunities": 28,
+    "ai_reports": 1
+  },
+  "trends_degraded": false,
+  "note": "Google Trends values are relative interest in a query range, NOT absolute search volume.",
+  "timezone_label": "UTC",
+  "repo_pages_path": "/demand-radar/"
+}

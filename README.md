@@ -2,6 +2,8 @@
 
 面向海外英文市场的需求情报 MVP：多源采集 → 标准化/聚类/评分 →（可选）ChatGPT 方案 → Streamlit 看板 → 人工验证回写。
 
+**在线结果看板**（机会评分 / 关键词 triage，非本文档页）：<https://gaopfEditer.github.io/demand-radar/> · 本地运维与验证请用下方 Streamlit。
+
 > **原则**：采集程序拿证据，评分规则引擎初筛，AI 做综合判断。不要让大模型只凭 Trends 热度决定做什么产品。
 
 ## 功能覆盖（第一版）
@@ -113,7 +115,7 @@ streamlit run dashboard/app.py
 
 ### 静态预览（GitHub Pages）
 
-仓库内 `public/` 为无构建步骤的静态站（机会列表 / 关键词 / 详情），数据来自 `exports/dev_site_demand.json`。
+**GitHub Pages 首页 = 结果看板**（根目录 `index.html` + `data/*.json`，`.nojekyll` 避免 Jekyll 把 README 当站点首页）。`public/` 为同内容的镜像，供 Actions 部署模式使用；`scripts/build_public.py` 会同时写入 `public/data/` 与根目录 `data/`，并同步 HTML/静态资源到根目录。
 
 - **预期地址**：<https://gaopfEditer.github.io/demand-radar/>
 - **首次启用**：GitHub 仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**（不要选 “Deploy from branch”）。`main` 推送后由 `.github/workflows/deploy-pages.yml` 发布 `public/` 目录。
