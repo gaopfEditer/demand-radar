@@ -4,7 +4,9 @@
 Weekly decision cards (周决策卡):
   1. Author ``docs/week-decision-cards-YYYY-MM-DD.md`` (see ``docs/decision-card-schema.md``).
   2. Update ``data/week_decisions.json`` to match the schema (1 Go / 1 Watch / 1 Kill).
-  3. Run ``python scripts/build_public.py`` — copies JSON to ``public/data/`` and ``data/``,
+  3. Update ``data/market_narratives.json`` (see ``docs/market-narratives-schema.md``) for the
+     产品兴衰 · 需求发散 layer.
+  4. Run ``python scripts/build_public.py`` — copies JSON to ``public/data/`` and ``data/``,
      and syncs HTML/assets from ``public/`` to the repo root for branch-based Pages.
   Markdown in ``docs/`` is the human source of truth; JSON is what the static UI loads.
 """
@@ -25,12 +27,14 @@ ROOT_DATA = ROOT / "data"
 PUBLIC_DIR = ROOT / "public"
 STATIC_PAGES = (
     "index.html",
+    "trends.html",
     "opportunities.html",
     "decision.html",
     "keywords.html",
     "detail.html",
 )
 WEEK_DECISIONS_JSON = "week_decisions.json"
+MARKET_NARRATIVES_JSON = "market_narratives.json"
 
 
 def _evidence_summary(rating_notes: dict | None) -> list[str]:
@@ -160,22 +164,32 @@ def _write_json_bundle(
     return {k: str(v) for k, v in paths.items()}
 
 
-def sync_week_decisions(out_dirs: list[Path] | None = None) -> list[str]:
-    """Mirror data/week_decisions.json into each public data directory."""
-    src = ROOT_DATA / WEEK_DECISIONS_JSON
+def _sync_json_artifact(filename: str, out_dirs: list[Path] | None = None) -> list[str]:
+    """Mirror data/<filename> into each public data directory."""
+    src = ROOT_DATA / filename
     if not src.is_file():
         return []
     dirs = out_dirs if out_dirs is not None else [PUBLIC_DATA, ROOT_DATA]
     copied: list[str] = []
     for out_dir in dirs:
         out_dir.mkdir(parents=True, exist_ok=True)
-        dest = out_dir / WEEK_DECISIONS_JSON
+        dest = out_dir / filename
         if dest.resolve() == src.resolve():
             copied.append(str(dest))
             continue
         shutil.copy2(src, dest)
         copied.append(str(dest))
     return copied
+
+
+def sync_week_decisions(out_dirs: list[Path] | None = None) -> list[str]:
+    """Mirror data/week_decisions.json into each public data directory."""
+    return _sync_json_artifact(WEEK_DECISIONS_JSON, out_dirs)
+
+
+def sync_market_narratives(out_dirs: list[Path] | None = None) -> list[str]:
+    """Mirror data/market_narratives.json into each public data directory."""
+    return _sync_json_artifact(MARKET_NARRATIVES_JSON, out_dirs)
 
 
 def sync_pages_root() -> dict[str, list[str]]:
@@ -228,8 +242,14 @@ def build_public(
         written[str(out_dir)] = _write_json_bundle(meta, opportunities, keywords, out_dir)
 
     week_decisions = sync_week_decisions(dirs)
+    market_narratives = sync_market_narratives(dirs)
     root_sync = sync_pages_root() if sync_root else None
-    return {"data": written, "week_decisions": week_decisions, "root_static": root_sync}
+    return {
+        "data": written,
+        "week_decisions": week_decisions,
+        "market_narratives": market_narratives,
+        "root_static": root_sync,
+    }
 
 
 def main() -> int:

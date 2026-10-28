@@ -243,3 +243,123 @@ export async function renderWeekMetaBar() {
     await renderSiteMetaBar();
   }
 }
+
+function narrativeItemRow(item, { showCategory = true, showLink = true } = {}) {
+  const url = item.evidence_url
+    ? `<a href="${escapeHtml(item.evidence_url)}" target="_blank" rel="noopener">来源</a>`
+    : "";
+  const cat =
+    showCategory && item.category
+      ? `<span class="narrative-cat">${escapeHtml(item.category)}</span>`
+      : "";
+  const cardLink =
+    showLink && item.linked_card_id
+      ? `<a class="narrative-card-link" href="decision.html?id=${encodeURIComponent(item.linked_card_id)}">决策卡</a>`
+      : "";
+  const name = item.name ? `<strong>${escapeHtml(item.name)}</strong> · ` : "";
+  return `<li class="narrative-item">${cat}${name}${escapeHtml(item.claim)} ${evidenceStatusTag(item.status)} ${url} ${cardLink}</li>`;
+}
+
+function displacementRow(item) {
+  const urls = (item.evidence_urls || [])
+    .map(
+      (u, i) =>
+        `<a href="${escapeHtml(u)}" target="_blank" rel="noopener">来源${item.evidence_urls.length > 1 ? i + 1 : ""}</a>`
+    )
+    .join(" ");
+  const cardLink = item.linked_card_id
+    ? `<a class="narrative-card-link" href="decision.html?id=${encodeURIComponent(item.linked_card_id)}">决策卡</a>`
+    : "";
+  return `<li class="narrative-displacement">
+    <p class="displacement-head"><span class="disp-old">${escapeHtml(item.old)}</span>
+    <span class="disp-arrow">→</span>
+    <span class="disp-new">${escapeHtml(item.new)}</span> ${evidenceStatusTag(item.status)}</p>
+    <p class="meta"><strong>缺口：</strong>${escapeHtml(item.gap_filled)}</p>
+    <p class="meta"><strong>Indie SEO：</strong>${escapeHtml(item.indie_seo_angle)}</p>
+    <p class="narrative-refs">${urls} ${cardLink}</p>
+  </li>`;
+}
+
+function demandSignalRow(s) {
+  const meta = [
+    s.market ? `市场 ${s.market}` : "",
+    s.window ? `窗口 ${s.window}` : "",
+    s.metric_type ? `指标 ${s.metric_type}` : "",
+    s.direction ? `方向 ${s.direction}` : "",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+  const url = s.evidence_url
+    ? `<a href="${escapeHtml(s.evidence_url)}" target="_blank" rel="noopener">来源</a>`
+    : "";
+  const cardLink = s.linked_card_id
+    ? `<a class="narrative-card-link" href="decision.html?id=${encodeURIComponent(s.linked_card_id)}">决策卡</a>`
+    : "";
+  return `<li class="narrative-demand">
+    <p><strong>${escapeHtml(s.keyword_or_cluster)}</strong> ${evidenceStatusTag(s.status)}</p>
+    <p class="meta">${escapeHtml(meta)}</p>
+    <p>${escapeHtml(s.note)}</p>
+    ${s.ideation_hint ? `<p class="ideation-hint"><strong>发散：</strong>${escapeHtml(s.ideation_hint)}</p>` : ""}
+    <p class="narrative-refs">${url} ${cardLink}</p>
+  </li>`;
+}
+
+/**
+ * @param {object} narratives - market_narratives.json
+ * @param {{ compact?: boolean, maxPerSection?: number }} opts
+ */
+export function renderMarketNarratives(narratives, { compact = false, maxPerSection = 4 } = {}) {
+  if (!narratives) return "";
+
+  const slice = (arr) =>
+    compact && maxPerSection > 0 ? (arr || []).slice(0, maxPerSection) : arr || [];
+
+  const rising = slice(narratives.rising);
+  const falling = slice(narratives.falling_or_stale);
+  const displacement = slice(narratives.displacement);
+  const signals = slice(narratives.demand_signals);
+
+  const limitations = (narratives.methodology_limitations || [])
+    .map(
+      (m) =>
+        `<li><strong>${escapeHtml(m.item)}</strong>：${escapeHtml(m.status)}</li>`
+    )
+    .join("");
+
+  const moreLink = compact
+    ? `<p class="narratives-more"><a href="trends.html">查看完整市场叙事层 →</a></p>`
+    : "";
+
+  return `
+    <section class="market-narratives" id="market-narratives">
+      <div class="narratives-header">
+        <h2>${escapeHtml(narratives.title || "产品兴衰 · 需求发散")}</h2>
+        ${narratives.intro ? `<p class="site-intro narratives-intro">${escapeHtml(narratives.intro)}</p>` : ""}
+      </div>
+      <div class="narratives-grid">
+        <div class="narrative-panel narrative-rising">
+          <h3>上升 · 新产品 / 新功能</h3>
+          <ul class="evidence-list">${rising.map((i) => narrativeItemRow(i)).join("") || "<li class='meta'>暂无</li>"}</ul>
+        </div>
+        <div class="narrative-panel narrative-falling">
+          <h3>衰退 / 停滞 · 旧产品</h3>
+          <ul class="evidence-list">${falling.map((i) => narrativeItemRow(i)).join("") || "<li class='meta'>暂无</li>"}</ul>
+        </div>
+      </div>
+      <div class="narrative-panel narrative-displacement-block">
+        <h3>替代叙事 · 旧 → 新</h3>
+        <ul class="displacement-list">${displacement.map(displacementRow).join("") || "<li class='meta'>暂无</li>"}</ul>
+      </div>
+      <div class="narrative-panel narrative-demand-block">
+        <h3>需求信号 · 相对趋势（发散用）</h3>
+        <p class="meta">仅相对份额 / rising 标签 / 内容密度；不含未标注的绝对搜索量。</p>
+        <ul class="demand-signal-list">${signals.map(demandSignalRow).join("") || "<li class='meta'>暂无</li>"}</ul>
+      </div>
+      ${
+        limitations && !compact
+          ? `<div class="narrative-panel narrative-limits"><h3>方法与局限</h3><ul>${limitations}</ul></div>`
+          : ""
+      }
+      ${moreLink}
+    </section>`;
+}

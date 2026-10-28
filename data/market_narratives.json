@@ -1,0 +1,297 @@
+{
+  "week_id": "2026-W44",
+  "as_of": "2026-10-28",
+  "timezone": "Asia/Hong_Kong",
+  "title": "产品兴衰 · 需求发散",
+  "intro": "AI 时代工具与资源趋同，独立 SEO 的差异在于看见「谁在取代谁、缺口填在哪」。本层汇总上升/衰退产品与替代叙事，并用相对需求信号做选题发散——不替代下方 Go / Watch / Kill 拍板，也不输出未标注的绝对搜索量。",
+  "linked_week_decisions": "2026-W44",
+  "source_markdown": "docs/week-decision-cards-2026-10-28.md",
+  "methodology_limitations": [
+    { "item": "Google Trends 官方 UI/API", "status": "未验证（429）；Brandwave 份额与竞品文密度作相对替代" },
+    { "item": "Similarweb 原表", "status": "未使用；Creati 等为第三方估计，已标注" },
+    { "item": "币圈", "status": "未纳入" }
+  ],
+  "rising": [
+    {
+      "id": "w44-rise-browserbase",
+      "name": "Browserbase（托管云浏览器）",
+      "category": "browser automation",
+      "claim": "2025-06-18 宣布 $40M Series B，公开博文称降价并扩大并发——品类资本与产品迭代仍在加速",
+      "evidence_url": "https://browserbase.com/blog/series-b-and-beyond/",
+      "evidence_date": "2025-06-18",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "id": "w44-rise-firecrawl",
+      "name": "Firecrawl（抓取 / 结构化 API）",
+      "category": "browser automation",
+      "claim": "公开 Series A 博文称前一年约 15x 增长、GitHub stars 过 48k（2025-08）；部分场景可替代「自建浏览器会话」",
+      "evidence_url": "https://www.firecrawl.dev/blog/firecrawl-v2-series-a-announcement",
+      "evidence_date": "2025-08",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "id": "w44-rise-browser-use",
+      "name": "Browser Use（Agent + 云浏览器叙事）",
+      "category": "browser automation",
+      "claim": "Brandwave 全球英文品牌搜份额 10.3% → 20.2%（2025-10→2026-09），升至类目第 2",
+      "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+      "evidence_date": "2026-09",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "id": "w44-rise-playwright",
+      "name": "Playwright（现代 E2E / CDP 栈）",
+      "category": "browser automation",
+      "claim": "Brandwave 份额 13% → 16.4%（峰值约 20.3% @2026-06）——云浏览器厂商普遍以 Playwright/CDP 为接入面",
+      "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+      "evidence_date": "2026-09",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "id": "w44-rise-cloud-alternatives-content",
+      "name": "「Browserbase alternatives」对比内容簇",
+      "category": "content / SERP",
+      "claim": "2026 年多家厂商与独立站密集发布 alternatives 长文（Deck / Kernel / webscraping.cc / Browser Use 等）——需求侧「选型焦虑」在内容层已显性化",
+      "evidence_url": "https://deck.co/blog/4-browserbase-alternatives-to-consider-in-2026",
+      "evidence_date": "2026-05",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "id": "w44-rise-coderabbit",
+      "name": "CodeRabbit（AI PR 评审）",
+      "category": "ai code review",
+      "claim": "Business Wire（2026-08-12）宣布 $143M Series C、估值 $1.5B；称收入 YoY >5x、周审 PR >200 万",
+      "evidence_url": "https://www.businesswire.com/news/home/20260812311754/en/CodeRabbit-Raises-%24143-Million-at-%241.5-Billion-Valuation-and-Introduces-Agentic-Change-Management",
+      "evidence_date": "2026-08-12",
+      "status": "verified",
+      "linked_card_id": "2026-W44-watch-ai-code-review"
+    },
+    {
+      "id": "w44-rise-ai-code-review-comparisons",
+      "name": "AI code review 对比文 / 榜单簇",
+      "category": "content / SERP",
+      "claim": "2026 年 Greptile、Repowise、Levelop 等密集发布 best-of 与 head-to-head——品类处于「选型内容军备竞赛」",
+      "evidence_url": "https://www.greptile.com/content-library/best-ai-code-review-tools",
+      "evidence_date": "2026",
+      "status": "verified",
+      "linked_card_id": "2026-W44-watch-ai-code-review"
+    }
+  ],
+  "falling_or_stale": [
+    {
+      "id": "w44-fall-selenium",
+      "name": "Selenium（品牌搜份额）",
+      "category": "browser automation",
+      "claim": "Brandwave：全球英文份额 26.5% → 13.3%（2025-10→2026-09）",
+      "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+      "evidence_date": "2026-09",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "id": "w44-fall-cypress",
+      "name": "Cypress（品牌搜份额）",
+      "category": "browser automation",
+      "claim": "Brandwave：份额 3.8% → 1.5%（同期窗口）",
+      "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+      "evidence_date": "2026-09",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "id": "w44-fall-selenium-ide",
+      "name": "Selenium IDE",
+      "category": "browser automation",
+      "claim": "2025-03 维护者在 GitHub issue 称项目 “effectively dead”",
+      "evidence_url": "https://github.com/SeleniumHQ/selenium-ide/issues/1872",
+      "evidence_date": "2025-03",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "id": "w44-stale-coderabbit-traffic",
+      "name": "CodeRabbit 第三方流量估计（短期走平）",
+      "category": "ai code review",
+      "claim": "Creati.ai（2026-09）约 1.00M 月访、环比 -2.21%——融资叙事强但流量非单调上升（第三方估计）",
+      "evidence_url": "https://creati.ai/ranking/september-2026/categories/ai-tools/coding-development/",
+      "evidence_date": "2026-09",
+      "status": "verified",
+      "linked_card_id": "2026-W44-watch-ai-code-review"
+    },
+    {
+      "id": "w44-stale-cursor-traffic",
+      "name": "Cursor 品牌流量（微降对照）",
+      "category": "ai ide",
+      "claim": "Creati.ai（2026-09）Cursor 约 21.50M 月访、环比 -4.58%——品牌仍大，但不等于 indie 可截流",
+      "evidence_url": "https://creati.ai/ranking/september-2026/categories/ai-tools/coding-development/",
+      "evidence_date": "2026-09",
+      "status": "verified",
+      "linked_card_id": "2026-W44-kill-cursor-ai"
+    }
+  ],
+  "displacement": [
+    {
+      "id": "w44-disp-selenium-playwright-cloud",
+      "old": "Selenium + 本机 Grid / IDE 录制",
+      "new": "Playwright + 托管云浏览器（Browserbase / Steel / Kernel 等）",
+      "gap_filled": "Agent 与 CI 需要可编程 CDP 会话、弹性并发与代理计费透明；旧栈难承接「按会话/按 GB」的云原生成本模型",
+      "indie_seo_angle": "独立对比枢纽 + Playwright 可复现基准 + 按页成本算术（Go 卡主叙事）；教程向「launch → connectOverCDP 迁移」",
+      "evidence_urls": [
+        "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+        "https://github.com/SeleniumHQ/selenium-ide/issues/1872",
+        "https://browser-use.com/posts/best-browser-infrastructure-for-ai-agents"
+      ],
+      "evidence_date": "2026-09",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "id": "w44-disp-full-browser-scrape-api",
+      "old": "自建无头浏览器爬全站",
+      "new": "Firecrawl 等「抓取 / 结构化 API」",
+      "gap_filled": "当目标只是 markdown/结构化数据而非通用浏览器自动化时，API 省掉会话运维与反爬胶着",
+      "indie_seo_angle": "「何时不必上云浏览器」决策树页；Firecrawl vs Browserbase 场景对照（Affiliate 友好）",
+      "evidence_urls": [
+        "https://www.firecrawl.dev/blog/firecrawl-v2-series-a-announcement",
+        "https://www.producthunt.com/categories/browser-automation"
+      ],
+      "evidence_date": "2026-09",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "id": "w44-disp-manual-review-coderabbit",
+      "old": "纯人工 PR review / 静态 linter  alone",
+      "new": "CodeRabbit、Greptile、Qodo 等 AI 评审层",
+      "gap_filled": "AI 生成代码放大 review 队列；团队要买「独立评审机器人」而非只买 IDE",
+      "indie_seo_angle": "Watch：盲测协议 + 固定 OSS PR 集对比文；ROI 计算器（seat × 噪音率）——壁垒弱于 Go 卡，适合观察",
+      "evidence_urls": [
+        "https://www.businesswire.com/news/home/20260812311754/en/CodeRabbit-Raises-%24143-Million-at-%241.5-Billion-Valuation-and-Introduces-Agentic-Change-Management",
+        "https://levelop.dev/blog/best-ai-code-review-tools-2026-coderabbit-greptile-qodo-compared"
+      ],
+      "evidence_date": "2026-08",
+      "status": "verified",
+      "linked_card_id": "2026-W44-watch-ai-code-review"
+    },
+    {
+      "id": "w44-disp-cursor-brand-indie",
+      "old": "「cursor ai」类品牌导航查询",
+      "new": "cursor.com 官方与大媒体",
+      "gap_filled": "下载/定价/学生优惠等意图由品牌资产闭环；第三方内容站难截获交易意图",
+      "indie_seo_angle": "Kill 示范：rising 品牌词 ≠ Go；可发散至「迁出 Cursor 到 Playwright+Agent 工作流」并入 Go 卡教程，不单独立项品牌站",
+      "evidence_urls": [
+        "https://probedex.ai/domain/cursor.com",
+        "https://gaopfEditer.github.io/demand-radar/data/keywords.json"
+      ],
+      "evidence_date": "2026-09",
+      "status": "verified",
+      "linked_card_id": "2026-W44-kill-cursor-ai"
+    },
+    {
+      "id": "w44-disp-vendor-alternatives-posts",
+      "old": "用户信任「厂商自推 alternatives 文」",
+      "new": "独立基准 + 中立算术的对比枢纽",
+      "gap_filled": "Deck/Kernel/Anchor 等文多推自家 SKU；缺可复现 Playwright 延迟与 proxy-GB 账单拆解",
+      "indie_seo_angle": "Go 卡核心缺口：公开方法与原始 JSON 的 benchmark 即差异化",
+      "evidence_urls": [
+        "https://deck.co/blog/4-browserbase-alternatives-to-consider-in-2026",
+        "https://webscraping.cc/blog/browserbase-alternatives/"
+      ],
+      "evidence_date": "2026-07",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    }
+  ],
+  "demand_signals": [
+    {
+      "keyword_or_cluster": "Browser Use",
+      "direction": "up",
+      "metric_type": "share_of_search",
+      "market": "global",
+      "window": "2025-10 → 2026-09",
+      "note": "品牌搜份额 10.3% → 20.2%（相对，非绝对量）",
+      "ideation_hint": "Browser Use Cloud vs 纯 CDP 云浏览器选型页；与 Browserbase 对照的 Agent 场景树",
+      "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "keyword_or_cluster": "Playwright",
+      "direction": "up",
+      "metric_type": "share_of_search",
+      "market": "global",
+      "window": "2025-10 → 2026-09",
+      "note": "份额 13% → 16.4%；峰值约 20.3% @2026-06",
+      "ideation_hint": "Playwright MCP / 云 CDP 联调教程簇；迁移 Selenium 遗留脚本 checklist",
+      "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "keyword_or_cluster": "Selenium",
+      "direction": "down",
+      "metric_type": "share_of_search",
+      "market": "global",
+      "window": "2025-10 → 2026-09",
+      "note": "份额 26.5% → 13.3%——作衰退对照，不当作 Go 主词",
+      "ideation_hint": "「Selenium 团队还在用什么」转型故事页，引流至 Playwright+云浏览器 Go 卡",
+      "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+      "status": "verified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "keyword_or_cluster": "browserbase alternatives",
+      "direction": "rising",
+      "metric_type": "qualitative_density",
+      "market": "US",
+      "window": "2026 H1–H2",
+      "note": "Google Trends 曲线本轮未验证（429）；替代证据为 alternatives 长文密集上线",
+      "ideation_hint": "英文对比枢纽 + 定价计算器——与 Go 卡主词一致",
+      "evidence_url": "https://deck.co/blog/4-browserbase-alternatives-to-consider-in-2026",
+      "status": "unverified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "keyword_or_cluster": "cloud browser automation pricing",
+      "direction": "up",
+      "metric_type": "qualitative_density",
+      "market": "global",
+      "window": "2026",
+      "note": "支撑词级商业调研意图；绝对搜索量未验证",
+      "ideation_hint": "按 browser-hour vs proxy-GB 拆解的可分享计算器（工具页获客）",
+      "evidence_url": "https://webscraping.cc/blog/browserbase-alternatives/",
+      "status": "unverified",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives"
+    },
+    {
+      "keyword_or_cluster": "best ai code review tools / coderabbit vs greptile",
+      "direction": "rising",
+      "metric_type": "qualitative_density",
+      "market": "US",
+      "window": "2025-09 → 2026-08",
+      "note": "对比文与融资窗口重叠；簇级 rising（定性），Trends 数值未验证",
+      "ideation_hint": "固定 20 PR 盲测报告；GitLab/Bitbucket 替代页——Watch 卡试水方向",
+      "evidence_url": "https://repowise.dev/blog/comparisons/best-ai-code-review-tools",
+      "status": "unverified",
+      "linked_card_id": "2026-W44-watch-ai-code-review"
+    },
+    {
+      "keyword_or_cluster": "cursor ai",
+      "direction": "rising",
+      "metric_type": "rising_label",
+      "market": "US",
+      "window": "2025–2026",
+      "note": "demand-radar keywords.json 标注 is_rising——品牌导航向，Kill 非 Go",
+      "ideation_hint": "反面教材：脏 Suggest（free for students 等）清洗清单；勿立项品牌站",
+      "evidence_url": "https://gaopfEditer.github.io/demand-radar/data/keywords.json",
+      "status": "verified",
+      "linked_card_id": "2026-W44-kill-cursor-ai"
+    }
+  ]
+}

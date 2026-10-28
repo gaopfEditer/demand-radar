@@ -78,4 +78,5 @@ keyword_growth_trend:
 ## 输出文件约定
 
 - 周卡正文：`week-decision-cards-YYYY-MM-DD.md`  
-- 本规格：`decision-card-schema.md`（同目录）
+- 本规格：`decision-card-schema.md`（同目录）  
+- 并列发散层：`data/market_narratives.json`（规格见 `market-narratives-schema.md`）

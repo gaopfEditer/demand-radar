@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demand Radar — 产品兴衰 · 需求发散</title>
+  <meta name="theme-color" content="#0f1419" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="trends">
+  <header>
+    <div class="header-top">
+      <h1>Demand Radar · 市场叙事</h1>
+      <nav>
+        <a href="index.html" data-page="decisions">本周决策</a>
+        <a href="trends.html" data-page="trends">产品兴衰</a>
+        <a href="opportunities.html" data-page="opportunities">原始机会</a>
+        <a href="keywords.html" data-page="keywords">关键词</a>
+      </nav>
+    </div>
+    <div id="site-meta-bar" class="site-meta-bar">加载叙事元数据…</div>
+  </header>
+  <main>
+    <p class="site-intro">
+      完整<strong>发散层</strong>：上升/衰退产品、旧→新替代叙事、相对需求信号（含 ideation 提示）。
+      拍板仍以<a href="index.html">本周决策三卡</a>为准。
+    </p>
+    <div id="market-narratives-full">
+      <p class="meta">加载 market_narratives.json…</p>
+    </div>
+  </main>
+  <footer>Demand Radar · 位移叙事 · 证据优先</footer>
+  <script type="module">
+    import { loadJson, setActiveNav, renderMarketNarratives, escapeHtml } from "./assets/app.js";
+
+    setActiveNav();
+
+    const narratives = await loadJson("market_narratives.json");
+    const el = document.getElementById("site-meta-bar");
+    el.innerHTML = `批次 <strong>${escapeHtml(narratives.week_id)}</strong> · 截止 <strong>${escapeHtml(narratives.as_of)}</strong>（${escapeHtml(narratives.timezone)}） · 关联决策 <strong>${escapeHtml(narratives.linked_week_decisions)}</strong>`;
+
+    document.getElementById("market-narratives-full").innerHTML = renderMarketNarratives(
+      narratives,
+      { compact: false }
+    );
+  </script>
+</body>
+</html>
