@@ -66,3 +66,180 @@ export function pendingLabel(dims) {
   if (!dims || !dims.length) return "—";
   return dims.join(", ");
 }
+
+export function escapeHtml(s) {
+  return String(s ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+const VERDICT_ORDER = { Go: 0, Watch: 1, Kill: 2 };
+
+export function sortDecisionCards(cards) {
+  return [...(cards || [])].sort(
+    (a, b) => (VERDICT_ORDER[a.verdict] ?? 9) - (VERDICT_ORDER[b.verdict] ?? 9)
+  );
+}
+
+export function verdictBadge(verdict) {
+  const key = (verdict || "").toLowerCase();
+  const cls =
+    key === "go" ? "verdict-go" : key === "watch" ? "verdict-watch" : "verdict-kill";
+  const label = { go: "Go", watch: "Watch", kill: "Kill" }[key] || escapeHtml(verdict);
+  return `<span class="badge verdict-badge ${cls}">${label}</span>`;
+}
+
+export function evidenceStatusTag(status) {
+  if (status === "verified") {
+    return '<span class="evidence-status status-verified">已验证</span>';
+  }
+  if (status === "unverified") {
+    return '<span class="evidence-status status-unverified">未验证</span>';
+  }
+  return "";
+}
+
+export function renderGrowthList(items, label) {
+  if (!items?.length) return "";
+  const lis = items
+    .map((item) => {
+      const url = item.evidence_url
+        ? `<a href="${escapeHtml(item.evidence_url)}" target="_blank" rel="noopener">来源</a>`
+        : "";
+      return `<li>${escapeHtml(item.claim)} ${evidenceStatusTag(item.status)} ${url}</li>`;
+    })
+    .join("");
+  return `<div class="decision-section"><h3>${escapeHtml(label)}</h3><ul class="evidence-list">${lis}</ul></div>`;
+}
+
+export function renderKeywordSignals(kwTrend) {
+  if (!kwTrend?.signals?.length) return "";
+  const meta = [
+    kwTrend.market ? `市场 ${kwTrend.market}` : "",
+    kwTrend.window ? `窗口 ${kwTrend.window}` : "",
+    kwTrend.metric_type ? `指标 ${kwTrend.metric_type}` : "",
+  ]
+    .filter(Boolean)
+    .join(" · ");
+  const lis = kwTrend.signals
+    .map((s) => {
+      const url = s.evidence_url
+        ? `<a href="${escapeHtml(s.evidence_url)}" target="_blank" rel="noopener">来源</a>`
+        : "";
+      return `<li><strong>${escapeHtml(s.keyword_or_cluster)}</strong> (${escapeHtml(s.direction)}): ${escapeHtml(s.note)} ${evidenceStatusTag(s.status)} ${url}</li>`;
+    })
+    .join("");
+  const note = kwTrend.trends_ui_note
+    ? `<p class="meta">${escapeHtml(kwTrend.trends_ui_note)}</p>`
+    : "";
+  return `<div class="decision-section"><h3>关键词增长趋势</h3><p class="meta">${escapeHtml(meta)}</p>${note}<ul class="evidence-list">${lis}</ul></div>`;
+}
+
+export function renderDecisionCard(card, { detail = false } = {}) {
+  const vKey = (card.verdict || "").toLowerCase();
+  const support = (card.support_keywords || [])
+    .map((k) => `<span class="kw-tag">${escapeHtml(k)}</span>`)
+    .join("");
+  const serpRefs = (card.serp_gap_refs || [])
+    .map(
+      (u) =>
+        `<li><a href="${escapeHtml(u)}" target="_blank" rel="noopener">${escapeHtml(u)}</a></li>`
+    )
+    .join("");
+  const peripherals = (card.related_peripheral_content || [])
+    .map((p) => `<li>${escapeHtml(p)}</li>`)
+    .join("");
+  const mvpTitles = (card.mvp_7d?.url_titles || [])
+    .map((t) => `<li>${escapeHtml(t)}</li>`)
+    .join("");
+  const mvpLimit = detail ? mvpTitles.length : 5;
+  const mvpSlice = (card.mvp_7d?.url_titles || []).slice(0, mvpLimit);
+  const mvpHtml = mvpSlice.map((t) => `<li>${escapeHtml(t)}</li>`).join("");
+  const mvpMore =
+    !detail && (card.mvp_7d?.url_titles || []).length > 5
+      ? `<p class="meta">另有 ${card.mvp_7d.url_titles.length - 5} 个标题，见<a href="decision.html?id=${encodeURIComponent(card.card_id)}">完整卡</a></p>`
+      : "";
+
+  const detailLink = detail
+    ? ""
+    : `<p class="card-link"><a href="decision.html?id=${encodeURIComponent(card.card_id)}">查看完整决策卡 →</a></p>`;
+
+  return `
+    <article class="decision-card verdict-${vKey}" id="${escapeHtml(card.card_id)}">
+      <div class="decision-card-header">
+        <div>
+          ${verdictBadge(card.verdict)}
+          <h2>${escapeHtml(card.title)}</h2>
+        </div>
+        <p class="primary-kw">${escapeHtml(card.primary_keyword)}</p>
+      </div>
+      ${card.kill_note ? `<p class="meta kill-note">${escapeHtml(card.kill_note)}</p>` : ""}
+      <div class="decision-section">
+        <h3>支撑词（5）</h3>
+        <div class="kw-tags">${support}</div>
+        ${card.support_keywords_note ? `<p class="meta">${escapeHtml(card.support_keywords_note)}</p>` : ""}
+      </div>
+      <div class="decision-section">
+        <h3>谁在搜、谁付钱</h3>
+        <p>${escapeHtml(card.who_searches_who_pays)}</p>
+      </div>
+      <div class="decision-grid-summary">
+        <div class="decision-section">
+          <h3>变现 · 主路径</h3>
+          <p>${escapeHtml(card.monetization?.primary?.path)}</p>
+          <p class="meta stack-fit">${escapeHtml(card.monetization?.primary?.stack_fit)}</p>
+        </div>
+        <div class="decision-section">
+          <h3>变现 · 备路径</h3>
+          <p>${escapeHtml(card.monetization?.backup?.path)}</p>
+          <p class="meta stack-fit">${escapeHtml(card.monetization?.backup?.stack_fit)}</p>
+        </div>
+      </div>
+      <div class="decision-section">
+        <h3>SERP 缺口</h3>
+        <p>${escapeHtml(card.serp_gap)}</p>
+        ${serpRefs ? `<ul class="serp-refs">${serpRefs}</ul>` : ""}
+      </div>
+      <div class="decision-section">
+        <h3>7 天 MVP · ${escapeHtml(card.mvp_7d?.site_type || "—")}</h3>
+        ${mvpHtml ? `<ol class="mvp-titles">${mvpHtml}</ol>` : '<p class="meta">无建议 URL 清单</p>'}
+        ${mvpMore}
+      </div>
+      <div class="decision-section">
+        <h3>不做/降级 & 30 天标准</h3>
+        <p>${escapeHtml(card.scope_and_success?.wont_do_or_downgrade)}</p>
+        <p class="meta"><strong>30 天：</strong>${escapeHtml(card.scope_and_success?.success_30d)}</p>
+      </div>
+      ${renderGrowthList(card.product_growth_trend?.upside, "产品增长 · 增量")}
+      ${renderGrowthList(card.product_growth_trend?.downside_or_stale, "产品增长 · 减量/停滞")}
+      ${renderKeywordSignals(card.keyword_growth_trend)}
+      <div class="decision-section">
+        <h3>周边相关内容</h3>
+        <ul>${peripherals}</ul>
+      </div>
+      ${
+        card.evidence_vs_inference
+          ? `<p class="meta evidence-note"><strong>证据 vs 推测：</strong>${escapeHtml(card.evidence_vs_inference)}</p>`
+          : ""
+      }
+      ${detailLink}
+    </article>`;
+}
+
+export async function renderWeekMetaBar() {
+  const el = document.getElementById("site-meta-bar");
+  if (!el) return;
+  try {
+    const week = await loadJson("week_decisions.json");
+    let html = `批次 <strong>${escapeHtml(week.week_id)}</strong> · 调研截止 <strong>${escapeHtml(week.as_of)}</strong>（${escapeHtml(week.timezone)}）`;
+    html += ` · 分布 Go / Watch / Kill 各 1`;
+    if (week.source_markdown) {
+      html += ` · 源文件 <code>${escapeHtml(week.source_markdown)}</code>`;
+    }
+    el.innerHTML = html;
+  } catch {
+    await renderSiteMetaBar();
+  }
+}

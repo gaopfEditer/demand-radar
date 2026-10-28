@@ -2,7 +2,7 @@
 
 面向海外英文市场的需求情报 MVP：多源采集 → 标准化/聚类/评分 →（可选）ChatGPT 方案 → Streamlit 看板 → 人工验证回写。
 
-**在线结果看板**（机会评分 / 关键词 triage，非本文档页）：<https://gaopfEditer.github.io/demand-radar/> · 本地运维与验证请用下方 Streamlit。
+**在线结果看板**（**本周决策卡**为主 · 原始机会表 / 关键词为辅）：<https://gaopfEditer.github.io/demand-radar/> · 本地运维与验证请用下方 Streamlit。
 
 > **原则**：采集程序拿证据，评分规则引擎初筛，AI 做综合判断。不要让大模型只凭 Trends 热度决定做什么产品。
 
@@ -115,7 +115,15 @@ streamlit run dashboard/app.py
 
 ### 静态预览（GitHub Pages）
 
-**GitHub Pages 首页 = 结果看板**（根目录 `index.html` + `data/*.json`，`.nojekyll` 避免 Jekyll 把 README 当站点首页）。`public/` 为同内容的镜像，供 Actions 部署模式使用；`scripts/build_public.py` 会同时写入 `public/data/` 与根目录 `data/`，并同步 HTML/静态资源到根目录。
+**GitHub Pages 首页 = 本周决策看板**（`index.html` 加载 `data/week_decisions.json`，展示 Go / Watch / Kill 三张卡）。原始机会评分表在 `opportunities.html`；字段规格见 `docs/decision-card-schema.md`。
+
+**新增下一周决策卡：**
+
+1. 在 `docs/` 撰写 `week-decision-cards-YYYY-MM-DD.md`（参照 schema，每批 1 Go · 1 Watch · 1 Kill）。
+2. 更新 `data/week_decisions.json`（UI 读取的结构化数据，勿编造未验证主张）。
+3. 运行 `python scripts/build_public.py`（同步 `week_decisions.json` 到 `public/data/`，并把 `public/` 下 HTML/静态资源复制到仓库根目录）。
+
+根目录与 `public/` 双份 HTML/数据供 branch Pages 与 Actions 部署；`.nojekyll` 避免 Jekyll 覆盖静态站。
 
 - **预期地址**：<https://gaopfEditer.github.io/demand-radar/>
 - **首次启用**：GitHub 仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**（不要选 “Deploy from branch”）。`main` 推送后由 `.github/workflows/deploy-pages.yml` 发布 `public/` 目录。
@@ -162,7 +170,8 @@ S=\sum_i w_i \frac{r_i}{5}\times 100
 ├── schemas/
 ├── storage/
 ├── dashboard/app.py
-├── public/              # GitHub Pages 静态 UI
+├── docs/                # 周决策卡 Markdown + schema
+├── public/              # GitHub Pages 静态 UI（Actions 部署源）
 ├── scripts/build_public.py
 ├── exports/
 ├── tests/

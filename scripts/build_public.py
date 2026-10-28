@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-"""Build static GitHub Pages data from pipeline exports."""
+"""Build static GitHub Pages data from pipeline exports.
+
+Weekly decision cards (周决策卡):
+  1. Author ``docs/week-decision-cards-YYYY-MM-DD.md`` (see ``docs/decision-card-schema.md``).
+  2. Update ``data/week_decisions.json`` to match the schema (1 Go / 1 Watch / 1 Kill).
+  3. Run ``python scripts/build_public.py`` — copies JSON to ``public/data/`` and ``data/``,
+     and syncs HTML/assets from ``public/`` to the repo root for branch-based Pages.
+  Markdown in ``docs/`` is the human source of truth; JSON is what the static UI loads.
+"""
 
 from __future__ import annotations
 
@@ -15,7 +23,14 @@ DEFAULT_KW_CSV = ROOT / "exports" / "keywords.csv"
 PUBLIC_DATA = ROOT / "public" / "data"
 ROOT_DATA = ROOT / "data"
 PUBLIC_DIR = ROOT / "public"
-STATIC_PAGES = ("index.html", "keywords.html", "detail.html")
+STATIC_PAGES = (
+    "index.html",
+    "opportunities.html",
+    "decision.html",
+    "keywords.html",
+    "detail.html",
+)
+WEEK_DECISIONS_JSON = "week_decisions.json"
 
 
 def _evidence_summary(rating_notes: dict | None) -> list[str]:
@@ -145,6 +160,24 @@ def _write_json_bundle(
     return {k: str(v) for k, v in paths.items()}
 
 
+def sync_week_decisions(out_dirs: list[Path] | None = None) -> list[str]:
+    """Mirror data/week_decisions.json into each public data directory."""
+    src = ROOT_DATA / WEEK_DECISIONS_JSON
+    if not src.is_file():
+        return []
+    dirs = out_dirs if out_dirs is not None else [PUBLIC_DATA, ROOT_DATA]
+    copied: list[str] = []
+    for out_dir in dirs:
+        out_dir.mkdir(parents=True, exist_ok=True)
+        dest = out_dir / WEEK_DECISIONS_JSON
+        if dest.resolve() == src.resolve():
+            copied.append(str(dest))
+            continue
+        shutil.copy2(src, dest)
+        copied.append(str(dest))
+    return copied
+
+
 def sync_pages_root() -> dict[str, list[str]]:
     """Copy static UI to repo root for branch-based GitHub Pages (Jekyll bypass)."""
     copied: dict[str, list[str]] = {"html": [], "assets": [], "other": []}
@@ -194,8 +227,9 @@ def build_public(
     for out_dir in dirs:
         written[str(out_dir)] = _write_json_bundle(meta, opportunities, keywords, out_dir)
 
+    week_decisions = sync_week_decisions(dirs)
     root_sync = sync_pages_root() if sync_root else None
-    return {"data": written, "root_static": root_sync}
+    return {"data": written, "week_decisions": week_decisions, "root_static": root_sync}
 
 
 def main() -> int:
