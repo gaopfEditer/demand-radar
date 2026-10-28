@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demand Radar — 关键词</title>
+  <meta name="theme-color" content="#0f1419" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="keywords">
+  <header>
+    <div class="header-top">
+      <h1>Demand Radar · 关键词</h1>
+      <nav>
+        <a href="index.html" data-page="opportunities">机会列表</a>
+        <a href="keywords.html" data-page="keywords">关键词</a>
+      </nav>
+    </div>
+    <div id="site-meta-bar" class="site-meta-bar">加载元数据…</div>
+  </header>
+  <main>
+    <p class="site-intro">导出关键词列表（含意图、类目、Trends 相对分）。搜索框过滤英文 keyword。</p>
+    <div class="filters">
+      <label>搜索 <input type="search" id="f-q" placeholder="filter…" /></label>
+      <label>类目
+        <select id="f-category"><option value="">全部</option></select>
+      </label>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>关键词</th>
+          <th>意图</th>
+          <th>类目</th>
+          <th>Trends 分</th>
+          <th>Rising</th>
+          <th class="hide-sm">来源</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </main>
+  <footer>Autocomplete / Trends 证据 · 非搜索量</footer>
+  <script type="module">
+    import { loadJson, setActiveNav, renderSiteMetaBar } from "./assets/app.js";
+
+    setActiveNav();
+    await renderSiteMetaBar();
+
+    const keywords = await loadJson("keywords.json");
+    const cats = [...new Set(keywords.map((k) => k.category).filter(Boolean))].sort();
+    const catSel = document.getElementById("f-category");
+    cats.forEach((c) => {
+      const opt = document.createElement("option");
+      opt.value = c;
+      opt.textContent = c;
+      catSel.appendChild(opt);
+    });
+
+    function render() {
+      const q = document.getElementById("f-q").value.trim().toLowerCase();
+      const cat = document.getElementById("f-category").value;
+      let rows = keywords.slice();
+      if (cat) rows = rows.filter((k) => k.category === cat);
+      if (q) {
+        rows = rows.filter(
+          (k) =>
+            (k.keyword || "").toLowerCase().includes(q) ||
+            (k.normalized || "").toLowerCase().includes(q)
+        );
+      }
+      rows.sort((a, b) => (b.trend_score ?? -1) - (a.trend_score ?? -1));
+
+      document.getElementById("rows").innerHTML =
+        rows
+          .slice(0, 500)
+          .map(
+            (k) => `
+        <tr>
+          <td>${k.keyword || "—"}</td>
+          <td class="meta">${k.intent || "—"}</td>
+          <td class="meta">${k.category || "—"}</td>
+          <td class="score">${k.trend_score != null ? Number(k.trend_score).toFixed(1) : "—"}</td>
+          <td>${k.is_rising ? "↑" : "—"}</td>
+          <td class="meta hide-sm">${(k.source || "").slice(0, 40)}</td>
+        </tr>`
+          )
+          .join("") ||
+        "<tr><td colspan='6'>无匹配</td></tr>";
+    }
+
+    document.getElementById("f-q").addEventListener("input", render);
+    document.getElementById("f-category").addEventListener("change", render);
+    render();
+  </script>
+</body>
+</html>

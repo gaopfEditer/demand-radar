@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/*.db
+exports/*.csv
+exports/*.json
+!exports/keywords.csv
+!exports/dev_site_demand.json
+exports/reports/
+.env
+*.egg-info/
+.streamlit/
