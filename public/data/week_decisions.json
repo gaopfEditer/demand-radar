@@ -1,0 +1,346 @@
+{
+  "week_id": "2026-W44",
+  "as_of": "2026-10-28",
+  "timezone": "Asia/Hong_Kong",
+  "distribution": { "go": 1, "watch": 1, "kill": 1 },
+  "batch_note": "线索源含清洗后的 demand-radar keywords.json；未把脏 Suggest / 笼统 vs code / code ai / 纯 Cursor·Claude 品牌词当 Go 主词。币圈不进评分。",
+  "methodology_limitations": [
+    { "item": "竞品长文 WebFetch", "status": "已完成（Deck / Kernel / webscraping.cc / Browserbase 融资博文 / Business Wire / Brandwave / Creati / Selenium IDE issue）" },
+    { "item": "Google Trends 官方 UI/API", "status": "未验证（429）；用 Brandwave 相对份额替代" },
+    { "item": "Google 前 10 完整 HTML", "status": "未验证（429）；用 WebSearch 结果集 + 打开的排名页代替" },
+    { "item": "Similarweb 原表登录数据", "status": "未使用；Creati 等为第三方估计，已标注" },
+    { "item": "币圈", "status": "未纳入任何评分" }
+  ],
+  "source_markdown": "docs/week-decision-cards-2026-10-28.md",
+  "cards": [
+    {
+      "card_id": "2026-W44-go-browserbase-alternatives",
+      "title": "云浏览器基础设施对比站",
+      "verdict": "Go",
+      "as_of": "2026-10-28",
+      "primary_keyword": "browserbase alternatives",
+      "support_keywords": [
+        "cloud browser automation pricing",
+        "steel.dev vs browserbase",
+        "hyperbrowser pricing",
+        "playwright cloud browser",
+        "browserless vs browserbase"
+      ],
+      "who_searches_who_pays": "做 AI Agent / 爬虫 / 自动化的独立开发者与小团队；已用 Playwright/Puppeteer，想把本机 Chrome 换成托管会话；被 Browserbase 代理带宽账单或 6 小时会话上限卡住后搜「alternatives」。意图：商业调研（对比 / 定价 / 选型），非纯百科。谁付钱：团队 SaaS 预算（$20–$250+/月 基础设施）；愿意点 Affiliate / 注册返佣；后续也愿意为「独立基准测试」小工具付费或订阅。买家画像：英文市场（优先 US）的 agent infra 买家，技术向，能读定价表与 CDP 文档。",
+      "monetization": {
+        "primary": {
+          "path": "Affiliate / 合作伙伴返佣 + 对比内容站 — 对接 Browserbase、Steel、Kernel、Hyperbrowser、Browser Use、Anchor、Firecrawl 等公开合作/联盟；Next.js 内容站承接对比页与定价页。",
+          "stack_fit": "用户已精通 Playwright，能自己写「真实会话基准」而不是抄厂商稿，信任度高于纯 SEO 站。"
+        },
+        "backup": {
+          "path": "小 SaaS / 工具页 — 「云浏览器成本计算器」「Playwright → connectOverCDP 一键迁移片段生成器」「代理 GB 账单估算器」。",
+          "stack_fit": "Python 抓公开价表 + Next.js 前端；扩展可选做「本机 vs 云会话」调试面板。"
+        }
+      },
+      "serp_gap": "前 10 几乎被厂商自推对比文占满（Deck 推 Deck、Kernel 推 Kernel、Anchor 推 Anchor），独立站要么缺真实基准、要么更新慢；缺口 = 无厂商立场、带可复现 Playwright 基准与「按页成本」算术的对比枢纽。",
+      "serp_gap_refs": [
+        "https://deck.co/blog/4-browserbase-alternatives-to-consider-in-2026",
+        "https://www.kernel.sh/ai-library/browserbase-alternatives-2026",
+        "https://webscraping.cc/blog/browserbase-alternatives/",
+        "https://browser-use.com/posts/best-browser-infrastructure-for-ai-agents"
+      ],
+      "mvp_7d": {
+        "site_type": "Next.js 英文对比站（对比枢纽 + 定价算术 + Playwright 迁移教程）",
+        "url_titles": [
+          "Browserbase Alternatives (2026): Independent Comparison",
+          "Browserbase vs Steel vs Kernel: Pricing & Cold Start",
+          "Cloud Browser Automation Pricing Calculator",
+          "Playwright on Browserbase / Steel / Kernel (CDP Connect Guide)",
+          "Browserless vs Browserbase for Existing Playwright Scripts",
+          "Hyperbrowser Pricing Explained (Credits, Stealth, Concurrent)",
+          "When You Don’t Need a Cloud Browser (Firecrawl / Scraping API Instead)",
+          "Browserbase Proxy Bandwidth Cost per Page (Math)",
+          "Best Self-Hosted Browser API: Steel & Open-Source Options",
+          "Migrate Stagehand Scripts Off Browserbase (Checklist)"
+        ]
+      },
+      "scope_and_success": {
+        "wont_do_or_downgrade": "不做「通用 web scraping 大而全目录」；不做币圈采集；不做纯 Cursor/Claude 品牌词站；首月不做重代理自营（合规与成本高）。",
+        "success_30d": "上线 ≥10 个索引页；GSC 展示 ≥1,000 或点击 ≥50（以先到者为参考）；≥3 个外链或社区引用（Reddit / IH / GitHub gist 均可）；Affiliate 或邮件询盘 ≥5 次，或计算器工具 UV ≥300。"
+      },
+      "product_growth_trend": {
+        "upside": [
+          {
+            "claim": "Browserbase：2025-06-18 宣布 $40M Series B（Notable Capital），并降价、扩并发",
+            "evidence_url": "https://browserbase.com/blog/series-b-and-beyond/",
+            "evidence_date": "2025-06-18",
+            "status": "verified"
+          },
+          {
+            "claim": "Firecrawl：公开博文称 Series A 前一年 15x 增长、GitHub stars 过 48k（2025-08）；后续报道称 Series B 与开发者规模继续放大",
+            "evidence_url": "https://www.firecrawl.dev/blog/firecrawl-v2-series-a-announcement",
+            "evidence_date": "2025-08",
+            "status": "verified"
+          },
+          {
+            "claim": "Creati.ai（2026-09）：Firecrawl 约 1.86M 月访（第三方估计）",
+            "evidence_url": "https://creati.ai/ranking/september-2026/categories/ai-tools/coding-development/",
+            "evidence_date": "2026-09",
+            "status": "verified"
+          },
+          {
+            "claim": "Product Hunt 类目「browser automation」2026-10-27 更新，Firecrawl / Browser Use / Browserbase 居前",
+            "evidence_url": "https://www.producthunt.com/categories/browser-automation",
+            "evidence_date": "2026-10-27",
+            "status": "verified"
+          }
+        ],
+        "downside_or_stale": [
+          {
+            "claim": "Brandwave（全球英文品牌搜份额，截至 2026-09）：Selenium 份额从 2025-10 的 26.5% → 13.3%；Cypress 3.8% → 1.5%",
+            "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+            "evidence_date": "2026-09",
+            "status": "verified"
+          },
+          {
+            "claim": "Selenium IDE 唯一维护者 2025-03 声明 “effectively dead”",
+            "evidence_url": "https://github.com/SeleniumHQ/selenium-ide/issues/1872",
+            "evidence_date": "2025-03",
+            "status": "verified"
+          }
+        ]
+      },
+      "keyword_growth_trend": {
+        "market": "global",
+        "window": "2025-10 → 2026-09",
+        "metric_type": "share_of_search",
+        "signals": [
+          {
+            "keyword_or_cluster": "Browser Use",
+            "direction": "up",
+            "note": "份额 10.3% → 20.2%（升至第 2）",
+            "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+            "status": "verified"
+          },
+          {
+            "keyword_or_cluster": "Playwright",
+            "direction": "up",
+            "note": "份额 13% → 16.4%（峰值曾到 20.3% @2026-06）",
+            "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+            "status": "verified"
+          },
+          {
+            "keyword_or_cluster": "Selenium",
+            "direction": "down",
+            "note": "份额 26.5% → 13.3%（下降对照）",
+            "evidence_url": "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+            "status": "verified"
+          },
+          {
+            "keyword_or_cluster": "browserbase alternatives",
+            "direction": "rising",
+            "note": "Google Trends 相对曲线未验证（本轮 Trends/SERP 抓取遇 429）；替代证据为 2026 年多篇 alternatives 长文密集上线",
+            "evidence_url": "https://deck.co/blog/4-browserbase-alternatives-to-consider-in-2026",
+            "status": "unverified"
+          }
+        ],
+        "trends_ui_note": "主词 US Google Trends 本轮未直接打开 UI → 标未验证"
+      },
+      "related_peripheral_content": [
+        "Browserbase vs Browser Use Cloud：何时用托管 Agent、何时只用 CDP 浏览器",
+        "Stagehand vs 纯 Playwright：成本与可控性对比",
+        "云浏览器「按页真实成本」定价拆解页（browser-hour vs proxy-GB）",
+        "Playwright MCP / Chrome DevTools MCP 与云浏览器联调教程",
+        "小工具：Cloud Browser Cost Calculator（输入并发、会话时长、代理 GB）",
+        "小工具：launch() → connectOverCDP() 迁移片段生成器",
+        "Self-host Steel on Docker：成本 vs 托管对照清单"
+      ],
+      "evidence_vs_inference": "融资/份额/竞品页结构 = 事实；「独立站 30 天可拿到 Affiliate 转化」= 推测；主词绝对搜索量 = 未验证。",
+      "crypto_excluded": true
+    },
+    {
+      "card_id": "2026-W44-watch-ai-code-review",
+      "title": "AI 代码评审工具簇",
+      "verdict": "Watch",
+      "as_of": "2026-10-28",
+      "primary_keyword": "best ai code review tools",
+      "support_keywords": [
+        "coderabbit vs greptile",
+        "coderabbit pricing",
+        "greptile alternatives",
+        "ai pull request review",
+        "qodo vs coderabbit"
+      ],
+      "who_searches_who_pays": "工程经理 / Staff 工程师，为团队选 PR 机器人；被 AI 生成代码淹没后找「独立评审层」。谁付钱：B2B seat 订阅（公开价常见约 $12–$48/开发者/月量级，以各厂商定价页为准）；开源仓库常有免费档。意图：强商业调研；决策周期长于云浏览器个人开发者。",
+      "monetization": {
+        "primary": {
+          "path": "Affiliate / 合作内容 + 深度对比站（CodeRabbit、Greptile、Qodo 等若有伙伴计划）。",
+          "stack_fit": "Next.js 内容站可做；但用户栈（Playwright/扩展）并非差异化壁垒，故不升 Go。"
+        },
+        "backup": {
+          "path": "开源评测脚手架 SaaS（对同一批 PR 跑多家 reviewer 并输出 diff 报告）。",
+          "stack_fit": "Python 编排 + GitHub App；工作量大，适合观察 1–2 个季度再决定。"
+        }
+      },
+      "serp_gap": "前排多为厂商内容库与新站对比文互相引战（Greptile 官博贬 CodeRabbit、第三方列表站跟风）；缺口是「可复现的盲测协议 + 固定 OSS PR 集」，但做出权威基准成本高、且头部已有 Martian 等第三方榜。",
+      "serp_gap_refs": [
+        "https://repowise.dev/blog/comparisons/best-ai-code-review-tools",
+        "https://www.greptile.com/content-library/best-ai-code-review-tools",
+        "https://levelop.dev/blog/best-ai-code-review-tools-2026-coderabbit-greptile-qodo-compared",
+        "https://www.greptile.com/content-library/greptile-martian-code-review-benchmark"
+      ],
+      "mvp_7d": {
+        "site_type": "轻量对比博客（不建重产品）",
+        "url_titles": [
+          "Best AI Code Review Tools (2026): Who They’re For",
+          "CodeRabbit vs Greptile: Precision vs Repo-Wide Context",
+          "CodeRabbit Pricing Breakdown (Seats, Credits, OSS)",
+          "Greptile Alternatives for GitLab / Bitbucket Teams",
+          "AI Pull Request Review: Noise vs Signal Checklist",
+          "Qodo vs CodeRabbit for Test Generation",
+          "Self-Hosted AI Code Review (PR-Agent & On-Prem Options)",
+          "How to Trial Two Reviewers on the Same 20 PRs"
+        ]
+      },
+      "scope_and_success": {
+        "wont_do_or_downgrade": "为何 Watch 不 Go：品类已被 CodeRabbit（十亿级估值叙事）与多家 VC 厂商标注；内容军备竞赛强；与用户 Playwright 壁垒弱；Affiliate 佣金与 cookie 周期未核实（未验证）。",
+        "success_30d": "主词周均展示是否稳定上升；是否谈成 ≥1 个伙伴链接；自有盲测是否在 HN/Reddit 获得 ≥100 互动。达不到则保持 Watch 或降级。"
+      },
+      "product_growth_trend": {
+        "upside": [
+          {
+            "claim": "CodeRabbit：Business Wire（2026-08-12）宣布 $143M Series C、估值 $1.5B；称收入 YoY >5x；周审 PR >200 万；客户 >17,000",
+            "evidence_url": "https://www.businesswire.com/news/home/20260812311754/en/CodeRabbit-Raises-%24143-Million-at-%241.5-Billion-Valuation-and-Introduces-Agentic-Change-Management",
+            "evidence_date": "2026-08-12",
+            "status": "verified"
+          },
+          {
+            "claim": "前一轮：$60M Series B @ $550M（TechCrunch 2025-09）",
+            "evidence_url": "https://techcrunch.com/2025/09/16/coderabbit-raises-60m-valuing-the-2-year-old-ai-code-review-startup-at-550m/",
+            "evidence_date": "2025-09-16",
+            "status": "verified"
+          }
+        ],
+        "downside_or_stale": [
+          {
+            "claim": "Creati.ai 2026-09：CodeRabbit 约 1.00M 月访，环比 -2.21%（第三方估计，作「流量短期走平」弱信号）",
+            "evidence_url": "https://creati.ai/ranking/september-2026/categories/ai-tools/coding-development/",
+            "evidence_date": "2026-09",
+            "status": "verified"
+          },
+          {
+            "claim": "同表 Cursor 21.50M 但环比 -4.58% — 品牌巨头也在波动，说明「有融资 ≠ 内容站好做」",
+            "evidence_url": "https://creati.ai/ranking/september-2026/categories/ai-tools/coding-development/",
+            "evidence_date": "2026-09",
+            "status": "verified"
+          }
+        ]
+      },
+      "keyword_growth_trend": {
+        "market": "US",
+        "window": "2025-09 → 2026-08",
+        "metric_type": "other_relative",
+        "signals": [
+          {
+            "keyword_or_cluster": "ai code review / coderabbit vs greptile 簇",
+            "direction": "rising",
+            "note": "商业调研文在 2026 密集出现 → 判定为簇级 rising（定性）；绝对量未验证",
+            "evidence_url": "https://www.greptile.com/content-library/best-ai-code-review-tools",
+            "status": "unverified"
+          }
+        ],
+        "trends_ui_note": "Google Trends 数值未验证"
+      },
+      "related_peripheral_content": [
+        "CodeRabbit vs GitHub Copilot code review（捆绑账单位）",
+        "Cursor Bugbot 是否替代独立 reviewer",
+        "AI code review ROI 计算器（seat × 噪音率 × 工程师时薪）",
+        "安全向：Semgrep / Sonar 与 LLM reviewer 如何叠放",
+        "开源维护者：免费档额度对比页",
+        "小工具：同一 PR 的多机器人评论去重演示",
+        "「Agentic Change Management」词条解释页（蹭 CodeRabbit 新叙事但保持中立）"
+      ],
+      "evidence_vs_inference": "融资与客户数来自新闻稿 = 事实（公司自述）；「indie 对比站难出头」= 合理推测；Trends 曲线 = 未验证。",
+      "crypto_excluded": true
+    },
+    {
+      "card_id": "2026-W44-kill-cursor-ai",
+      "title": "Cursor 品牌导航红海",
+      "verdict": "Kill",
+      "as_of": "2026-10-28",
+      "primary_keyword": "cursor ai",
+      "support_keywords": [
+        "cursor ai download",
+        "cursor ai pricing",
+        "cursor ai free for students",
+        "what is cursor ai",
+        "cursor ai alternative"
+      ],
+      "support_keywords_note": "支撑词说明为何脏/不可做 Go；demand-radar keywords.json 中大量 cursor ai free* / 城市乱入 / claude code free for students 均属清洗对象，禁止当主词。",
+      "who_searches_who_pays": "已听说 Cursor 的开发者，要下载、登录、看价格 → 导航/交易向品牌词。付钱给 Cursor 公司，不是给你的内容站；广告主 CPC 极高，联盟空间通常被官方与大媒体占住。",
+      "monetization": {
+        "primary": {
+          "path": "品牌词 SEO → 广告/联盟（理论）。",
+          "stack_fit": "即使用户会 Next.js，也打不赢官网权威与品牌广告；与「找词建站」主线的可防守差异无关 → Kill。"
+        },
+        "backup": {
+          "path": "「Cursor alternatives」列表站（理论）。",
+          "stack_fit": "同上。"
+        }
+      },
+      "serp_gap": "没有可防守缺口：cursor / cursor ai / cursor pricing 一类查询由 cursor.com 官网与品牌资产主导；第三方综述无法稳定截走导航意图。",
+      "serp_gap_refs": [
+        "https://creati.ai/ranking/september-2026/categories/ai-tools/coding-development/",
+        "https://probedex.ai/domain/cursor.com",
+        "https://gaopfEditer.github.io/demand-radar/data/keywords.json"
+      ],
+      "mvp_7d": {
+        "site_type": "不建议启动",
+        "url_titles": []
+      },
+      "scope_and_success": {
+        "wont_do_or_downgrade": "Kill 理由：纯品牌红海；脏 Suggest 污染词根；变现不归内容站；与 Playwright 差异化无关。",
+        "success_30d": "不适用；若误开站，30 天内品牌词无法进前 10 即确认 Kill。"
+      },
+      "product_growth_trend": {
+        "upside": [
+          {
+            "claim": "Cursor 仍是头部 AI IDE 流量资产（Creati 上表）",
+            "evidence_url": "https://creati.ai/ranking/september-2026/categories/ai-tools/coding-development/",
+            "evidence_date": "2026-09",
+            "status": "verified"
+          }
+        ],
+        "downside_or_stale": [
+          {
+            "claim": "同表 Cursor 月访环比 -4.58%（2026-09）— 即使品牌走平/微降，也不构成 indie SEO Go 条件",
+            "evidence_url": "https://creati.ai/ranking/september-2026/categories/ai-tools/coding-development/",
+            "evidence_date": "2026-09",
+            "status": "verified"
+          }
+        ]
+      },
+      "keyword_growth_trend": {
+        "market": "US",
+        "window": "2025–2026",
+        "metric_type": "rising_label",
+        "signals": [
+          {
+            "keyword_or_cluster": "cursor ai",
+            "direction": "rising",
+            "note": "demand-radar 标注 is_rising — rising 的品牌导航词 → Kill 示范，不是 Go",
+            "evidence_url": "https://gaopfEditer.github.io/demand-radar/data/keywords.json",
+            "status": "verified"
+          }
+        ],
+        "trends_ui_note": "Google Trends 绝对值未验证"
+      },
+      "related_peripheral_content": [
+        "~~cursor ai free for students~~（脏）",
+        "~~cursor ai download mirror~~（侵权/钓鱼风险）",
+        "~~unofficial cursor ai online~~（误导导航）",
+        "cursor vs windsurf（红海对比，可 Watch 观察但本批不立项）",
+        "cursor api pricing（官网意图）",
+        "「从 Cursor 迁出到 Playwright+Agent 工作流」（可将来并入 Go 卡教程，不单独立项品牌站）"
+      ],
+      "evidence_vs_inference": "「官网垄断导航 SERP」有第三方旁证但仍属强推测+行业常识；具体前 10 URL 截图本轮因 Google 429 未逐条抓取。",
+      "crypto_excluded": true,
+      "kill_note": "对「以 cursor ai 做 Go 主词建站变现」；可留作反面教材"
+    }
+  ]
+}

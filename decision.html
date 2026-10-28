@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demand Radar — 决策卡详情</title>
+  <meta name="theme-color" content="#0f1419" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="decision-detail">
+  <header>
+    <div class="header-top">
+      <h1>Demand Radar · 决策卡</h1>
+      <nav>
+        <a href="index.html" data-page="decisions">本周决策</a>
+        <a href="opportunities.html" data-page="opportunities">原始机会</a>
+        <a href="keywords.html" data-page="keywords">关键词</a>
+      </nav>
+    </div>
+    <div id="site-meta-bar" class="site-meta-bar">加载周决策元数据…</div>
+  </header>
+  <main id="content">
+    <p class="meta">加载中…</p>
+  </main>
+  <footer><a href="index.html">← 返回本周决策</a></footer>
+  <script type="module">
+    import {
+      loadJson,
+      setActiveNav,
+      renderWeekMetaBar,
+      renderDecisionCard,
+      escapeHtml,
+    } from "./assets/app.js";
+
+    setActiveNav();
+    await renderWeekMetaBar();
+
+    const cardId = new URLSearchParams(location.search).get("id");
+    const week = await loadJson("week_decisions.json");
+    const card = (week.cards || []).find((c) => c.card_id === cardId);
+    const root = document.getElementById("content");
+
+    if (!card) {
+      root.innerHTML =
+        "<p>未找到该决策卡（id 无效）。<a href=\"index.html\">返回本周决策</a></p>";
+    } else {
+      root.innerHTML = renderDecisionCard(card, { detail: true });
+      document.title = `Demand Radar — ${card.verdict} · ${card.title}`;
+    }
+  </script>
+</body>
+</html>
