@@ -6,12 +6,16 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_DEMAND = ROOT / "exports" / "dev_site_demand.json"
 DEFAULT_KW_CSV = ROOT / "exports" / "keywords.csv"
 PUBLIC_DATA = ROOT / "public" / "data"
+ROOT_DATA = ROOT / "data"
+PUBLIC_DIR = ROOT / "public"
+STATIC_PAGES = ("index.html", "keywords.html", "detail.html")
 
 
 def _evidence_summary(rating_notes: dict | None) -> list[str]:
@@ -116,11 +120,65 @@ def keywords_from_csv(path: Path) -> list[dict]:
     return rows
 
 
+def _write_json_bundle(
+    meta: dict,
+    opportunities: list,
+    keywords: list,
+    out_dir: Path,
+) -> dict[str, str]:
+    out_dir.mkdir(parents=True, exist_ok=True)
+    paths = {
+        "meta.json": out_dir / "meta.json",
+        "opportunities.json": out_dir / "opportunities.json",
+        "keywords.json": out_dir / "keywords.json",
+    }
+    payloads = {
+        "meta.json": meta,
+        "opportunities.json": opportunities,
+        "keywords.json": keywords,
+    }
+    for name, path in paths.items():
+        path.write_text(
+            json.dumps(payloads[name], ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+    return {k: str(v) for k, v in paths.items()}
+
+
+def sync_pages_root() -> dict[str, list[str]]:
+    """Copy static UI to repo root for branch-based GitHub Pages (Jekyll bypass)."""
+    copied: dict[str, list[str]] = {"html": [], "assets": [], "other": []}
+
+    nojekyll_src = PUBLIC_DIR / ".nojekyll"
+    if nojekyll_src.is_file():
+        shutil.copy2(nojekyll_src, ROOT / ".nojekyll")
+        copied["other"].append(str(ROOT / ".nojekyll"))
+
+    for name in STATIC_PAGES:
+        src = PUBLIC_DIR / name
+        if src.is_file():
+            shutil.copy2(src, ROOT / name)
+            copied["html"].append(str(ROOT / name))
+
+    src_assets = PUBLIC_DIR / "assets"
+    dst_assets = ROOT / "assets"
+    if src_assets.is_dir():
+        dst_assets.mkdir(parents=True, exist_ok=True)
+        for item in src_assets.iterdir():
+            dest = dst_assets / item.name
+            if item.is_file():
+                shutil.copy2(item, dest)
+                copied["assets"].append(str(dest))
+
+    return copied
+
+
 def build_public(
     demand_path: Path = DEFAULT_DEMAND,
     keywords_csv: Path | None = DEFAULT_KW_CSV,
-    out_dir: Path = PUBLIC_DATA,
-) -> dict[str, str]:
+    out_dirs: list[Path] | None = None,
+    sync_root: bool = True,
+) -> dict[str, object]:
     if not demand_path.is_file():
         raise FileNotFoundError(f"Missing export: {demand_path}")
 
@@ -130,32 +188,40 @@ def build_public(
     if not keywords and keywords_csv and keywords_csv.is_file():
         keywords = keywords_from_csv(keywords_csv)
 
-    out_dir.mkdir(parents=True, exist_ok=True)
-    paths = {
-        "meta.json": out_dir / "meta.json",
-        "opportunities.json": out_dir / "opportunities.json",
-        "keywords.json": out_dir / "keywords.json",
-    }
-    paths["meta.json"].write_text(
-        json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
-    paths["opportunities.json"].write_text(
-        json.dumps(opportunities, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
-    paths["keywords.json"].write_text(
-        json.dumps(keywords, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
-    return {k: str(v) for k, v in paths.items()}
+    dirs = out_dirs if out_dirs is not None else [PUBLIC_DATA, ROOT_DATA]
+    written: dict[str, dict[str, str]] = {}
+    for out_dir in dirs:
+        written[str(out_dir)] = _write_json_bundle(meta, opportunities, keywords, out_dir)
+
+    root_sync = sync_pages_root() if sync_root else None
+    return {"data": written, "root_static": root_sync}
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="Build public/data for GitHub Pages")
     parser.add_argument("--demand", type=Path, default=DEFAULT_DEMAND)
     parser.add_argument("--keywords-csv", type=Path, default=DEFAULT_KW_CSV)
-    parser.add_argument("--out", type=Path, default=PUBLIC_DATA)
+    parser.add_argument(
+        "--out",
+        type=Path,
+        action="append",
+        dest="outs",
+        help="Output data dir (repeatable; default: public/data and ./data)",
+    )
+    parser.add_argument(
+        "--no-sync-root",
+        action="store_true",
+        help="Do not copy HTML/assets/.nojekyll to repo root",
+    )
     args = parser.parse_args()
-    written = build_public(args.demand, args.keywords_csv, args.out)
-    print(json.dumps({"status": "ok", "written": written}, indent=2))
+    out_dirs = args.outs if args.outs else [PUBLIC_DATA, ROOT_DATA]
+    result = build_public(
+        args.demand,
+        args.keywords_csv,
+        out_dirs=out_dirs,
+        sync_root=not args.no_sync_root,
+    )
+    print(json.dumps({"status": "ok", **result}, indent=2))
     return 0
 
 
