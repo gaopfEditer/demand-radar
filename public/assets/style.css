@@ -230,6 +230,97 @@ tbody tr:hover { background: rgba(91, 159, 212, 0.06); }
 }
 .week-overview a { color: var(--muted); }
 
+.section-divider {
+  margin: 2rem 0 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.section-divider h2 {
+  margin: 0 0 0.35rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.section-divider p { margin: 0; }
+
+.market-narratives {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.15rem;
+  background: rgba(26, 35, 50, 0.65);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.narratives-header h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+}
+.narratives-intro { margin: 0 0 1rem; max-width: 78ch; }
+.narratives-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.85rem 1rem;
+  margin-bottom: 0.85rem;
+}
+.narrative-panel {
+  padding: 0.75rem 0.85rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.narrative-panel h3 {
+  margin: 0 0 0.55rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-weight: 600;
+  text-transform: none;
+}
+.narrative-rising { border-left: 3px solid var(--green); }
+.narrative-falling { border-left: 3px solid var(--red); }
+.narrative-displacement-block { margin-bottom: 0.85rem; border-left: 3px solid var(--accent); }
+.narrative-demand-block { border-left: 3px solid var(--amber); }
+.narrative-cat {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.1rem 0.35rem;
+  margin-right: 0.35rem;
+  background: var(--bg);
+  border-radius: 3px;
+  color: var(--muted);
+}
+.narrative-item { font-size: 0.88rem; }
+.narrative-card-link { font-size: 0.82rem; margin-left: 0.35rem; }
+.displacement-list,
+.demand-signal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.narrative-displacement,
+.narrative-demand {
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.narrative-displacement:last-child,
+.narrative-demand:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.displacement-head { margin: 0 0 0.35rem; }
+.disp-old { color: var(--red); }
+.disp-arrow { color: var(--muted); margin: 0 0.25rem; }
+.disp-new { color: var(--green); }
+.ideation-hint {
+  margin: 0.35rem 0 0;
+  padding: 0.45rem 0.55rem;
+  background: rgba(240, 180, 41, 0.08);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+.narrative-refs { margin: 0.35rem 0 0; font-size: 0.82rem; }
+.narratives-more { margin: 0.85rem 0 0; font-size: 0.9rem; }
+
 @media (max-width: 640px) {
   .hide-sm { display: none; }
 }

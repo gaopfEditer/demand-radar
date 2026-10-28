@@ -17,6 +17,7 @@
       <h1>Demand Radar · 本周决策</h1>
       <nav>
         <a href="index.html" data-page="decisions">本周决策</a>
+        <a href="trends.html" data-page="trends">产品兴衰</a>
         <a href="opportunities.html" data-page="opportunities">原始机会</a>
         <a href="keywords.html" data-page="keywords">关键词</a>
       </nav>
@@ -25,10 +26,15 @@
   </header>
   <main>
     <p class="site-intro">
-      出海 SEO <strong>周决策卡</strong>：每批固定 <strong>1 Go · 1 Watch · 1 Kill</strong>，聚合主词、变现、SERP 缺口、7 天 MVP、
-      <strong>产品增长</strong>与<strong>关键词增长</strong>证据及周边内容。币圈不进评分；脏 Suggest 不得当 Go 主词。
+      首页两层：<strong>产品兴衰 · 需求发散</strong>（看谁取代谁、相对需求怎么发散选题）+
+      <strong>周决策三卡</strong>（1 Go · 1 Watch · 1 Kill 拍板）。币圈不进评分；脏 Suggest 不得当 Go 主词。
       原始机会评分表见<a href="opportunities.html">原始机会</a>。
     </p>
+    <div id="market-narratives-root"></div>
+    <div class="section-divider">
+      <h2>本周决策三卡</h2>
+      <p class="meta">Go / Watch / Kill 各一张 · 证据与完整字段见各卡或<a href="decision.html">单卡页</a></p>
+    </div>
     <div id="week-overview" class="week-overview" hidden></div>
     <div id="decision-board" class="decision-board">
       <p class="meta">加载决策卡…</p>
@@ -42,11 +48,23 @@
       renderWeekMetaBar,
       sortDecisionCards,
       renderDecisionCard,
+      renderMarketNarratives,
       escapeHtml,
     } from "./assets/app.js";
 
     setActiveNav();
     await renderWeekMetaBar();
+
+    try {
+      const narratives = await loadJson("market_narratives.json");
+      document.getElementById("market-narratives-root").innerHTML = renderMarketNarratives(
+        narratives,
+        { compact: true, maxPerSection: 4 }
+      );
+    } catch (e) {
+      document.getElementById("market-narratives-root").innerHTML =
+        `<p class="meta">无法加载 market_narratives.json</p>`;
+    }
 
     const week = await loadJson("week_decisions.json");
     const overview = document.getElementById("week-overview");

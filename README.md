@@ -115,13 +115,14 @@ streamlit run dashboard/app.py
 
 ### 静态预览（GitHub Pages）
 
-**GitHub Pages 首页 = 本周决策看板**（`index.html` 加载 `data/week_decisions.json`，展示 Go / Watch / Kill 三张卡）。原始机会评分表在 `opportunities.html`；字段规格见 `docs/decision-card-schema.md`。
+**GitHub Pages 首页 = 决策看板 + 市场叙事层**（`index.html` 加载 `data/market_narratives.json` 与 `data/week_decisions.json`：上方「产品兴衰 · 需求发散」，下方 Go / Watch / Kill 三卡）。完整叙事见 `trends.html`；原始机会评分表在 `opportunities.html`。字段规格见 `docs/decision-card-schema.md` 与 `docs/market-narratives-schema.md`。
 
-**新增下一周决策卡：**
+**新增下一周决策卡 + 叙事层：**
 
 1. 在 `docs/` 撰写 `week-decision-cards-YYYY-MM-DD.md`（参照 schema，每批 1 Go · 1 Watch · 1 Kill）。
 2. 更新 `data/week_decisions.json`（UI 读取的结构化数据，勿编造未验证主张）。
-3. 运行 `python scripts/build_public.py`（同步 `week_decisions.json` 到 `public/data/`，并把 `public/` 下 HTML/静态资源复制到仓库根目录）。
+3. 同步更新 `data/market_narratives.json`（上升/衰退/替代叙事/相对需求信号，见 `docs/market-narratives-schema.md`）。
+4. 运行 `python scripts/build_public.py`（同步 JSON 到 `public/data/`，并把 `public/` 下 HTML/静态资源复制到仓库根目录）。
 
 根目录与 `public/` 双份 HTML/数据供 branch Pages 与 Actions 部署；`.nojekyll` 避免 Jekyll 覆盖静态站。
 
