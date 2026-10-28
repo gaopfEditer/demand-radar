@@ -1,0 +1,55 @@
+markets:
+  - US
+  - Global
+
+language: en
+
+categories:
+  ai_development:
+    - ai coding
+    - ai coding agent
+    - claude code
+    - cursor ai
+    - code review tool
+    - ai test generator
+
+  developer_tools:
+    - api testing tool
+    - json formatter
+    - regex tester
+    - webhook tester
+    - sql query formatter
+    - code snippet manager
+
+  online_tools:
+    - invoice generator
+    - pdf compressor
+    - image converter
+    - resume builder
+    - website screenshot tool
+
+  micro_saas:
+    - saas ideas
+    - workflow automation tool
+    - client portal software
+    - website monitoring tool
+    - ai documentation generator
+
+  seo_tools:
+    - programmatic seo
+    - keyword clustering tool
+    - internal link checker
+    - schema markup generator
+    - website seo audit tool
+
+# Expansion modifiers for autocomplete (limited set)
+modifiers:
+  - free
+  - online
+  - for developers
+  - alternative
+  - API
+  - without signup
+
+# Cap candidates per seed word
+max_candidates_per_seed: 50

@@ -1,0 +1,1596 @@
+[
+  {
+    "id": 1,
+    "title": "vs code",
+    "category": "ai_development",
+    "cluster_id": "c_79f5300afb",
+    "score": 65.5,
+    "tier": "候选",
+    "confidence": "high",
+    "status": "discovered",
+    "pending_dimensions": [],
+    "keywords": [
+      "claude code",
+      "code review tool",
+      "claude code pricing",
+      "claude code download",
+      "claude code install",
+      "claude code cli",
+      "claude code vs codex",
+      "claude code desktop",
+      "claude code docs",
+      "claude code free",
+      "claude code free trial",
+      "claude code free tier",
+      "claude code free for students",
+      "claude code free alternative",
+      "claude code free plan",
+      "claude code free github",
+      "claude code free credits",
+      "claude code free version",
+      "claude code free limit",
+      "claude code online",
+      "claude code online free",
+      "claude code online course",
+      "claude code online login",
+      "claude code online version",
+      "claude code online training",
+      "claude code online ide",
+      "claude code online session",
+      "claude code online environment",
+      "claude code status online",
+      "claude code for developers",
+      "claude code for developers course",
+      "claude code for developers copenhagen",
+      "claude code for developers tutorial",
+      "claude code for developers pdf",
+      "claude code alternatives",
+      "claude code alternatives free",
+      "claude code alternative for local llm",
+      "claude code alternative models proxy",
+      "claude code alternatives open source",
+      "claude code alternatives reddit",
+      "claude code alternative from google",
+      "claude code alternative harness",
+      "claude code alternative gemini",
+      "claude code alternative github",
+      "claude code api",
+      "claude code api key",
+      "claude code api error",
+      "claude code api pricing",
+      "claude code api usage billing",
+      "claude code apikeyhelper",
+      "code review tools open source",
+      "code review tools github",
+      "code review tools for .net",
+      "code review tools for java",
+      "code review tools free",
+      "what are the best code review tools",
+      "code review tool free",
+      "source code review tools free",
+      "automated code review tools free",
+      "online code review tools free",
+      "code review tool online",
+      "python code review tools online",
+      "free online code review tool",
+      "code review tools",
+      "no-code app builders",
+      "claude vs claude code",
+      "vs code",
+      "what is claude code",
+      "claude code github",
+      "install claude code",
+      "claude code xmrig mac discovery",
+      "claude code tv",
+      "claude code 2.0",
+      "how the claude code team does code review",
+      "cursor code"
+    ],
+    "rating_notes": {
+      "demand": [
+        "avg_interest=24.6",
+        "rising_signal"
+      ],
+      "monetization": [
+        "commercial_modifier",
+        "intent_ratio=0.49"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp",
+        "many_long_tail_queries_possible_niche"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=4",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: avg_interest=24.6",
+      "demand: rising_signal",
+      "monetization: commercial_modifier",
+      "monetization: intent_ratio=0.49",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "competition: many_long_tail_queries_possible_niche",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=4",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": 50.0,
+    "monetization_score": 80.0,
+    "competition_score": 60.0,
+    "feasibility_score": 50.0,
+    "evidence_score": 100.0
+  },
+  {
+    "id": 2,
+    "title": "code ai",
+    "category": "ai_development",
+    "cluster_id": "c_c0ed496698",
+    "score": 65.1,
+    "tier": "候选",
+    "confidence": "high",
+    "status": "discovered",
+    "pending_dimensions": [],
+    "keywords": [
+      "ai coding",
+      "ai coding agent",
+      "cursor ai",
+      "ai coding agents",
+      "ai coding benchmarks",
+      "ai coding tools",
+      "ai coding interview",
+      "ai coding assistant",
+      "ai coding app",
+      "ai coding classes",
+      "ai coding jobs",
+      "ai coding courses",
+      "ai coding free",
+      "ai coding free trial",
+      "ai coding free online",
+      "ai coding free unlimited",
+      "ai coding free tools",
+      "ai coding free course",
+      "ai coding free agent",
+      "ai coding free reddit",
+      "ai coding free for students",
+      "ai coding free website",
+      "ai coding online",
+      "ai coding online course",
+      "ai coding online free",
+      "ai coding for developers",
+      "ai coding tools for developers",
+      "ai coding for non developers",
+      "ai coding mandates for developers",
+      "best ai coding tools for developers",
+      "ai coding alternatives",
+      "ai coding cursor alternative",
+      "windsurf ai coding alternative",
+      "ai coding agent ranking",
+      "ai coding agents free",
+      "ai coding agent benchmarks",
+      "ai coding agents comparison",
+      "ai coding agent leaderboard",
+      "ai coding agent harness token variation",
+      "ai coding agent free trial",
+      "ai coding agents list",
+      "ai coding agent skills",
+      "ai coding agent free",
+      "ai coding agent free for students",
+      "ai coding agent free online",
+      "ai coding agent free unlimited",
+      "ai coding agent free download",
+      "ai coding agent free tier",
+      "ai coding agent online",
+      "ai coding agent online free",
+      "ai coding salary",
+      "ai coding agents for software development",
+      "best ai coding agents for software developers",
+      "ai coding programs",
+      "ai coding agent api",
+      "ai coding agent sdk",
+      "free ai coding agent api",
+      "claude code ai",
+      "cursor ai download",
+      "cursor ai founders",
+      "cursor ai pricing",
+      "cursor ai stock",
+      "cursor ai careers",
+      "cursor ai which company",
+      "cursor ai vs claude code",
+      "cursor ai powered ide",
+      "cursor ai tool",
+      "cursor ai free",
+      "cursor ai free for students",
+      "cursor ai free trial",
+      "cursor ai free plan",
+      "cursor ai free tier",
+      "cursor ai free models",
+      "cursor ai free limits",
+      "cursor ai free student plan",
+      "cursor ai free download",
+      "cursor ai free plan limits",
+      "cursor ai online",
+      "cursor ai online free",
+      "cursor ai online chat",
+      "cursor ai online editor",
+      "cursor ai online course",
+      "cursor ai online ide",
+      "cursor ai online use",
+      "cursor ai online version",
+      "cursor ai online compiler",
+      "cursor ai online login",
+      "cursor ai for developers",
+      "cursor ai alternative",
+      "cursor ai alternative free",
+      "cursor ai alternative open source",
+      "cursor ai alternative github",
+      "cursor ai alternative free open source",
+      "cursor ai alternative reddit",
+      "cursor ai alternative google",
+      "cursor ai alternative free reddit",
+      "cursor ai alternative open source github",
+      "cursor ai alternative code editor",
+      "cursor ai api",
+      "cursor ai api key",
+      "cursor ai api pricing",
+      "cursor ai api documentation",
+      "cursor ai api integration",
+      "cursor ai api key free",
+      "cursor ai api usage",
+      "cursor ai api cost",
+      "cursor ai api endpoint",
+      "code review tools ai",
+      "ai for coding",
+      "best coding ai",
+      "best ai for coding",
+      "code ai",
+      "claude ai",
+      "free coding ai",
+      "vibe coding ai",
+      "ai music generator",
+      "ai avatar generator",
+      "ai logo generator",
+      "best ai coding agent",
+      "best ai agent for coding",
+      "opencode ai coding agent",
+      "google ai coding agent",
+      "claude ai code",
+      "what is cursor ai",
+      "cursor ai coding",
+      "grok ai",
+      "google ai",
+      "who owns cursor ai",
+      "hermes ai"
+    ],
+    "rating_notes": {
+      "demand": [
+        "avg_interest=25.4",
+        "rising_signal"
+      ],
+      "monetization": [
+        "commercial_modifier",
+        "intent_ratio=0.48"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp",
+        "many_long_tail_queries_possible_niche"
+      ],
+      "feasibility": [
+        "easy=1,hard=1"
+      ],
+      "evidence": [
+        "distinct_sources=4",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: avg_interest=25.4",
+      "demand: rising_signal",
+      "monetization: commercial_modifier",
+      "monetization: intent_ratio=0.48",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "competition: many_long_tail_queries_possible_niche",
+      "feasibility: easy=1,hard=1",
+      "evidence: distinct_sources=4",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": 50.0,
+    "monetization_score": 80.0,
+    "competition_score": 60.0,
+    "feasibility_score": 48.0,
+    "evidence_score": 100.0
+  },
+  {
+    "id": 3,
+    "title": "online code review",
+    "category": null,
+    "cluster_id": "c_e792a65e1a",
+    "score": 59.5,
+    "tier": "观察",
+    "confidence": "high",
+    "status": "discovered",
+    "pending_dimensions": [],
+    "keywords": [
+      "free code review software",
+      "code analysis tool free",
+      "static code analysis tool free",
+      "c# code analysis tools free",
+      "source code analysis tools free",
+      "code analysis tool online",
+      "online code review"
+    ],
+    "rating_notes": {
+      "demand": [
+        "suggest_only_weak_demand"
+      ],
+      "monetization": [
+        "intent_ratio=0.70"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp",
+        "many_long_tail_queries_possible_niche"
+      ],
+      "feasibility": [
+        "category_unknown_default_feasibility",
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1"
+      ]
+    },
+    "evidence_summary": [
+      "demand: suggest_only_weak_demand",
+      "monetization: intent_ratio=0.70",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "competition: many_long_tail_queries_possible_niche",
+      "feasibility: category_unknown_default_feasibility",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1"
+    ],
+    "demand_score": 40.0,
+    "monetization_score": 90.0,
+    "competition_score": 60.0,
+    "feasibility_score": 60.0,
+    "evidence_score": 50.0
+  },
+  {
+    "id": 5,
+    "title": "api coding interview questions",
+    "category": null,
+    "cluster_id": "c_aeaa81eea1",
+    "score": 58.8,
+    "tier": "观察",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "competition"
+    ],
+    "keywords": [
+      "api coding interview questions"
+    ],
+    "rating_notes": {
+      "demand": [
+        "suggest_only_weak_demand"
+      ],
+      "monetization": [
+        "commercial_modifier",
+        "intent_ratio=0.70"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "category_unknown_default_feasibility",
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1"
+      ]
+    },
+    "evidence_summary": [
+      "demand: suggest_only_weak_demand",
+      "monetization: commercial_modifier",
+      "monetization: intent_ratio=0.70",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: category_unknown_default_feasibility",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1"
+    ],
+    "demand_score": 40.0,
+    "monetization_score": 100.0,
+    "competition_score": null,
+    "feasibility_score": 60.0,
+    "evidence_score": 50.0
+  },
+  {
+    "id": 4,
+    "title": "what is api in artificial intelligence",
+    "category": null,
+    "cluster_id": "c_d7d5d7b809",
+    "score": 58.8,
+    "tier": "观察",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "competition"
+    ],
+    "keywords": [
+      "what is api in artificial intelligence"
+    ],
+    "rating_notes": {
+      "demand": [
+        "suggest_only_weak_demand"
+      ],
+      "monetization": [
+        "commercial_modifier",
+        "intent_ratio=0.70"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "category_unknown_default_feasibility",
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1"
+      ]
+    },
+    "evidence_summary": [
+      "demand: suggest_only_weak_demand",
+      "monetization: commercial_modifier",
+      "monetization: intent_ratio=0.70",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: category_unknown_default_feasibility",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1"
+    ],
+    "demand_score": 40.0,
+    "monetization_score": 100.0,
+    "competition_score": null,
+    "feasibility_score": 60.0,
+    "evidence_score": 50.0
+  },
+  {
+    "id": 6,
+    "title": "ai alternative",
+    "category": null,
+    "cluster_id": "c_dd4af67f89",
+    "score": 57.1,
+    "tier": "观察",
+    "confidence": "high",
+    "status": "discovered",
+    "pending_dimensions": [],
+    "keywords": [
+      "ai coder online",
+      "ai code online generator",
+      "ai code online editor",
+      "ai programming online",
+      "ai programming online course",
+      "ai programming online free",
+      "ai online code editor free",
+      "ai assisted coding for developers",
+      "ai assisted coding for developers datacamp",
+      "ai code generator for developers",
+      "best coding ai for developers",
+      "ai programming for javascript developers",
+      "coding ai alternative to claude",
+      "coding ai alternative to chatgpt",
+      "ai vs code alternative",
+      "best coding ai alternative to claude",
+      "ai needs coding",
+      "ai alternative",
+      "ai code examples",
+      "ai coder agent free",
+      "ai programming agent free",
+      "free ai agent for local coding",
+      "ai agents examples",
+      "ai coder salary",
+      "how to create an ai agent",
+      "what coding is used for ai",
+      "is api.ai free",
+      "code review ai tool free"
+    ],
+    "rating_notes": {
+      "demand": [
+        "suggest_only_weak_demand"
+      ],
+      "monetization": [
+        "commercial_modifier",
+        "intent_ratio=0.54"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp",
+        "many_long_tail_queries_possible_niche"
+      ],
+      "feasibility": [
+        "category_unknown_default_feasibility",
+        "easy=1,hard=1"
+      ],
+      "evidence": [
+        "distinct_sources=1"
+      ]
+    },
+    "evidence_summary": [
+      "demand: suggest_only_weak_demand",
+      "monetization: commercial_modifier",
+      "monetization: intent_ratio=0.54",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "competition: many_long_tail_queries_possible_niche",
+      "feasibility: category_unknown_default_feasibility",
+      "feasibility: easy=1,hard=1",
+      "evidence: distinct_sources=1"
+    ],
+    "demand_score": 40.0,
+    "monetization_score": 80.0,
+    "competition_score": 60.0,
+    "feasibility_score": 58.0,
+    "evidence_score": 50.0
+  },
+  {
+    "id": 12,
+    "title": "budget-friendly tech gadgets",
+    "category": "ai_development",
+    "cluster_id": "c_cdce3c6355",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "budget-friendly tech gadgets"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 19,
+    "title": "cheapest flights to tokyo",
+    "category": "ai_development",
+    "cluster_id": "c_be8fbd5ab2",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "cheapest flights to tokyo"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 7,
+    "title": "claude",
+    "category": "ai_development",
+    "cluster_id": "c_771e4dcabe",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "claude",
+      "install claude",
+      "claude duet"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 20,
+    "title": "cleanyourtv",
+    "category": "ai_development",
+    "cluster_id": "c_91a54c3307",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "cleanyourtv"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 26,
+    "title": "cloudflare",
+    "category": "ai_development",
+    "cluster_id": "c_ddb4d94442",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "cloudflare"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 14,
+    "title": "codex",
+    "category": "ai_development",
+    "cluster_id": "c_e20f6a3924",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "codex"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 15,
+    "title": "cursor",
+    "category": "ai_development",
+    "cluster_id": "c_4013b7526c",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "cursor",
+      "what is cursor"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 10,
+    "title": "digital products to sell",
+    "category": "ai_development",
+    "cluster_id": "c_e31f7dec4c",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "digital products to sell"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 23,
+    "title": "elevenlabs",
+    "category": "ai_development",
+    "cluster_id": "c_bd5548de63",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "elevenlabs"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 9,
+    "title": "faceless youtube channels",
+    "category": "ai_development",
+    "cluster_id": "c_dbc9aacaf4",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "faceless youtube channels"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 17,
+    "title": "github",
+    "category": "ai_development",
+    "cluster_id": "c_54fc1dd5a5",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "github copilot",
+      "github"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 21,
+    "title": "grok",
+    "category": "ai_development",
+    "cluster_id": "c_89b5f1d9d4",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "grok"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 8,
+    "title": "home office upgrades",
+    "category": "ai_development",
+    "cluster_id": "c_e29f07f00a",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "smart home technology",
+      "home office upgrades"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 16,
+    "title": "how to bake a cake",
+    "category": "ai_development",
+    "cluster_id": "c_941c8c376c",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "how to bake a cake"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 24,
+    "title": "kimi",
+    "category": "ai_development",
+    "cluster_id": "c_109c977810",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "kimi"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 11,
+    "title": "micro saas ideas",
+    "category": "ai_development",
+    "cluster_id": "c_b6686be80a",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "micro saas ideas"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 22,
+    "title": "microsoft copilot",
+    "category": "ai_development",
+    "cluster_id": "c_172c4cafa7",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "microsoft copilot"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 18,
+    "title": "ollama",
+    "category": "ai_development",
+    "cluster_id": "c_0b931ba2e1",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "ollama"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 13,
+    "title": "opencode",
+    "category": "ai_development",
+    "cluster_id": "c_2cdd830b94",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "opencode"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 25,
+    "title": "spacexai",
+    "category": "ai_development",
+    "cluster_id": "c_395794bbcb",
+    "score": 44.2,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "spacexai"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=0"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=0",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 50.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 28,
+    "title": "replit agent",
+    "category": "ai_development",
+    "cluster_id": "c_99e902532f",
+    "score": 41.6,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "replit agent",
+      "hermes agent"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=1"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=1",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 42.0,
+    "evidence_score": 60.0
+  },
+  {
+    "id": 27,
+    "title": "vibe coding",
+    "category": "ai_development",
+    "cluster_id": "c_b407170aa8",
+    "score": 41.6,
+    "tier": "暂缓",
+    "confidence": "low",
+    "status": "discovered",
+    "pending_dimensions": [
+      "demand",
+      "competition"
+    ],
+    "keywords": [
+      "vibe coding",
+      "pi coding agent"
+    ],
+    "rating_notes": {
+      "demand": [
+        "no_trend_or_suggest_data"
+      ],
+      "monetization": [
+        "intent_ratio=0.00"
+      ],
+      "competition": [
+        "competition_data_missing_no_kd_or_serp"
+      ],
+      "feasibility": [
+        "easy=0,hard=1"
+      ],
+      "evidence": [
+        "distinct_sources=1",
+        "trend_evidence"
+      ]
+    },
+    "evidence_summary": [
+      "demand: no_trend_or_suggest_data",
+      "monetization: intent_ratio=0.00",
+      "competition: competition_data_missing_no_kd_or_serp",
+      "feasibility: easy=0,hard=1",
+      "evidence: distinct_sources=1",
+      "evidence: trend_evidence"
+    ],
+    "demand_score": null,
+    "monetization_score": 40.0,
+    "competition_score": null,
+    "feasibility_score": 42.0,
+    "evidence_score": 60.0
+  }
+]

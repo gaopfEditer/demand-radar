@@ -1,0 +1,4191 @@
+{
+  "generated_at": "2026-10-28T09:26:20.527265+00:00",
+  "market": "US",
+  "language": "en",
+  "stats": {
+    "seeds": 5,
+    "suggest_queries": 31,
+    "suggest_candidates": 209,
+    "suggest_errors": 0,
+    "trend_points": 5,
+    "trends_degraded": false,
+    "keywords": 270,
+    "opportunities": 28,
+    "ai_reports": 1
+  },
+  "trends_degraded": false,
+  "keywords": [
+    {
+      "keyword": "ai coding",
+      "normalized": "ai coding",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "seed,autocomplete,trends",
+      "trend_score": 32.96449704142012,
+      "is_rising": true,
+      "is_breakout": false,
+      "id": 1,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent",
+      "normalized": "ai coding agent",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "seed,autocomplete,trends",
+      "trend_score": 6.78698224852071,
+      "is_rising": true,
+      "is_breakout": false,
+      "id": 214,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "claude code",
+      "normalized": "claude code",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "seed,autocomplete,trends_related,trends",
+      "is_rising": true,
+      "trend_score": 48.06508875739645,
+      "is_breakout": false,
+      "id": 85,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "cursor ai",
+      "normalized": "cursor ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "seed,autocomplete,trends",
+      "trend_score": 36.437869822485204,
+      "is_rising": true,
+      "is_breakout": false,
+      "id": 139,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "code review tool",
+      "normalized": "code review tool",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "seed,autocomplete,trends",
+      "trend_score": 1.0828402366863905,
+      "is_rising": false,
+      "is_breakout": false,
+      "id": 190,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "ai coding agents",
+      "normalized": "ai coding agents",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete,trends_related",
+      "is_rising": true,
+      "id": 2,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding benchmarks",
+      "normalized": "ai coding benchmarks",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 3,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding tools",
+      "normalized": "ai coding tools",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 4,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding interview",
+      "normalized": "ai coding interview",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 5,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding assistant",
+      "normalized": "ai coding assistant",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 6,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding app",
+      "normalized": "ai coding app",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 7,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding classes",
+      "normalized": "ai coding classes",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 8,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding jobs",
+      "normalized": "ai coding jobs",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 9,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding courses",
+      "normalized": "ai coding courses",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 10,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding free",
+      "normalized": "ai coding free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 11,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding free trial",
+      "normalized": "ai coding free trial",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 12,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding free online",
+      "normalized": "ai coding free online",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 13,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding free unlimited",
+      "normalized": "ai coding free unlimited",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 14,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding free tools",
+      "normalized": "ai coding free tools",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 15,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding free course",
+      "normalized": "ai coding free course",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 16,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding free agent",
+      "normalized": "ai coding free agent",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 17,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding free reddit",
+      "normalized": "ai coding free reddit",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 18,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding free for students",
+      "normalized": "ai coding free for students",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 19,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding free website",
+      "normalized": "ai coding free website",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 20,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding online",
+      "normalized": "ai coding online",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 21,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding online course",
+      "normalized": "ai coding online course",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 22,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding online free",
+      "normalized": "ai coding online free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 23,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding for developers",
+      "normalized": "ai coding for developers",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 31,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding tools for developers",
+      "normalized": "ai coding tools for developers",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 32,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding for non developers",
+      "normalized": "ai coding for non developers",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 34,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding mandates for developers",
+      "normalized": "ai coding mandates for developers",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 36,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "best ai coding tools for developers",
+      "normalized": "best ai coding tools for developers",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 40,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding alternatives",
+      "normalized": "ai coding alternatives",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 41,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding cursor alternative",
+      "normalized": "ai coding cursor alternative",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 44,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "windsurf ai coding alternative",
+      "normalized": "windsurf ai coding alternative",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 45,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent ranking",
+      "normalized": "ai coding agent ranking",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 51,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agents free",
+      "normalized": "ai coding agents free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 52,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent benchmarks",
+      "normalized": "ai coding agent benchmarks",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 53,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agents comparison",
+      "normalized": "ai coding agents comparison",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 54,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent leaderboard",
+      "normalized": "ai coding agent leaderboard",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 55,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent harness token variation",
+      "normalized": "ai coding agent harness token variation",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 56,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent free trial",
+      "normalized": "ai coding agent free trial",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 57,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agents list",
+      "normalized": "ai coding agents list",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 58,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent skills",
+      "normalized": "ai coding agent skills",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 59,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent free",
+      "normalized": "ai coding agent free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 60,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent free for students",
+      "normalized": "ai coding agent free for students",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 61,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent free online",
+      "normalized": "ai coding agent free online",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 62,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent free unlimited",
+      "normalized": "ai coding agent free unlimited",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 63,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent free download",
+      "normalized": "ai coding agent free download",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 64,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent free tier",
+      "normalized": "ai coding agent free tier",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 65,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent online",
+      "normalized": "ai coding agent online",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 69,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent online free",
+      "normalized": "ai coding agent online free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 70,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding salary",
+      "normalized": "ai coding salary",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 71,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agents for software development",
+      "normalized": "ai coding agents for software development",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 75,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "best ai coding agents for software developers",
+      "normalized": "best ai coding agents for software developers",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 76,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding programs",
+      "normalized": "ai coding programs",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 78,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent api",
+      "normalized": "ai coding agent api",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 79,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coding agent sdk",
+      "normalized": "ai coding agent sdk",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 80,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "free ai coding agent api",
+      "normalized": "free ai coding agent api",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 81,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "claude code pricing",
+      "normalized": "claude code pricing",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 86,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code download",
+      "normalized": "claude code download",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 87,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code install",
+      "normalized": "claude code install",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 88,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code cli",
+      "normalized": "claude code cli",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 89,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code ai",
+      "normalized": "claude code ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 90,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "claude code vs codex",
+      "normalized": "claude code vs codex",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 91,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code desktop",
+      "normalized": "claude code desktop",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 92,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code docs",
+      "normalized": "claude code docs",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 93,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code free",
+      "normalized": "claude code free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 94,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code free trial",
+      "normalized": "claude code free trial",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 95,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code free tier",
+      "normalized": "claude code free tier",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 96,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code free for students",
+      "normalized": "claude code free for students",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 97,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code free alternative",
+      "normalized": "claude code free alternative",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 98,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code free plan",
+      "normalized": "claude code free plan",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 99,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code free github",
+      "normalized": "claude code free github",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 100,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code free credits",
+      "normalized": "claude code free credits",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 101,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code free version",
+      "normalized": "claude code free version",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 102,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code free limit",
+      "normalized": "claude code free limit",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 103,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code online",
+      "normalized": "claude code online",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 104,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code online free",
+      "normalized": "claude code online free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 105,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code online course",
+      "normalized": "claude code online course",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 106,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code online login",
+      "normalized": "claude code online login",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 107,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code online version",
+      "normalized": "claude code online version",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 108,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code online training",
+      "normalized": "claude code online training",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 109,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code online ide",
+      "normalized": "claude code online ide",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 110,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code online session",
+      "normalized": "claude code online session",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 111,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code online environment",
+      "normalized": "claude code online environment",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 112,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code status online",
+      "normalized": "claude code status online",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 113,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code for developers",
+      "normalized": "claude code for developers",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 114,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code for developers course",
+      "normalized": "claude code for developers course",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 115,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code for developers copenhagen",
+      "normalized": "claude code for developers copenhagen",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 116,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code for developers tutorial",
+      "normalized": "claude code for developers tutorial",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 117,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code for developers pdf",
+      "normalized": "claude code for developers pdf",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 118,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code alternatives",
+      "normalized": "claude code alternatives",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 119,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code alternatives free",
+      "normalized": "claude code alternatives free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 120,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code alternative for local llm",
+      "normalized": "claude code alternative for local llm",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 121,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code alternative models proxy",
+      "normalized": "claude code alternative models proxy",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 122,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code alternatives open source",
+      "normalized": "claude code alternatives open source",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 123,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code alternatives reddit",
+      "normalized": "claude code alternatives reddit",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 124,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code alternative from google",
+      "normalized": "claude code alternative from google",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 125,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code alternative harness",
+      "normalized": "claude code alternative harness",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 126,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code alternative gemini",
+      "normalized": "claude code alternative gemini",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 127,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code alternative github",
+      "normalized": "claude code alternative github",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 128,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code api",
+      "normalized": "claude code api",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 129,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code api key",
+      "normalized": "claude code api key",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 130,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code api error",
+      "normalized": "claude code api error",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 131,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code api pricing",
+      "normalized": "claude code api pricing",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 132,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code api usage billing",
+      "normalized": "claude code api usage billing",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 133,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code apikeyhelper",
+      "normalized": "claude code apikeyhelper",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 134,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "cursor ai download",
+      "normalized": "cursor ai download",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 140,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai founders",
+      "normalized": "cursor ai founders",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 141,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai pricing",
+      "normalized": "cursor ai pricing",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 142,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai stock",
+      "normalized": "cursor ai stock",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 143,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai careers",
+      "normalized": "cursor ai careers",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 144,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai which company",
+      "normalized": "cursor ai which company",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 145,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai vs claude code",
+      "normalized": "cursor ai vs claude code",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 146,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai powered ide",
+      "normalized": "cursor ai powered ide",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 147,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai tool",
+      "normalized": "cursor ai tool",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 148,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai free",
+      "normalized": "cursor ai free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 149,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai free for students",
+      "normalized": "cursor ai free for students",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 150,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai free trial",
+      "normalized": "cursor ai free trial",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 151,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai free plan",
+      "normalized": "cursor ai free plan",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 152,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai free tier",
+      "normalized": "cursor ai free tier",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 153,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai free models",
+      "normalized": "cursor ai free models",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 154,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai free limits",
+      "normalized": "cursor ai free limits",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 155,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai free student plan",
+      "normalized": "cursor ai free student plan",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 156,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai free download",
+      "normalized": "cursor ai free download",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 157,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai free plan limits",
+      "normalized": "cursor ai free plan limits",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 158,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai online",
+      "normalized": "cursor ai online",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 159,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai online free",
+      "normalized": "cursor ai online free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 160,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai online chat",
+      "normalized": "cursor ai online chat",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 161,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai online editor",
+      "normalized": "cursor ai online editor",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 162,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai online course",
+      "normalized": "cursor ai online course",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 163,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai online ide",
+      "normalized": "cursor ai online ide",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 164,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai online use",
+      "normalized": "cursor ai online use",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 165,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai online version",
+      "normalized": "cursor ai online version",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 166,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai online compiler",
+      "normalized": "cursor ai online compiler",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 167,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai online login",
+      "normalized": "cursor ai online login",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 168,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai for developers",
+      "normalized": "cursor ai for developers",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 169,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai alternative",
+      "normalized": "cursor ai alternative",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 170,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai alternative free",
+      "normalized": "cursor ai alternative free",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 171,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai alternative open source",
+      "normalized": "cursor ai alternative open source",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 172,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai alternative github",
+      "normalized": "cursor ai alternative github",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 173,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai alternative free open source",
+      "normalized": "cursor ai alternative free open source",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 174,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai alternative reddit",
+      "normalized": "cursor ai alternative reddit",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 175,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai alternative google",
+      "normalized": "cursor ai alternative google",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 176,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai alternative free reddit",
+      "normalized": "cursor ai alternative free reddit",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 177,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai alternative open source github",
+      "normalized": "cursor ai alternative open source github",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 178,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai alternative code editor",
+      "normalized": "cursor ai alternative code editor",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 179,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai api",
+      "normalized": "cursor ai api",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 180,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai api key",
+      "normalized": "cursor ai api key",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 181,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai api pricing",
+      "normalized": "cursor ai api pricing",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 182,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai api documentation",
+      "normalized": "cursor ai api documentation",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 183,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai api integration",
+      "normalized": "cursor ai api integration",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 184,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai api key free",
+      "normalized": "cursor ai api key free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 185,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai api usage",
+      "normalized": "cursor ai api usage",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 186,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai api cost",
+      "normalized": "cursor ai api cost",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 187,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor ai api endpoint",
+      "normalized": "cursor ai api endpoint",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 188,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "code review tools ai",
+      "normalized": "code review tools ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 191,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "code review tools open source",
+      "normalized": "code review tools open source",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 192,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "code review tools github",
+      "normalized": "code review tools github",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 193,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "code review tools for .net",
+      "normalized": "code review tools for .net",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 194,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "code review tools for java",
+      "normalized": "code review tools for java",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 195,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "code review tools free",
+      "normalized": "code review tools free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 196,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "what are the best code review tools",
+      "normalized": "what are the best code review tools",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 197,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "code review tool free",
+      "normalized": "code review tool free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 198,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "source code review tools free",
+      "normalized": "source code review tools free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 202,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "automated code review tools free",
+      "normalized": "automated code review tools free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 203,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "online code review tools free",
+      "normalized": "online code review tools free",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 204,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "code review tool online",
+      "normalized": "code review tool online",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 208,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "python code review tools online",
+      "normalized": "python code review tools online",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 210,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "free online code review tool",
+      "normalized": "free online code review tool",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 211,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "code review tools",
+      "normalized": "code review tools",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "autocomplete",
+      "id": 212,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "ai for coding",
+      "normalized": "ai for coding",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 215,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "best coding ai",
+      "normalized": "best coding ai",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 216,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "best ai for coding",
+      "normalized": "best ai for coding",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 217,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "code ai",
+      "normalized": "code ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 218,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "claude ai",
+      "normalized": "claude ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 219,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "claude",
+      "normalized": "claude",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 220,
+      "cluster_id": "c_771e4dcabe",
+      "cluster_label": "ai_development:claude"
+    },
+    {
+      "keyword": "free coding ai",
+      "normalized": "free coding ai",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 221,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "vibe coding",
+      "normalized": "vibe coding",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 222,
+      "cluster_id": "c_b407170aa8",
+      "cluster_label": "ai_development:coding"
+    },
+    {
+      "keyword": "vibe coding ai",
+      "normalized": "vibe coding ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 223,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai music generator",
+      "normalized": "ai music generator",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 224,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "smart home technology",
+      "normalized": "smart home technology",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 225,
+      "cluster_id": "c_e29f07f00a",
+      "cluster_label": "ai_development:home"
+    },
+    {
+      "keyword": "faceless youtube channels",
+      "normalized": "faceless youtube channels",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 226,
+      "cluster_id": "c_dbc9aacaf4",
+      "cluster_label": "ai_development:solo:faceless youtube channels"
+    },
+    {
+      "keyword": "home office upgrades",
+      "normalized": "home office upgrades",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 227,
+      "cluster_id": "c_e29f07f00a",
+      "cluster_label": "ai_development:home"
+    },
+    {
+      "keyword": "no-code app builders",
+      "normalized": "no-code app builders",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 228,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "digital products to sell",
+      "normalized": "digital products to sell",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 229,
+      "cluster_id": "c_e31f7dec4c",
+      "cluster_label": "ai_development:solo:digital products to sell"
+    },
+    {
+      "keyword": "ai avatar generator",
+      "normalized": "ai avatar generator",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 230,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai logo generator",
+      "normalized": "ai logo generator",
+      "intent": "transactional",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 231,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "micro saas ideas",
+      "normalized": "micro saas ideas",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 232,
+      "cluster_id": "c_b6686be80a",
+      "cluster_label": "ai_development:solo:micro saas ideas"
+    },
+    {
+      "keyword": "budget-friendly tech gadgets",
+      "normalized": "budget-friendly tech gadgets",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 233,
+      "cluster_id": "c_cdce3c6355",
+      "cluster_label": "ai_development:solo:budget-friendly tech gadgets"
+    },
+    {
+      "keyword": "best ai coding agent",
+      "normalized": "best ai coding agent",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 234,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "best ai agent for coding",
+      "normalized": "best ai agent for coding",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 235,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "opencode ai coding agent",
+      "normalized": "opencode ai coding agent",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 236,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "opencode",
+      "normalized": "opencode",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 237,
+      "cluster_id": "c_2cdd830b94",
+      "cluster_label": "ai_development:solo:opencode"
+    },
+    {
+      "keyword": "google ai coding agent",
+      "normalized": "google ai coding agent",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 238,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "pi coding agent",
+      "normalized": "pi coding agent",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 239,
+      "cluster_id": "c_b407170aa8",
+      "cluster_label": "ai_development:coding"
+    },
+    {
+      "keyword": "codex",
+      "normalized": "codex",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 240,
+      "cluster_id": "c_e20f6a3924",
+      "cluster_label": "ai_development:solo:codex"
+    },
+    {
+      "keyword": "cursor",
+      "normalized": "cursor",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 241,
+      "cluster_id": "c_4013b7526c",
+      "cluster_label": "ai_development:cursor"
+    },
+    {
+      "keyword": "replit agent",
+      "normalized": "replit agent",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 242,
+      "cluster_id": "c_99e902532f",
+      "cluster_label": "ai_development:agent"
+    },
+    {
+      "keyword": "how to bake a cake",
+      "normalized": "how to bake a cake",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 243,
+      "cluster_id": "c_941c8c376c",
+      "cluster_label": "ai_development:solo:how to bake a cake"
+    },
+    {
+      "keyword": "github copilot",
+      "normalized": "github copilot",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 244,
+      "cluster_id": "c_54fc1dd5a5",
+      "cluster_label": "ai_development:github"
+    },
+    {
+      "keyword": "ollama",
+      "normalized": "ollama",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 245,
+      "cluster_id": "c_0b931ba2e1",
+      "cluster_label": "ai_development:solo:ollama"
+    },
+    {
+      "keyword": "cheapest flights to tokyo",
+      "normalized": "cheapest flights to tokyo",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 246,
+      "cluster_id": "c_be8fbd5ab2",
+      "cluster_label": "ai_development:solo:cheapest flights to tokyo"
+    },
+    {
+      "keyword": "hermes agent",
+      "normalized": "hermes agent",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 247,
+      "cluster_id": "c_99e902532f",
+      "cluster_label": "ai_development:agent"
+    },
+    {
+      "keyword": "claude vs claude code",
+      "normalized": "claude vs claude code",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 248,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "vs code",
+      "normalized": "vs code",
+      "intent": "commercial_investigation",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 249,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude ai code",
+      "normalized": "claude ai code",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 250,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "what is claude code",
+      "normalized": "what is claude code",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 251,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code github",
+      "normalized": "claude code github",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 252,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "install claude",
+      "normalized": "install claude",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 253,
+      "cluster_id": "c_771e4dcabe",
+      "cluster_label": "ai_development:claude"
+    },
+    {
+      "keyword": "github",
+      "normalized": "github",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 254,
+      "cluster_id": "c_54fc1dd5a5",
+      "cluster_label": "ai_development:github"
+    },
+    {
+      "keyword": "install claude code",
+      "normalized": "install claude code",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 255,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude duet",
+      "normalized": "claude duet",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 256,
+      "cluster_id": "c_771e4dcabe",
+      "cluster_label": "ai_development:claude"
+    },
+    {
+      "keyword": "claude code xmrig mac discovery",
+      "normalized": "claude code xmrig mac discovery",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 257,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "cleanyourtv",
+      "normalized": "cleanyourtv",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 258,
+      "cluster_id": "c_91a54c3307",
+      "cluster_label": "ai_development:solo:cleanyourtv"
+    },
+    {
+      "keyword": "claude code tv",
+      "normalized": "claude code tv",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 259,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "claude code 2.0",
+      "normalized": "claude code 2.0",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 260,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "how the claude code team does code review",
+      "normalized": "how the claude code team does code review",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 261,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "what is cursor",
+      "normalized": "what is cursor",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 262,
+      "cluster_id": "c_4013b7526c",
+      "cluster_label": "ai_development:cursor"
+    },
+    {
+      "keyword": "what is cursor ai",
+      "normalized": "what is cursor ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 263,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "cursor code",
+      "normalized": "cursor code",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 264,
+      "cluster_id": "c_79f5300afb",
+      "cluster_label": "ai_development:code"
+    },
+    {
+      "keyword": "cursor ai coding",
+      "normalized": "cursor ai coding",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 265,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "grok ai",
+      "normalized": "grok ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 266,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "grok",
+      "normalized": "grok",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 267,
+      "cluster_id": "c_89b5f1d9d4",
+      "cluster_label": "ai_development:solo:grok"
+    },
+    {
+      "keyword": "google ai",
+      "normalized": "google ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 268,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "microsoft copilot",
+      "normalized": "microsoft copilot",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 269,
+      "cluster_id": "c_172c4cafa7",
+      "cluster_label": "ai_development:solo:microsoft copilot"
+    },
+    {
+      "keyword": "elevenlabs",
+      "normalized": "elevenlabs",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 270,
+      "cluster_id": "c_bd5548de63",
+      "cluster_label": "ai_development:solo:elevenlabs"
+    },
+    {
+      "keyword": "kimi",
+      "normalized": "kimi",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 271,
+      "cluster_id": "c_109c977810",
+      "cluster_label": "ai_development:solo:kimi"
+    },
+    {
+      "keyword": "spacexai",
+      "normalized": "spacexai",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 272,
+      "cluster_id": "c_395794bbcb",
+      "cluster_label": "ai_development:solo:spacexai"
+    },
+    {
+      "keyword": "cloudflare",
+      "normalized": "cloudflare",
+      "intent": "navigational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 273,
+      "cluster_id": "c_ddb4d94442",
+      "cluster_label": "ai_development:solo:cloudflare"
+    },
+    {
+      "keyword": "who owns cursor ai",
+      "normalized": "who owns cursor ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 274,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "hermes ai",
+      "normalized": "hermes ai",
+      "intent": "informational",
+      "category": "ai_development",
+      "source": "trends_related",
+      "is_rising": true,
+      "trend_score": null,
+      "id": 275,
+      "cluster_id": "c_c0ed496698",
+      "cluster_label": "ai_development:ai"
+    },
+    {
+      "keyword": "ai coder online",
+      "normalized": "ai coder online",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 24,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai code online generator",
+      "normalized": "ai code online generator",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 25,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai code online editor",
+      "normalized": "ai code online editor",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 26,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai programming online",
+      "normalized": "ai programming online",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 27,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai programming online course",
+      "normalized": "ai programming online course",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 28,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai programming online free",
+      "normalized": "ai programming online free",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 29,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai online code editor free",
+      "normalized": "ai online code editor free",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 30,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai assisted coding for developers",
+      "normalized": "ai assisted coding for developers",
+      "intent": "informational",
+      "category": null,
+      "source": "autocomplete",
+      "id": 33,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai assisted coding for developers datacamp",
+      "normalized": "ai assisted coding for developers datacamp",
+      "intent": "informational",
+      "category": null,
+      "source": "autocomplete",
+      "id": 35,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai code generator for developers",
+      "normalized": "ai code generator for developers",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 37,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "best coding ai for developers",
+      "normalized": "best coding ai for developers",
+      "intent": "commercial_investigation",
+      "category": null,
+      "source": "autocomplete",
+      "id": 38,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai programming for javascript developers",
+      "normalized": "ai programming for javascript developers",
+      "intent": "informational",
+      "category": null,
+      "source": "autocomplete",
+      "id": 39,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "coding ai alternative to claude",
+      "normalized": "coding ai alternative to claude",
+      "intent": "commercial_investigation",
+      "category": null,
+      "source": "autocomplete",
+      "id": 42,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "coding ai alternative to chatgpt",
+      "normalized": "coding ai alternative to chatgpt",
+      "intent": "commercial_investigation",
+      "category": null,
+      "source": "autocomplete",
+      "id": 43,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai vs code alternative",
+      "normalized": "ai vs code alternative",
+      "intent": "commercial_investigation",
+      "category": null,
+      "source": "autocomplete",
+      "id": 46,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "best coding ai alternative to claude",
+      "normalized": "best coding ai alternative to claude",
+      "intent": "commercial_investigation",
+      "category": null,
+      "source": "autocomplete",
+      "id": 47,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai needs coding",
+      "normalized": "ai needs coding",
+      "intent": "informational",
+      "category": null,
+      "source": "autocomplete",
+      "id": 48,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai alternative",
+      "normalized": "ai alternative",
+      "intent": "commercial_investigation",
+      "category": null,
+      "source": "autocomplete",
+      "id": 49,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai code examples",
+      "normalized": "ai code examples",
+      "intent": "informational",
+      "category": null,
+      "source": "autocomplete",
+      "id": 50,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai coder agent free",
+      "normalized": "ai coder agent free",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 66,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai programming agent free",
+      "normalized": "ai programming agent free",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 67,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "free ai agent for local coding",
+      "normalized": "free ai agent for local coding",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 68,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai agents examples",
+      "normalized": "ai agents examples",
+      "intent": "informational",
+      "category": null,
+      "source": "autocomplete",
+      "id": 72,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "ai coder salary",
+      "normalized": "ai coder salary",
+      "intent": "informational",
+      "category": null,
+      "source": "autocomplete",
+      "id": 73,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "how to create an ai agent",
+      "normalized": "how to create an ai agent",
+      "intent": "informational",
+      "category": null,
+      "source": "autocomplete",
+      "id": 74,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "what coding is used for ai",
+      "normalized": "what coding is used for ai",
+      "intent": "informational",
+      "category": null,
+      "source": "autocomplete",
+      "id": 77,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "what is api in artificial intelligence",
+      "normalized": "what is api in artificial intelligence",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 82,
+      "cluster_id": "c_d7d5d7b809",
+      "cluster_label": "misc:solo:what is api in artificial intelligence"
+    },
+    {
+      "keyword": "is api.ai free",
+      "normalized": "is api.ai free",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 83,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "api coding interview questions",
+      "normalized": "api coding interview questions",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 84,
+      "cluster_id": "c_aeaa81eea1",
+      "cluster_label": "misc:solo:api coding interview questions"
+    },
+    {
+      "keyword": "free code review software",
+      "normalized": "free code review software",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 199,
+      "cluster_id": "c_e792a65e1a",
+      "cluster_label": "misc:code"
+    },
+    {
+      "keyword": "code analysis tool free",
+      "normalized": "code analysis tool free",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 200,
+      "cluster_id": "c_e792a65e1a",
+      "cluster_label": "misc:code"
+    },
+    {
+      "keyword": "code review ai tool free",
+      "normalized": "code review ai tool free",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 201,
+      "cluster_id": "c_dd4af67f89",
+      "cluster_label": "misc:ai"
+    },
+    {
+      "keyword": "static code analysis tool free",
+      "normalized": "static code analysis tool free",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 205,
+      "cluster_id": "c_e792a65e1a",
+      "cluster_label": "misc:code"
+    },
+    {
+      "keyword": "c# code analysis tools free",
+      "normalized": "c# code analysis tools free",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 206,
+      "cluster_id": "c_e792a65e1a",
+      "cluster_label": "misc:code"
+    },
+    {
+      "keyword": "source code analysis tools free",
+      "normalized": "source code analysis tools free",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 207,
+      "cluster_id": "c_e792a65e1a",
+      "cluster_label": "misc:code"
+    },
+    {
+      "keyword": "code analysis tool online",
+      "normalized": "code analysis tool online",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 209,
+      "cluster_id": "c_e792a65e1a",
+      "cluster_label": "misc:code"
+    },
+    {
+      "keyword": "online code review",
+      "normalized": "online code review",
+      "intent": "transactional",
+      "category": null,
+      "source": "autocomplete",
+      "id": 213,
+      "cluster_id": "c_e792a65e1a",
+      "cluster_label": "misc:code"
+    }
+  ],
+  "opportunities": [
+    {
+      "title": "vs code",
+      "category": "ai_development",
+      "cluster_id": "c_79f5300afb",
+      "keywords": [
+        "claude code",
+        "code review tool",
+        "claude code pricing",
+        "claude code download",
+        "claude code install",
+        "claude code cli",
+        "claude code vs codex",
+        "claude code desktop",
+        "claude code docs",
+        "claude code free",
+        "claude code free trial",
+        "claude code free tier",
+        "claude code free for students",
+        "claude code free alternative",
+        "claude code free plan",
+        "claude code free github",
+        "claude code free credits",
+        "claude code free version",
+        "claude code free limit",
+        "claude code online",
+        "claude code online free",
+        "claude code online course",
+        "claude code online login",
+        "claude code online version",
+        "claude code online training",
+        "claude code online ide",
+        "claude code online session",
+        "claude code online environment",
+        "claude code status online",
+        "claude code for developers",
+        "claude code for developers course",
+        "claude code for developers copenhagen",
+        "claude code for developers tutorial",
+        "claude code for developers pdf",
+        "claude code alternatives",
+        "claude code alternatives free",
+        "claude code alternative for local llm",
+        "claude code alternative models proxy",
+        "claude code alternatives open source",
+        "claude code alternatives reddit",
+        "claude code alternative from google",
+        "claude code alternative harness",
+        "claude code alternative gemini",
+        "claude code alternative github",
+        "claude code api",
+        "claude code api key",
+        "claude code api error",
+        "claude code api pricing",
+        "claude code api usage billing",
+        "claude code apikeyhelper",
+        "code review tools open source",
+        "code review tools github",
+        "code review tools for .net",
+        "code review tools for java",
+        "code review tools free",
+        "what are the best code review tools",
+        "code review tool free",
+        "source code review tools free",
+        "automated code review tools free",
+        "online code review tools free",
+        "code review tool online",
+        "python code review tools online",
+        "free online code review tool",
+        "code review tools",
+        "no-code app builders",
+        "claude vs claude code",
+        "vs code",
+        "what is claude code",
+        "claude code github",
+        "install claude code",
+        "claude code xmrig mac discovery",
+        "claude code tv",
+        "claude code 2.0",
+        "how the claude code team does code review",
+        "cursor code"
+      ],
+      "demand_score": 50.0,
+      "monetization_score": 80.0,
+      "competition_score": 60.0,
+      "feasibility_score": 50.0,
+      "evidence_score": 100.0,
+      "score": 65.5,
+      "confidence": "high",
+      "pending_dimensions": [],
+      "rating_notes": {
+        "demand": [
+          "avg_interest=24.6",
+          "rising_signal"
+        ],
+        "monetization": [
+          "commercial_modifier",
+          "intent_ratio=0.49"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp",
+          "many_long_tail_queries_possible_niche"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=4",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 1
+    },
+    {
+      "title": "code ai",
+      "category": "ai_development",
+      "cluster_id": "c_c0ed496698",
+      "keywords": [
+        "ai coding",
+        "ai coding agent",
+        "cursor ai",
+        "ai coding agents",
+        "ai coding benchmarks",
+        "ai coding tools",
+        "ai coding interview",
+        "ai coding assistant",
+        "ai coding app",
+        "ai coding classes",
+        "ai coding jobs",
+        "ai coding courses",
+        "ai coding free",
+        "ai coding free trial",
+        "ai coding free online",
+        "ai coding free unlimited",
+        "ai coding free tools",
+        "ai coding free course",
+        "ai coding free agent",
+        "ai coding free reddit",
+        "ai coding free for students",
+        "ai coding free website",
+        "ai coding online",
+        "ai coding online course",
+        "ai coding online free",
+        "ai coding for developers",
+        "ai coding tools for developers",
+        "ai coding for non developers",
+        "ai coding mandates for developers",
+        "best ai coding tools for developers",
+        "ai coding alternatives",
+        "ai coding cursor alternative",
+        "windsurf ai coding alternative",
+        "ai coding agent ranking",
+        "ai coding agents free",
+        "ai coding agent benchmarks",
+        "ai coding agents comparison",
+        "ai coding agent leaderboard",
+        "ai coding agent harness token variation",
+        "ai coding agent free trial",
+        "ai coding agents list",
+        "ai coding agent skills",
+        "ai coding agent free",
+        "ai coding agent free for students",
+        "ai coding agent free online",
+        "ai coding agent free unlimited",
+        "ai coding agent free download",
+        "ai coding agent free tier",
+        "ai coding agent online",
+        "ai coding agent online free",
+        "ai coding salary",
+        "ai coding agents for software development",
+        "best ai coding agents for software developers",
+        "ai coding programs",
+        "ai coding agent api",
+        "ai coding agent sdk",
+        "free ai coding agent api",
+        "claude code ai",
+        "cursor ai download",
+        "cursor ai founders",
+        "cursor ai pricing",
+        "cursor ai stock",
+        "cursor ai careers",
+        "cursor ai which company",
+        "cursor ai vs claude code",
+        "cursor ai powered ide",
+        "cursor ai tool",
+        "cursor ai free",
+        "cursor ai free for students",
+        "cursor ai free trial",
+        "cursor ai free plan",
+        "cursor ai free tier",
+        "cursor ai free models",
+        "cursor ai free limits",
+        "cursor ai free student plan",
+        "cursor ai free download",
+        "cursor ai free plan limits",
+        "cursor ai online",
+        "cursor ai online free",
+        "cursor ai online chat",
+        "cursor ai online editor",
+        "cursor ai online course",
+        "cursor ai online ide",
+        "cursor ai online use",
+        "cursor ai online version",
+        "cursor ai online compiler",
+        "cursor ai online login",
+        "cursor ai for developers",
+        "cursor ai alternative",
+        "cursor ai alternative free",
+        "cursor ai alternative open source",
+        "cursor ai alternative github",
+        "cursor ai alternative free open source",
+        "cursor ai alternative reddit",
+        "cursor ai alternative google",
+        "cursor ai alternative free reddit",
+        "cursor ai alternative open source github",
+        "cursor ai alternative code editor",
+        "cursor ai api",
+        "cursor ai api key",
+        "cursor ai api pricing",
+        "cursor ai api documentation",
+        "cursor ai api integration",
+        "cursor ai api key free",
+        "cursor ai api usage",
+        "cursor ai api cost",
+        "cursor ai api endpoint",
+        "code review tools ai",
+        "ai for coding",
+        "best coding ai",
+        "best ai for coding",
+        "code ai",
+        "claude ai",
+        "free coding ai",
+        "vibe coding ai",
+        "ai music generator",
+        "ai avatar generator",
+        "ai logo generator",
+        "best ai coding agent",
+        "best ai agent for coding",
+        "opencode ai coding agent",
+        "google ai coding agent",
+        "claude ai code",
+        "what is cursor ai",
+        "cursor ai coding",
+        "grok ai",
+        "google ai",
+        "who owns cursor ai",
+        "hermes ai"
+      ],
+      "demand_score": 50.0,
+      "monetization_score": 80.0,
+      "competition_score": 60.0,
+      "feasibility_score": 48.0,
+      "evidence_score": 100.0,
+      "score": 65.1,
+      "confidence": "high",
+      "pending_dimensions": [],
+      "rating_notes": {
+        "demand": [
+          "avg_interest=25.4",
+          "rising_signal"
+        ],
+        "monetization": [
+          "commercial_modifier",
+          "intent_ratio=0.48"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp",
+          "many_long_tail_queries_possible_niche"
+        ],
+        "feasibility": [
+          "easy=1,hard=1"
+        ],
+        "evidence": [
+          "distinct_sources=4",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 2
+    },
+    {
+      "title": "online code review",
+      "category": null,
+      "cluster_id": "c_e792a65e1a",
+      "keywords": [
+        "free code review software",
+        "code analysis tool free",
+        "static code analysis tool free",
+        "c# code analysis tools free",
+        "source code analysis tools free",
+        "code analysis tool online",
+        "online code review"
+      ],
+      "demand_score": 40.0,
+      "monetization_score": 90.0,
+      "competition_score": 60.0,
+      "feasibility_score": 60.0,
+      "evidence_score": 50.0,
+      "score": 59.5,
+      "confidence": "high",
+      "pending_dimensions": [],
+      "rating_notes": {
+        "demand": [
+          "suggest_only_weak_demand"
+        ],
+        "monetization": [
+          "intent_ratio=0.70"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp",
+          "many_long_tail_queries_possible_niche"
+        ],
+        "feasibility": [
+          "category_unknown_default_feasibility",
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 3
+    },
+    {
+      "title": "what is api in artificial intelligence",
+      "category": null,
+      "cluster_id": "c_d7d5d7b809",
+      "keywords": [
+        "what is api in artificial intelligence"
+      ],
+      "demand_score": 40.0,
+      "monetization_score": 100.0,
+      "competition_score": null,
+      "feasibility_score": 60.0,
+      "evidence_score": 50.0,
+      "score": 58.8,
+      "confidence": "low",
+      "pending_dimensions": [
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "suggest_only_weak_demand"
+        ],
+        "monetization": [
+          "commercial_modifier",
+          "intent_ratio=0.70"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "category_unknown_default_feasibility",
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 4
+    },
+    {
+      "title": "api coding interview questions",
+      "category": null,
+      "cluster_id": "c_aeaa81eea1",
+      "keywords": [
+        "api coding interview questions"
+      ],
+      "demand_score": 40.0,
+      "monetization_score": 100.0,
+      "competition_score": null,
+      "feasibility_score": 60.0,
+      "evidence_score": 50.0,
+      "score": 58.8,
+      "confidence": "low",
+      "pending_dimensions": [
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "suggest_only_weak_demand"
+        ],
+        "monetization": [
+          "commercial_modifier",
+          "intent_ratio=0.70"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "category_unknown_default_feasibility",
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 5
+    },
+    {
+      "title": "ai alternative",
+      "category": null,
+      "cluster_id": "c_dd4af67f89",
+      "keywords": [
+        "ai coder online",
+        "ai code online generator",
+        "ai code online editor",
+        "ai programming online",
+        "ai programming online course",
+        "ai programming online free",
+        "ai online code editor free",
+        "ai assisted coding for developers",
+        "ai assisted coding for developers datacamp",
+        "ai code generator for developers",
+        "best coding ai for developers",
+        "ai programming for javascript developers",
+        "coding ai alternative to claude",
+        "coding ai alternative to chatgpt",
+        "ai vs code alternative",
+        "best coding ai alternative to claude",
+        "ai needs coding",
+        "ai alternative",
+        "ai code examples",
+        "ai coder agent free",
+        "ai programming agent free",
+        "free ai agent for local coding",
+        "ai agents examples",
+        "ai coder salary",
+        "how to create an ai agent",
+        "what coding is used for ai",
+        "is api.ai free",
+        "code review ai tool free"
+      ],
+      "demand_score": 40.0,
+      "monetization_score": 80.0,
+      "competition_score": 60.0,
+      "feasibility_score": 58.0,
+      "evidence_score": 50.0,
+      "score": 57.1,
+      "confidence": "high",
+      "pending_dimensions": [],
+      "rating_notes": {
+        "demand": [
+          "suggest_only_weak_demand"
+        ],
+        "monetization": [
+          "commercial_modifier",
+          "intent_ratio=0.54"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp",
+          "many_long_tail_queries_possible_niche"
+        ],
+        "feasibility": [
+          "category_unknown_default_feasibility",
+          "easy=1,hard=1"
+        ],
+        "evidence": [
+          "distinct_sources=1"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 6
+    },
+    {
+      "title": "claude",
+      "category": "ai_development",
+      "cluster_id": "c_771e4dcabe",
+      "keywords": [
+        "claude",
+        "install claude",
+        "claude duet"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 7
+    },
+    {
+      "title": "home office upgrades",
+      "category": "ai_development",
+      "cluster_id": "c_e29f07f00a",
+      "keywords": [
+        "smart home technology",
+        "home office upgrades"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 8
+    },
+    {
+      "title": "faceless youtube channels",
+      "category": "ai_development",
+      "cluster_id": "c_dbc9aacaf4",
+      "keywords": [
+        "faceless youtube channels"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 9
+    },
+    {
+      "title": "digital products to sell",
+      "category": "ai_development",
+      "cluster_id": "c_e31f7dec4c",
+      "keywords": [
+        "digital products to sell"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 10
+    },
+    {
+      "title": "micro saas ideas",
+      "category": "ai_development",
+      "cluster_id": "c_b6686be80a",
+      "keywords": [
+        "micro saas ideas"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 11
+    },
+    {
+      "title": "budget-friendly tech gadgets",
+      "category": "ai_development",
+      "cluster_id": "c_cdce3c6355",
+      "keywords": [
+        "budget-friendly tech gadgets"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 12
+    },
+    {
+      "title": "opencode",
+      "category": "ai_development",
+      "cluster_id": "c_2cdd830b94",
+      "keywords": [
+        "opencode"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 13
+    },
+    {
+      "title": "codex",
+      "category": "ai_development",
+      "cluster_id": "c_e20f6a3924",
+      "keywords": [
+        "codex"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 14
+    },
+    {
+      "title": "cursor",
+      "category": "ai_development",
+      "cluster_id": "c_4013b7526c",
+      "keywords": [
+        "cursor",
+        "what is cursor"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 15
+    },
+    {
+      "title": "how to bake a cake",
+      "category": "ai_development",
+      "cluster_id": "c_941c8c376c",
+      "keywords": [
+        "how to bake a cake"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 16
+    },
+    {
+      "title": "github",
+      "category": "ai_development",
+      "cluster_id": "c_54fc1dd5a5",
+      "keywords": [
+        "github copilot",
+        "github"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 17
+    },
+    {
+      "title": "ollama",
+      "category": "ai_development",
+      "cluster_id": "c_0b931ba2e1",
+      "keywords": [
+        "ollama"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 18
+    },
+    {
+      "title": "cheapest flights to tokyo",
+      "category": "ai_development",
+      "cluster_id": "c_be8fbd5ab2",
+      "keywords": [
+        "cheapest flights to tokyo"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 19
+    },
+    {
+      "title": "cleanyourtv",
+      "category": "ai_development",
+      "cluster_id": "c_91a54c3307",
+      "keywords": [
+        "cleanyourtv"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 20
+    },
+    {
+      "title": "grok",
+      "category": "ai_development",
+      "cluster_id": "c_89b5f1d9d4",
+      "keywords": [
+        "grok"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 21
+    },
+    {
+      "title": "microsoft copilot",
+      "category": "ai_development",
+      "cluster_id": "c_172c4cafa7",
+      "keywords": [
+        "microsoft copilot"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 22
+    },
+    {
+      "title": "elevenlabs",
+      "category": "ai_development",
+      "cluster_id": "c_bd5548de63",
+      "keywords": [
+        "elevenlabs"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 23
+    },
+    {
+      "title": "kimi",
+      "category": "ai_development",
+      "cluster_id": "c_109c977810",
+      "keywords": [
+        "kimi"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 24
+    },
+    {
+      "title": "spacexai",
+      "category": "ai_development",
+      "cluster_id": "c_395794bbcb",
+      "keywords": [
+        "spacexai"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 25
+    },
+    {
+      "title": "cloudflare",
+      "category": "ai_development",
+      "cluster_id": "c_ddb4d94442",
+      "keywords": [
+        "cloudflare"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 50.0,
+      "evidence_score": 60.0,
+      "score": 44.2,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=0"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 26
+    },
+    {
+      "title": "vibe coding",
+      "category": "ai_development",
+      "cluster_id": "c_b407170aa8",
+      "keywords": [
+        "vibe coding",
+        "pi coding agent"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 42.0,
+      "evidence_score": 60.0,
+      "score": 41.6,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=1"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 27
+    },
+    {
+      "title": "replit agent",
+      "category": "ai_development",
+      "cluster_id": "c_99e902532f",
+      "keywords": [
+        "replit agent",
+        "hermes agent"
+      ],
+      "demand_score": null,
+      "monetization_score": 40.0,
+      "competition_score": null,
+      "feasibility_score": 42.0,
+      "evidence_score": 60.0,
+      "score": 41.6,
+      "confidence": "low",
+      "pending_dimensions": [
+        "demand",
+        "competition"
+      ],
+      "rating_notes": {
+        "demand": [
+          "no_trend_or_suggest_data"
+        ],
+        "monetization": [
+          "intent_ratio=0.00"
+        ],
+        "competition": [
+          "competition_data_missing_no_kd_or_serp"
+        ],
+        "feasibility": [
+          "easy=0,hard=1"
+        ],
+        "evidence": [
+          "distinct_sources=1",
+          "trend_evidence"
+        ]
+      },
+      "status": "discovered",
+      "opportunity_id": 28
+    }
+  ],
+  "note": "Google Trends values are relative interest in a query range, NOT absolute search volume."
+}

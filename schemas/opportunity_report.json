@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpportunityScreeningReport",
+  "type": "object",
+  "required": ["opportunities"],
+  "properties": {
+    "opportunities": {
+      "type": "array",
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "required": [
+          "opportunity_id",
+          "opportunity_name",
+          "total_score",
+          "confidence_level"
+        ],
+        "properties": {
+          "opportunity_id": { "type": "string" },
+          "opportunity_name": { "type": "string" },
+          "target_user": { "type": ["string", "null"] },
+          "core_problem": { "type": ["string", "null"] },
+          "evidence_summary": { "type": ["string", "null"] },
+          "supporting_keywords": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "search_intent": {
+            "type": ["string", "null"],
+            "enum": [
+              "informational",
+              "transactional",
+              "commercial_investigation",
+              "navigational",
+              null
+            ]
+          },
+          "demand_score": { "type": ["number", "null"] },
+          "monetization_score": { "type": ["number", "null"] },
+          "competition_score": { "type": ["number", "null"] },
+          "development_feasibility_score": { "type": ["number", "null"] },
+          "evidence_quality_score": { "type": ["number", "null"] },
+          "total_score": { "type": "number", "minimum": 0, "maximum": 100 },
+          "confidence_level": {
+            "type": "string",
+            "enum": ["high", "medium", "low", "pending"]
+          },
+          "key_competitors": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "monetization_options": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "unresolved_questions": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "recommended_next_step": { "type": ["string", "null"] },
+          "verified_evidence": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "hypotheses": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    }
+  }
+}

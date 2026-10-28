@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demand Radar — 机会列表</title>
+  <meta name="theme-color" content="#0f1419" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="opportunities">
+  <header>
+    <div class="header-top">
+      <h1>Demand Radar · 需求机会</h1>
+      <nav>
+        <a href="index.html" data-page="opportunities">机会列表</a>
+        <a href="keywords.html" data-page="keywords">关键词</a>
+      </nav>
+    </div>
+    <div id="site-meta-bar" class="site-meta-bar">加载元数据…</div>
+  </header>
+  <main>
+    <p class="site-intro">
+      内部 triage 看板：从 Google Trends 与 Autocomplete 等公开信号聚类评分，<strong>不等于搜索量或付费意愿</strong>。
+      分数仅用于排序与人工初筛，缺 KD/SERP 时竞争维度会标 <code>pending</code>，请勿仅凭热度立项。
+    </p>
+    <div id="degraded-notice" class="demo-notice" hidden></div>
+    <div class="filters">
+      <label>类目
+        <select id="f-category"><option value="">全部</option></select>
+      </label>
+      <label>最低分
+        <select id="f-min-score">
+          <option value="">不限</option>
+          <option value="50">≥50</option>
+          <option value="65">≥65</option>
+          <option value="80">≥80</option>
+        </select>
+      </label>
+      <label>置信度
+        <select id="f-confidence">
+          <option value="">全部</option>
+          <option value="high">高</option>
+          <option value="medium">中</option>
+          <option value="low">低</option>
+        </select>
+      </label>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>标题</th>
+          <th>类目</th>
+          <th>综合分</th>
+          <th>档位</th>
+          <th>置信度</th>
+          <th>状态</th>
+          <th class="hide-sm">待补维度</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </main>
+  <footer>Demand Radar MVP · 证据优先 · 人工决策</footer>
+  <script type="module">
+    import {
+      loadJson,
+      setActiveNav,
+      renderSiteMetaBar,
+      confidenceBadge,
+      pendingLabel,
+    } from "./assets/app.js";
+
+    setActiveNav();
+    await renderSiteMetaBar();
+
+    const meta = await loadJson("meta.json");
+    if (meta.trends_degraded) {
+      const n = document.getElementById("degraded-notice");
+      n.hidden = false;
+      n.innerHTML =
+        "<strong>Trends 降级</strong>：本次导出可能含 mock/限流数据，热度相对值不可当作实盘搜索量。";
+    }
+
+    const opportunities = await loadJson("opportunities.json");
+    const cats = [...new Set(opportunities.map((o) => o.category).filter(Boolean))].sort();
+    const catSel = document.getElementById("f-category");
+    cats.forEach((c) => {
+      const opt = document.createElement("option");
+      opt.value = c;
+      opt.textContent = c;
+      catSel.appendChild(opt);
+    });
+
+    function render() {
+      const cat = document.getElementById("f-category").value;
+      const minScore = document.getElementById("f-min-score").value;
+      const conf = document.getElementById("f-confidence").value;
+      let rows = opportunities.slice();
+      if (cat) rows = rows.filter((o) => o.category === cat);
+      if (minScore) rows = rows.filter((o) => (o.score ?? 0) >= Number(minScore));
+      if (conf) rows = rows.filter((o) => (o.confidence || "").toLowerCase() === conf);
+
+      document.getElementById("rows").innerHTML =
+        rows
+          .map(
+            (o) => `
+        <tr>
+          <td><a href="detail.html?id=${encodeURIComponent(o.id)}">${o.title || "—"}</a></td>
+          <td class="meta">${o.category || "—"}</td>
+          <td class="score">${o.score != null ? o.score.toFixed(1) : "—"}</td>
+          <td>${o.tier || "—"}</td>
+          <td>${confidenceBadge(o.confidence)}</td>
+          <td class="meta">${o.status || "—"}</td>
+          <td class="meta hide-sm">${pendingLabel(o.pending_dimensions)}</td>
+        </tr>`
+          )
+          .join("") || "<tr><td colspan='7'>无匹配机会</td></tr>";
+    }
+
+    ["f-category", "f-min-score", "f-confidence"].forEach((id) => {
+      document.getElementById(id).addEventListener("change", render);
+    });
+    render();
+  </script>
+</body>
+</html>
