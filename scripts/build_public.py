@@ -164,7 +164,8 @@ def sync_pages_root() -> dict[str, list[str]]:
     dst_assets = ROOT / "assets"
     if src_assets.is_dir():
         dst_assets.mkdir(parents=True, exist_ok=True)
-        for item in src_assets.iterdir():
+        # Copy every file under public/assets (CSS/JS, favicon.svg/.ico/.png, etc.).
+        for item in sorted(src_assets.iterdir()):
             dest = dst_assets / item.name
             if item.is_file():
                 shutil.copy2(item, dest)
