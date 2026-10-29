@@ -1,0 +1,2021 @@
+{
+  "as_of": "2026-10-29",
+  "timezone": "Asia/Shanghai",
+  "title": "收入榜公开快照",
+  "intro": "公开 API / 公开页快照；TrustMRR 走官方 discovery；Acquire/Flippa 多为自报。",
+  "sources": [
+    "trustmrr",
+    "bizpeel",
+    "getlatka",
+    "acquire",
+    "flippa"
+  ],
+  "count": 100,
+  "notes": [
+    "TrustMRR: 使用官方公开 API；完整榜分页需认证，勿硬爬全站。",
+    "BizPeel/GetLatka: 完整报告常需订阅。",
+    "Acquire/Flippa: 收入多为卖家自报。"
+  ],
+  "rows": [
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Charcoal UI",
+      "monthly_revenue": 69,
+      "mrr": 0,
+      "total_revenue": 69,
+      "growth_30d": 0,
+      "category": "Developer Tools",
+      "url": "https://trustmrr.com/startup/charcoal-ui",
+      "website": "https://charcoalui.com/",
+      "scraped_at": "2026-10-29T15:24:43.142774+00:00",
+      "extra": {
+        "slug": "charcoal-ui",
+        "paymentProvider": "polar",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Copy-paste React components built with Motion and Tailwind CSS 4."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Anonymous startup",
+      "monthly_revenue": 3050.39,
+      "mrr": 2003.76,
+      "total_revenue": 17847.48,
+      "growth_30d": 31.937283737024046,
+      "category": null,
+      "url": "https://trustmrr.com/startup/stealth-venture-55",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.142837+00:00",
+      "extra": {
+        "slug": "stealth-venture-55",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 6.9933001119985265,
+        "onSale": false,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Anonymous startup",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": null,
+      "url": "https://trustmrr.com/startup/private-enterprise-82",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.142843+00:00",
+      "extra": {
+        "slug": "private-enterprise-82",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Anonymous startup",
+      "monthly_revenue": 497.71000000000004,
+      "mrr": 36.25,
+      "total_revenue": 689.48,
+      "growth_30d": 200,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/hidden-business-58",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.142849+00:00",
+      "extra": {
+        "slug": "hidden-business-58",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 284.00423728813564,
+        "onSale": true,
+        "description": "A consumer health app in a chronic-condition niche, live on iOS and Android and localized in 5 languages. Growth is fully organic from app store search, with no ad spend. There is no backend and no se"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "BeamTake – AI Clip Maker for Shorts, Reels & TikTok",
+      "monthly_revenue": 19,
+      "mrr": 19,
+      "total_revenue": 19,
+      "growth_30d": 0,
+      "category": "SaaS",
+      "url": "https://trustmrr.com/startup/beamtake",
+      "website": "https://beamtake.com/",
+      "scraped_at": "2026-10-29T15:24:43.142871+00:00",
+      "extra": {
+        "slug": "beamtake",
+        "paymentProvider": "creem",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "BeamTake turns long videos into ready-to-post vertical clips. Paste a YouTube link or upload a podcast, stream or webinar: it finds the strongest moments, reframes them to 9:16 around the speaker, cut"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "My startup",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": null,
+      "url": "https://trustmrr.com/startup/mystartup",
+      "website": "https://www.replycurrent.com/",
+      "scraped_at": "2026-10-29T15:24:43.142874+00:00",
+      "extra": {
+        "slug": "mystartup",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": true,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Toll",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/toll",
+      "website": "https://tollapp.github.io/",
+      "scraped_at": "2026-10-29T15:24:43.142879+00:00",
+      "extra": {
+        "slug": "toll",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Toll locks the apps you choose (TikTok, Instagram, YouTube and more) with Apple's Screen Time until you prove you did your habit: a live photo of your workout or meal, a check-in at the gym, or hittin"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Solofounders.help",
+      "monthly_revenue": 23.48,
+      "mrr": 0,
+      "total_revenue": 23.48,
+      "growth_30d": 0,
+      "category": "Marketing",
+      "url": "https://trustmrr.com/startup/solofoundershelp",
+      "website": "https://solofounders.help/",
+      "scraped_at": "2026-10-29T15:24:43.142885+00:00",
+      "extra": {
+        "slug": "solofoundershelp",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Get your first sale playbook and leads"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Vydstudio",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": null,
+      "url": "https://trustmrr.com/startup/vydstudio",
+      "website": "https://vydstudio.ai/",
+      "scraped_at": "2026-10-29T15:24:43.142888+00:00",
+      "extra": {
+        "slug": "vydstudio",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Vydstudio is an all-in-one AI-powered video creation and social media automation platform designed for content creators, businesses, and marketing agencies. It transforms simple text prompts into prof"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Launch Streak",
+      "monthly_revenue": 87,
+      "mrr": 0,
+      "total_revenue": 145,
+      "growth_30d": 200,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/launch-streak",
+      "website": "https://launchstreak.dev/",
+      "scraped_at": "2026-10-29T15:24:43.142891+00:00",
+      "extra": {
+        "slug": "launch-streak",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Launch your tool made fun; earn sponsored spots, auto launches and more with streaks!"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Easy Launch",
+      "monthly_revenue": 148.71,
+      "mrr": 0,
+      "total_revenue": 708.13,
+      "growth_30d": 20.696372047723397,
+      "category": "Marketing",
+      "url": "https://trustmrr.com/startup/easy-launch",
+      "website": "https://www.easylaunch.dev/",
+      "scraped_at": "2026-10-29T15:24:43.142893+00:00",
+      "extra": {
+        "slug": "easy-launch",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "The easiest launch directory collection out there to get high quality backlinks."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "лесноCV: CV и мотивационно писмо",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": "Education",
+      "url": "https://trustmrr.com/startup/cv-cv",
+      "website": "https://lesnocv.com/",
+      "scraped_at": "2026-10-29T15:24:43.142896+00:00",
+      "extra": {
+        "slug": "cv-cv",
+        "paymentProvider": "creem",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Изтегляне на готовото CV в PDF и мотивационно писмо. Еднократно плащане, без абонамент."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Hold Sleep",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/hold-sleep",
+      "website": "https://holdsleep.com/",
+      "scraped_at": "2026-10-29T15:24:43.142899+00:00",
+      "extra": {
+        "slug": "hold-sleep",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Hold Sleep is a macOS menu bar app that keeps your Mac awake while apps are busy — exports, downloads, builds and AI agents — and lets it sleep the moment they finish. One-time purchase with a license"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "MacFlow",
+      "monthly_revenue": 29.85,
+      "mrr": 0,
+      "total_revenue": 29.85,
+      "growth_30d": 0,
+      "category": "Developer Tools",
+      "url": "https://trustmrr.com/startup/macflow",
+      "website": "https://macflow.space/",
+      "scraped_at": "2026-10-29T15:24:43.142902+00:00",
+      "extra": {
+        "slug": "macflow",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Visual workflows. Built for your Mac."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Monstache: 2 3 4 Player Games",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": null,
+      "url": "https://trustmrr.com/startup/monstache-2-3-4-player-games",
+      "website": "https://play.google.com/store/apps/details?id=com.monstache.app",
+      "scraped_at": "2026-10-29T15:24:43.142904+00:00",
+      "extra": {
+        "slug": "monstache-2-3-4-player-games",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "LLM Dojo",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": "Education",
+      "url": "https://trustmrr.com/startup/llm-dojo",
+      "website": "https://llmdojo.dev/",
+      "scraped_at": "2026-10-29T15:24:43.142906+00:00",
+      "extra": {
+        "slug": "llm-dojo",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "learn AI by building, experimenting and solving real problems. explore hands-on mini labs, play with neural networks, and prep for AI engineering interviews. no boring tutorials or complicated setup,"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Anonymous startup",
+      "monthly_revenue": 16974,
+      "mrr": 16716,
+      "total_revenue": 40260.08,
+      "growth_30d": -4.784182528957706,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/confidential-startup-61",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.142909+00:00",
+      "extra": {
+        "slug": "confidential-startup-61",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -59.005297233666866,
+        "onSale": true,
+        "description": "AI agent that runs a TikTok Shop creator's brand-deal inbox end to end. Connect Gmail, set your rates, done. The AI replies to brands within minutes, negotiates, counters, flags scams, and closes with"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Statement Dock",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": "Fintech",
+      "url": "https://trustmrr.com/startup/statementdock",
+      "website": "https://statementdock.com/",
+      "scraped_at": "2026-10-29T15:24:43.142915+00:00",
+      "extra": {
+        "slug": "statementdock",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Bank statement converter. Turns PDF bank statements into Excel, CSV and Tally Prime files in the browser, with every row checked against the running balance."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Postfalcon",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": "Social Media",
+      "url": "https://trustmrr.com/startup/postfalcon",
+      "website": "https://postfalcon.co/",
+      "scraped_at": "2026-10-29T15:24:43.142917+00:00",
+      "extra": {
+        "slug": "postfalcon",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Social media scheduler for creators and small teams. Write a post once, schedule it on a calendar, and Postfalcon publishes it on time to Mastodon, Bluesky, Instagram, Facebook, Threads, TikTok, YouTu"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "AskElliot Consulting",
+      "monthly_revenue": 228,
+      "mrr": 328,
+      "total_revenue": 3682,
+      "growth_30d": -52.30125523012552,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/askelliot",
+      "website": "https://elliotconsulting.ai/",
+      "scraped_at": "2026-10-29T15:24:43.142920+00:00",
+      "extra": {
+        "slug": "askelliot",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -4.835589941972926,
+        "onSale": true,
+        "description": "AskElliot is an AI-powered recruiting prep platform built for students pursuing careers in management consulting. The platform helps candidates prepare for case and fit interviews through on-demand pr"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "NJLIGames Ltd",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": null,
+      "url": "https://trustmrr.com/startup/njligames-ltd",
+      "website": "https://njligames.com/",
+      "scraped_at": "2026-10-29T15:24:43.142924+00:00",
+      "extra": {
+        "slug": "njligames-ltd",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Last follower",
+      "monthly_revenue": 99.80000000000001,
+      "mrr": 89.83,
+      "total_revenue": 152.66,
+      "growth_30d": 92.40408714092915,
+      "category": "Social Media",
+      "url": "https://trustmrr.com/startup/last-follower",
+      "website": "https://www.lastfollower.com/",
+      "scraped_at": "2026-10-29T15:24:43.142927+00:00",
+      "extra": {
+        "slug": "last-follower",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 439.0897724431107,
+        "onSale": false,
+        "description": "See who unfollowed you on Instagram"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "ETHICSLAB LIMITED",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": "Education",
+      "url": "https://trustmrr.com/startup/ethicslab-limited",
+      "website": "https://www.ethicslablimited.biz/",
+      "scraped_at": "2026-10-29T15:24:43.142929+00:00",
+      "extra": {
+        "slug": "ethicslab-limited",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "We build software people can trust.EthicsLab Limited is a United Kingdom software studio. We build and ship our own apps — and help other teams design, develop, and audit software that's secure, priva"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Anonymous startup",
+      "monthly_revenue": 211.86,
+      "mrr": 112.58,
+      "total_revenue": 3304.2400000000002,
+      "growth_30d": 3.847850595559024,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/startup-27de72730f9a",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.142931+00:00",
+      "extra": {
+        "slug": "startup-27de72730f9a",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": -32.25418221205922,
+        "onSale": true,
+        "description": "Comics & Manga Maker. Grew organically on App Store, Google Play and Web. Google Play 10k+ download. There's clear room to grow: ASA, Meta, paid UGC on TikTok, paywall price tests, and new styles/temp"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_added",
+      "name": "Kinovra",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": "SaaS",
+      "url": "https://trustmrr.com/startup/kinovra",
+      "website": "https://www.kinovra.com/",
+      "scraped_at": "2026-10-29T15:24:43.142933+00:00",
+      "extra": {
+        "slug": "kinovra",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": true,
+        "description": "Kinovra is a ready-built SaaS platform helping assisted and senior living facilities keep families informed through daily resident updates."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "WESAM.ai",
+      "monthly_revenue": 7304,
+      "mrr": 7304,
+      "total_revenue": 8106,
+      "growth_30d": 365100,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/wesam-inc",
+      "website": "https://wesam.ai/",
+      "scraped_at": "2026-10-29T15:24:43.142940+00:00",
+      "extra": {
+        "slug": "wesam-inc",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 62.23900488671702,
+        "onSale": false,
+        "description": "Upwork for AI agents: Marketplace for ai agents for SMBs to hire."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Content Creators",
+      "monthly_revenue": 30507.66525086366,
+      "mrr": 0,
+      "total_revenue": 31064.665250863665,
+      "growth_30d": 234574.3480835666,
+      "category": "Marketplace",
+      "url": "https://trustmrr.com/startup/creatorbid",
+      "website": "https://hhtps//creatorbid.lol",
+      "scraped_at": "2026-10-29T15:24:43.142943+00:00",
+      "extra": {
+        "slug": "creatorbid",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "We offer a digital educational course focused on creating short-form video content. Students receive lifetime access to training videos, learning modules, and digital materials inside our private onli"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "MetaMuse",
+      "monthly_revenue": 1861,
+      "mrr": 2015,
+      "total_revenue": 4865,
+      "growth_30d": 186000,
+      "category": "Marketing",
+      "url": "https://trustmrr.com/startup/metamuse",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.142947+00:00",
+      "extra": {
+        "slug": "metamuse",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 46400.00000000001,
+        "onSale": false,
+        "description": "Advertising and creative services"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Anonymous startup",
+      "monthly_revenue": 2004,
+      "mrr": 4,
+      "total_revenue": 2012,
+      "growth_30d": 50000,
+      "category": null,
+      "url": "https://trustmrr.com/startup/stealth-company-41",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.142950+00:00",
+      "extra": {
+        "slug": "stealth-company-41",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Open, model-agnostic agentic development platform where teams of AI agents plan, design, code, test, and ship software. Cipher replaces isolated prompt-to-code workflows with persistent orchestration,"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Anonymous startup",
+      "monthly_revenue": 4.47,
+      "mrr": 0,
+      "total_revenue": 30.79,
+      "growth_30d": 44600,
+      "category": null,
+      "url": "https://trustmrr.com/startup/hugo-mobile-app-04",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.142952+00:00",
+      "extra": {
+        "slug": "hugo-mobile-app-04",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "KreatorflowAI",
+      "monthly_revenue": 10041.237573441334,
+      "mrr": 6474.71,
+      "total_revenue": 113716.67536622641,
+      "growth_30d": 37103.54788233171,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/kreatorflowai",
+      "website": "https://kreatorflow.ai/",
+      "scraped_at": "2026-10-29T15:24:43.142954+00:00",
+      "extra": {
+        "slug": "kreatorflowai",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 23889.284923295785,
+        "onSale": false,
+        "description": "Official partners with byteplus a bytedance company, ai image and video generator, 12k users / sign ups Over 100k in rev to year date, need a quick sale"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Deepnia",
+      "monthly_revenue": 479.24,
+      "mrr": 53.74,
+      "total_revenue": 481.24,
+      "growth_30d": 23862,
+      "category": "Content Creation",
+      "url": "https://trustmrr.com/startup/deepnia",
+      "website": "https://deepnia.com/",
+      "scraped_at": "2026-10-29T15:24:43.142957+00:00",
+      "extra": {
+        "slug": "deepnia",
+        "paymentProvider": "whop",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Deepnia creates, posts, and grows your social media with AI. Note: Our most-used payment gateway isn’t listed on TrustMRR, so our verified revenue there doesn’t reflect our full numbers."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "The Pepino Brand",
+      "monthly_revenue": 156.23889941467345,
+      "mrr": 107.48,
+      "total_revenue": 1232.5604875459094,
+      "growth_30d": 22789.13224695338,
+      "category": "Design Tools",
+      "url": "https://trustmrr.com/startup/the-pepino-brand",
+      "website": "https://www.thepepinobrand.com/",
+      "scraped_at": "2026-10-29T15:24:43.142960+00:00",
+      "extra": {
+        "slug": "the-pepino-brand",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 13.166925783477817,
+        "onSale": false,
+        "description": "The Pepino Brand es un software de gestión de marca (BrandOS) que centraliza activos (logos, tipografías, colores, plantillas) y facilita su uso y compartición. Incluye conversor multiformato, almacen"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "BasinCheck",
+      "monthly_revenue": 2225.96,
+      "mrr": 895,
+      "total_revenue": 5579.09,
+      "growth_30d": 16425.31551596139,
+      "category": "Analytics",
+      "url": "https://trustmrr.com/startup/basincheck",
+      "website": "https://basincheck.com/",
+      "scraped_at": "2026-10-29T15:24:43.142964+00:00",
+      "extra": {
+        "slug": "basincheck",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "BasinCheck is a field-first safety audit platform for oil & gas contractors, built to replace paper checklists and spreadsheets with fast mobile inspections, offline mode, and audit-ready documentatio"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Qoest",
+      "monthly_revenue": 771.11,
+      "mrr": 4274,
+      "total_revenue": 3520,
+      "growth_30d": 8467.888888888887,
+      "category": null,
+      "url": "https://trustmrr.com/startup/qoest",
+      "website": "https://qoest.lemonsqueezy.com/",
+      "scraped_at": "2026-10-29T15:24:43.142966+00:00",
+      "extra": {
+        "slug": "qoest",
+        "paymentProvider": "lemonsqueezy",
+        "growthMRR30d": -99.19062238347753,
+        "onSale": false,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Kiiwi",
+      "monthly_revenue": 473.3499593510296,
+      "mrr": 0,
+      "total_revenue": 478.96732788192844,
+      "growth_30d": 8326.542726319776,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/kiiwi",
+      "website": "https://kiiwi.app/",
+      "scraped_at": "2026-10-29T15:24:43.142970+00:00",
+      "extra": {
+        "slug": "kiiwi",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Kiiwi makes your Mac keyboard sound like a mechanical one. It plays real recordings of 38 mechanical switches (linear, tactile and clicky) as you type, from the menu bar. No window, no Dock icon, 0% C"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Skedix",
+      "monthly_revenue": 783.12,
+      "mrr": 0,
+      "total_revenue": 7200.12,
+      "growth_30d": 7731.199999999998,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/skedix",
+      "website": "https://skedix.app/",
+      "scraped_at": "2026-10-29T15:24:43.142974+00:00",
+      "extra": {
+        "slug": "skedix",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Skedix: The AI-powered planner for Telegram & Web. Voice-to-task parsing, smart alerts, and pro Kanban boards."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "bytemail",
+      "monthly_revenue": 18520.67,
+      "mrr": 240.73,
+      "total_revenue": 18758.93,
+      "growth_30d": 7673.302274825821,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/bytemail",
+      "website": "https://bytemailapp.com/",
+      "scraped_at": "2026-10-29T15:24:43.142980+00:00",
+      "extra": {
+        "slug": "bytemail",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 100,
+        "onSale": false,
+        "description": "Native MacOS Email Client"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Intentsly",
+      "monthly_revenue": 7387.950342129241,
+      "mrr": 0,
+      "total_revenue": 11090.508764854849,
+      "growth_30d": 7516.44365167963,
+      "category": "Sales",
+      "url": "https://trustmrr.com/startup/intentsly",
+      "website": "https://intentsly.com/",
+      "scraped_at": "2026-10-29T15:24:43.142982+00:00",
+      "extra": {
+        "slug": "intentsly",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -100,
+        "onSale": false,
+        "description": "Intentsly - Find People Looking To Buy Your Services. Our AI detects intent signals, scores prospects based on your ideal customers, starts relevant conversations on LinkedIn, Reddit, X and Facebook a"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "kdpbook.io",
+      "monthly_revenue": 3431.12,
+      "mrr": 2458,
+      "total_revenue": 3431.12,
+      "growth_30d": 6802.285714285715,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/kdpbook",
+      "website": "https://kdpbook.io/",
+      "scraped_at": "2026-10-29T15:24:43.142984+00:00",
+      "extra": {
+        "slug": "kdpbook",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 4916.326530612245,
+        "onSale": true,
+        "description": "kdpbook.io is an AI book studio for Amazon KDP. Describe a book in a chat, or import your own manuscript, and it writes, illustrates and typesets it, then exports the interior PDF, the full-wrap cover"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Anonymous startup",
+      "monthly_revenue": 14011.397035441481,
+      "mrr": 4639.17,
+      "total_revenue": 14313.397035441481,
+      "growth_30d": 6416.928853693712,
+      "category": null,
+      "url": "https://trustmrr.com/startup/aisaaswebsitebygefei",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.142986+00:00",
+      "extra": {
+        "slug": "aisaaswebsitebygefei",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 2057.7519379844957,
+        "onSale": false,
+        "description": "All In One AI SaaS Website By GeFei"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "AntForms",
+      "monthly_revenue": 1187.06,
+      "mrr": 0,
+      "total_revenue": 1244.03,
+      "growth_30d": 6150.974196945761,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/antforms",
+      "website": "https://antforms.com/",
+      "scraped_at": "2026-10-29T15:24:43.142991+00:00",
+      "extra": {
+        "slug": "antforms",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Form builder that is actually free not just in marketing"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Aarivi",
+      "monthly_revenue": 2011.2681795320038,
+      "mrr": 1575,
+      "total_revenue": 2045.7273576179348,
+      "growth_30d": 5989.004702946901,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/aarivi",
+      "website": "https://aarivi.com/",
+      "scraped_at": "2026-10-29T15:24:43.142993+00:00",
+      "extra": {
+        "slug": "aarivi",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 78649.8596006391,
+        "onSale": true,
+        "description": "Aarivi finds jobs, cold emails your profile to founders, tracks every application, and builds your resume and portfolio."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "CossyVita",
+      "monthly_revenue": 74.72,
+      "mrr": 27.73,
+      "total_revenue": 75.95,
+      "growth_30d": 5974.796747967479,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/cossyvita",
+      "website": "https://www.cossyvita.com/en",
+      "scraped_at": "2026-10-29T15:24:43.142995+00:00",
+      "extra": {
+        "slug": "cossyvita",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 2154.471544715447,
+        "onSale": false,
+        "description": "CossyVita is an AI-powered skincare companion that helps users understand their skin and make smarter skincare choices. Analyze skin photos, scan cosmetic ingredients, discover personalized product co"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Savebase",
+      "monthly_revenue": 475.15,
+      "mrr": 62.33,
+      "total_revenue": 559.15,
+      "growth_30d": 5839.375,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/savebase",
+      "website": "https://savebase.space/",
+      "scraped_at": "2026-10-29T15:24:43.142997+00:00",
+      "extra": {
+        "slug": "savebase",
+        "paymentProvider": "polar",
+        "growthMRR30d": 334.8837209302326,
+        "onSale": true,
+        "description": "Savebase brings saves from 11 social platforms and the web into one searchable library. Users organize with folders, tags, notes and reminders, transcribe eligible videos, and connect saved knowledge"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Anonymous startup",
+      "monthly_revenue": 5649.020783929153,
+      "mrr": 328.9,
+      "total_revenue": 5744.940783929153,
+      "growth_30d": 5789.304403595831,
+      "category": null,
+      "url": "https://trustmrr.com/startup/aivideobygefei",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.142999+00:00",
+      "extra": {
+        "slug": "aivideobygefei",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 1000,
+        "onSale": false,
+        "description": "AI Video Maker By GeFei"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Bidder iQ",
+      "monthly_revenue": 2052,
+      "mrr": 0,
+      "total_revenue": 13748,
+      "growth_30d": 5445.945945945946,
+      "category": "Analytics",
+      "url": "https://trustmrr.com/startup/bidder-iq",
+      "website": "https://bidderiq.com/",
+      "scraped_at": "2026-10-29T15:24:43.143001+00:00",
+      "extra": {
+        "slug": "bidder-iq",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": false,
+        "description": "Bidder iQ is a collector-car pricing intelligence tool built for serious buyers, sellers, and enthusiasts. It combines: A Web App for running comps, exploring price trends, segmenting auction results,"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Skillmaxing",
+      "monthly_revenue": 455.99662168159927,
+      "mrr": 15.64,
+      "total_revenue": 464.6781908630884,
+      "growth_30d": 5152.46775264865,
+      "category": null,
+      "url": "https://trustmrr.com/startup/skillmaxing",
+      "website": "https://skillmaxing.in/",
+      "scraped_at": "2026-10-29T15:24:43.143005+00:00",
+      "extra": {
+        "slug": "skillmaxing",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 200.1919385796545,
+        "onSale": false,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "ECOMSTATEMENT.COM",
+      "monthly_revenue": 3303.7079616936103,
+      "mrr": 1143.38,
+      "total_revenue": 3883.1279616936104,
+      "growth_30d": 5031.574963798712,
+      "category": "E-commerce",
+      "url": "https://trustmrr.com/startup/ecomstatement-com",
+      "website": "https://ecomstatement.com/",
+      "scraped_at": "2026-10-29T15:24:43.143007+00:00",
+      "extra": {
+        "slug": "ecomstatement-com",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 1871.3443980310708,
+        "onSale": false,
+        "description": "A suite of marketing and lead generation products to grow your business."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "fastest_growing",
+      "name": "Hidden",
+      "monthly_revenue": 1688.63,
+      "mrr": 552.89,
+      "total_revenue": 1721.83,
+      "growth_30d": 4986.234939759036,
+      "category": null,
+      "url": "https://trustmrr.com/startup/book-a-sponsor",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:43.143010+00:00",
+      "extra": {
+        "slug": "book-a-sponsor",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 1643.6793692509884,
+        "onSale": false,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "VTC Facile",
+      "monthly_revenue": 1321.42,
+      "mrr": 716.06,
+      "total_revenue": 5184.36,
+      "growth_30d": -42.33887507090806,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/vtc-facile",
+      "website": "https://www.vtc-facile.app",
+      "scraped_at": "2026-10-29T15:24:44.124014+00:00",
+      "extra": {
+        "slug": "vtc-facile",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": -2.493293571360494,
+        "onSale": true,
+        "description": "VTC Facile is a French VTC and taxi theory exam-prep app available on iOS, Android and web. Candidates get 3,000+ explained questions, exam-date study plans, timed mock exams, audio lessons and progre"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Anonymous startup",
+      "monthly_revenue": 497.71000000000004,
+      "mrr": 36.25,
+      "total_revenue": 689.48,
+      "growth_30d": 200,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/hidden-business-58",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:44.124078+00:00",
+      "extra": {
+        "slug": "hidden-business-58",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 284.00423728813564,
+        "onSale": true,
+        "description": "A consumer health app in a chronic-condition niche, live on iOS and Android and localized in 5 languages. Growth is fully organic from app store search, with no ad spend. There is no backend and no se"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "My startup",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": null,
+      "category": null,
+      "url": "https://trustmrr.com/startup/mystartup",
+      "website": "https://www.replycurrent.com",
+      "scraped_at": "2026-10-29T15:24:44.124089+00:00",
+      "extra": {
+        "slug": "mystartup",
+        "paymentProvider": "stripe",
+        "growthMRR30d": null,
+        "onSale": true,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Anonymous startup",
+      "monthly_revenue": 16974,
+      "mrr": 16716,
+      "total_revenue": 40260.08,
+      "growth_30d": -4.784182528957706,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/confidential-startup-61",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:44.124103+00:00",
+      "extra": {
+        "slug": "confidential-startup-61",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -59.005297233666866,
+        "onSale": true,
+        "description": "AI agent that runs a TikTok Shop creator's brand-deal inbox end to end. Connect Gmail, set your rates, done. The AI replies to brands within minutes, negotiates, counters, flags scams, and closes with"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "AskElliot Consulting",
+      "monthly_revenue": 228,
+      "mrr": 328,
+      "total_revenue": 3682,
+      "growth_30d": -52.30125523012552,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/askelliot",
+      "website": "https://elliotconsulting.ai",
+      "scraped_at": "2026-10-29T15:24:44.124134+00:00",
+      "extra": {
+        "slug": "askelliot",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -4.835589941972926,
+        "onSale": true,
+        "description": "AskElliot is an AI-powered recruiting prep platform built for students pursuing careers in management consulting. The platform helps candidates prepare for case and fit interviews through on-demand pr"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Anonymous startup",
+      "monthly_revenue": 211.86,
+      "mrr": 112.58,
+      "total_revenue": 3304.2400000000002,
+      "growth_30d": 3.847850595559024,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/startup-27de72730f9a",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:44.124142+00:00",
+      "extra": {
+        "slug": "startup-27de72730f9a",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": -32.25418221205922,
+        "onSale": true,
+        "description": "Comics & Manga Maker. Grew organically on App Store, Google Play and Web. Google Play 10k+ download. There's clear room to grow: ASA, Meta, paid UGC on TikTok, paywall price tests, and new styles/temp"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Get Funneled",
+      "monthly_revenue": 20145.819024907505,
+      "mrr": 18766.83,
+      "total_revenue": 108029.42526226326,
+      "growth_30d": 30.88037576391419,
+      "category": "Marketing",
+      "url": "https://trustmrr.com/startup/getfunneled",
+      "website": "https://getfunneled.com",
+      "scraped_at": "2026-10-29T15:24:44.124148+00:00",
+      "extra": {
+        "slug": "getfunneled",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 29.518716445825667,
+        "onSale": true,
+        "description": "AI Native post click funnel experience for D2C brands Productized service offering that AI does 97% of the work for"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Kinovra",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": null,
+      "category": "SaaS",
+      "url": "https://trustmrr.com/startup/kinovra",
+      "website": "https://www.kinovra.com",
+      "scraped_at": "2026-10-29T15:24:44.124163+00:00",
+      "extra": {
+        "slug": "kinovra",
+        "paymentProvider": "stripe",
+        "growthMRR30d": null,
+        "onSale": true,
+        "description": "Kinovra is a ready-built SaaS platform helping assisted and senior living facilities keep families informed through daily resident updates."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Stockatomics",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": null,
+      "category": "Fintech",
+      "url": "https://trustmrr.com/startup/stockatomics",
+      "website": "https://www.stockatomics.com",
+      "scraped_at": "2026-10-29T15:24:44.124168+00:00",
+      "extra": {
+        "slug": "stockatomics",
+        "paymentProvider": "stripe",
+        "growthMRR30d": null,
+        "onSale": true,
+        "description": "From AI data centers, power grids and EVs to robotics and defence programmes, Stockatomics connects physical market data from materials and components to industrial demand, sectors and companies. Unco"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Gladia2: Old School Online RPG",
+      "monthly_revenue": 5715.19,
+      "mrr": 854.43,
+      "total_revenue": 40968.47,
+      "growth_30d": -16.29970592370418,
+      "category": "Games",
+      "url": "https://trustmrr.com/startup/gladia2",
+      "website": "https://apps.apple.com/us/app/id6757353087",
+      "scraped_at": "2026-10-29T15:24:44.124172+00:00",
+      "extra": {
+        "slug": "gladia2",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 3.9541080140644587,
+        "onSale": true,
+        "description": "Gladia2 is an ad free multiplayer RPG for iOS and Android, with a core player base and almost all traffic coming organic with zero marketing. Day to day maintenance is light. I mainly check the player"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Chirps",
+      "monthly_revenue": 60.13574462790605,
+      "mrr": 60.14,
+      "total_revenue": 20572.778186018135,
+      "growth_30d": 0,
+      "category": "SaaS",
+      "url": "https://trustmrr.com/startup/chirps-ai",
+      "website": "https://chirps.cc",
+      "scraped_at": "2026-10-29T15:24:44.124186+00:00",
+      "extra": {
+        "slug": "chirps-ai",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -24.00229226122554,
+        "onSale": true,
+        "description": "Chirps AI is an AI-powered customer support and sales platform that turns any website into an interactive AI assistant. It learns from website content and documents to answer customer questions 24/7,"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "GoodLads.cc",
+      "monthly_revenue": 200,
+      "mrr": 200,
+      "total_revenue": 400,
+      "growth_30d": 0,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/goodlads",
+      "website": "https://goodlads.cc",
+      "scraped_at": "2026-10-29T15:24:44.124189+00:00",
+      "extra": {
+        "slug": "goodlads",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -50,
+        "onSale": true,
+        "description": "AI growth manager for optimising Google Ads spend"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "TimeTuna.com",
+      "monthly_revenue": 22.271489255812096,
+      "mrr": 122.55,
+      "total_revenue": 1280.6106322091955,
+      "growth_30d": 100,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/timetuna",
+      "website": "https://timetuna.com",
+      "scraped_at": "2026-10-29T15:24:44.124192+00:00",
+      "extra": {
+        "slug": "timetuna",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0.05035398619735892,
+        "onSale": true,
+        "description": "If Calendly had gorgeous video backgrounds"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Store Stock Checker",
+      "monthly_revenue": 15992.49647501801,
+      "mrr": 15900,
+      "total_revenue": 15992.49647501801,
+      "growth_30d": null,
+      "category": "Analytics",
+      "url": "https://trustmrr.com/startup/store-stock-checker",
+      "website": "https://www.storestockchecker.com",
+      "scraped_at": "2026-10-29T15:24:44.124197+00:00",
+      "extra": {
+        "slug": "store-stock-checker",
+        "paymentProvider": "stripe",
+        "growthMRR30d": null,
+        "onSale": true,
+        "description": "Realtime Apple Store stock checking."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "cove ivf",
+      "monthly_revenue": 284.62,
+      "mrr": 127.75,
+      "total_revenue": 325.04,
+      "growth_30d": 604.1563582384957,
+      "category": "Health & Fitness",
+      "url": "https://trustmrr.com/startup/cove-ivf",
+      "website": "https://apps.apple.com/us/app/cove-ivf-tracker-injections/id6788749556?uo=4",
+      "scraped_at": "2026-10-29T15:24:44.124209+00:00",
+      "extra": {
+        "slug": "cove-ivf",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 216.056407718951,
+        "onSale": true,
+        "description": "Your clinic protocol, medication schedule, and treatment records — together in one place. Cove helps you stay organized through IVF treatment."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Dictation Daddy",
+      "monthly_revenue": 1802.395563030671,
+      "mrr": 1316.12,
+      "total_revenue": 23925.45124347698,
+      "growth_30d": 4.069335359180963,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/dictation-daddy",
+      "website": "https://dictationdaddy.com",
+      "scraped_at": "2026-10-29T15:24:44.124218+00:00",
+      "extra": {
+        "slug": "dictation-daddy",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": -18.22501771021101,
+        "onSale": true,
+        "description": "AI dictation for professionals who write all day. Speak naturally and get finished, punctuated text wherever the cursor is, in any app or website, with no voice training. Runs on Mac, Windows, Chrome"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "RemJobs",
+      "monthly_revenue": 58.83868127042798,
+      "mrr": 54.99,
+      "total_revenue": 58.83868127042798,
+      "growth_30d": 0,
+      "category": "Recruiting & HR",
+      "url": "https://trustmrr.com/startup/remjobs",
+      "website": "https://www.remjobs.works",
+      "scraped_at": "2026-10-29T15:24:44.124221+00:00",
+      "extra": {
+        "slug": "remjobs",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 0,
+        "onSale": true,
+        "description": "RemJobs is a map of 252,000+ startups in 178 countries. Click any startup to see who founded it, with their LinkedIn, the careers page and a founder email where we have one. Job seekers use it to reac"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Arclify",
+      "monthly_revenue": 22.43,
+      "mrr": 36.24,
+      "total_revenue": 115.86999999999999,
+      "growth_30d": -45.873552123552116,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/arclify",
+      "website": "https://arclifyapp.com",
+      "scraped_at": "2026-10-29T15:24:44.124226+00:00",
+      "extra": {
+        "slug": "arclify",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 162.41853729181753,
+        "onSale": true,
+        "description": "A live, subscription-ready iOS habit app built on 90-day Seasons. Users pick 3 to 5 of 6 core habits, log each with one tap, and a weekly review suggests raising, keeping or lowering next week's targe"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "LinkPost",
+      "monthly_revenue": 4253.390528159771,
+      "mrr": 4798.86,
+      "total_revenue": 179031.68263653343,
+      "growth_30d": -20.791958928249223,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/linkpost",
+      "website": "https://www.linkpost.gg",
+      "scraped_at": "2026-10-29T15:24:44.124231+00:00",
+      "extra": {
+        "slug": "linkpost",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -5.966325097265022,
+        "onSale": true,
+        "description": "LinkPost is part of LinkEmpire, offered as a complete portfolio for USD 99,000: three LinkedIn SaaS products (LinkPost, LinkHub, LinkMagnet), the LinkEarn self-paced course and shared distribution ass"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "BetterBite AI",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": 0,
+      "category": null,
+      "url": "https://trustmrr.com/startup/private-venture-90",
+      "website": "https://trybiteai.com",
+      "scraped_at": "2026-10-29T15:24:44.124233+00:00",
+      "extra": {
+        "slug": "private-venture-90",
+        "paymentProvider": "appstore",
+        "growthMRR30d": 0,
+        "onSale": true,
+        "description": "BetterBite is an AI-powered health and nutrition app that helps users track calories, analyze meals through photos, receive personalized nutrition recommendations, and achieve their wellness goals. Wi"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Zenvesto",
+      "monthly_revenue": 0,
+      "mrr": 0,
+      "total_revenue": 0,
+      "growth_30d": null,
+      "category": null,
+      "url": "https://trustmrr.com/startup/zenvesto-solutions",
+      "website": "https://zenvesto.com",
+      "scraped_at": "2026-10-29T15:24:44.124236+00:00",
+      "extra": {
+        "slug": "zenvesto-solutions",
+        "paymentProvider": "stripe",
+        "growthMRR30d": null,
+        "onSale": true,
+        "description": "Zenvesto brings all your investments into one clean dashboard. Track stocks, ETFs, crypto, cash, and custom assets across multiple portfolios. Understand your performance, compare returns against benc"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Voice & Meeting Notes",
+      "monthly_revenue": 13.92,
+      "mrr": 25.58,
+      "total_revenue": 425.84000000000003,
+      "growth_30d": -3.534303534303533,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/notello",
+      "website": "https://apps.apple.com/us/app/voice-meeting-notes-notello/id6746511316?uo=4",
+      "scraped_at": "2026-10-29T15:24:44.124239+00:00",
+      "extra": {
+        "slug": "notello",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": -1.9547719432732906,
+        "onSale": true,
+        "description": "Turn conversations into clear notes. Record meetings, lectures, and ideas to get accurate transcripts, AI summaries, key points, and action items in seconds. Never take notes during a conversation aga"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "ReplyCurrent",
+      "monthly_revenue": 225,
+      "mrr": 225,
+      "total_revenue": 2305.73,
+      "growth_30d": 0,
+      "category": "SaaS",
+      "url": "https://trustmrr.com/startup/reply-current",
+      "website": "https://www.replycurrent.com",
+      "scraped_at": "2026-10-29T15:24:44.124245+00:00",
+      "extra": {
+        "slug": "reply-current",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -17.88321167883212,
+        "onSale": true,
+        "description": "ReplyCurrent is an AI customer support SaaS I built to help businesses answer customer questions automatically. You connect your website, help center, or documents, and it creates an AI chatbot that a"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "Anonymous startup",
+      "monthly_revenue": 649.56,
+      "mrr": 355.94,
+      "total_revenue": 1844.96,
+      "growth_30d": 109.63692109085042,
+      "category": null,
+      "url": "https://trustmrr.com/startup/private-venture-72",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:44.124251+00:00",
+      "extra": {
+        "slug": "private-venture-72",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 99.406162464986,
+        "onSale": true,
+        "description": "iPhone Health & Fitness app that helps people quit nicotine step by step. Live ~6 months. Selling to focus fully on a new project. Includes the app, full source code and Apple Ads data. No servers; on"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "recently_listed_for_sale",
+      "name": "MyEx",
+      "monthly_revenue": 1020.28,
+      "mrr": 910.57,
+      "total_revenue": 14017.45,
+      "growth_30d": -35.08099922373093,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/my-ex",
+      "website": "https://getmyexback.io",
+      "scraped_at": "2026-10-29T15:24:44.124262+00:00",
+      "extra": {
+        "slug": "my-ex",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 4.398023411793033,
+        "onSale": true,
+        "description": "MyEx is an iPhone app for breakup recovery and relationship guidance. It combines AI coaching, personalized relationship analysis, a guided 30-day plan, and no-contact tracking. Available in English a"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Aarivi",
+      "monthly_revenue": 2011.2681795320038,
+      "mrr": 1575,
+      "total_revenue": 2045.7273576179348,
+      "growth_30d": 5989.004702946901,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/aarivi",
+      "website": "https://aarivi.com",
+      "scraped_at": "2026-10-29T15:24:44.124269+00:00",
+      "extra": {
+        "slug": "aarivi",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 78649.8596006391,
+        "onSale": true,
+        "description": "Aarivi finds jobs, cold emails your profile to founders, tracks every application, and builds your resume and portfolio."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "LipsyncX",
+      "monthly_revenue": 859.9476193472374,
+      "mrr": 130.12,
+      "total_revenue": 8413.195120436369,
+      "growth_30d": 602.5715844340176,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/ai-lip-sync",
+      "website": "https://lipsyncx.com",
+      "scraped_at": "2026-10-29T15:24:44.124273+00:00",
+      "extra": {
+        "slug": "ai-lip-sync",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -28.323540213000374,
+        "onSale": true,
+        "description": "Create Lip Sync AI videos from photos or existing videos. Add text or audio for talking photos, singing clips, video dubbing, and multilingual avatars."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Get Funneled",
+      "monthly_revenue": 20145.819024907505,
+      "mrr": 18766.83,
+      "total_revenue": 108029.42526226326,
+      "growth_30d": 30.88037576391419,
+      "category": "Marketing",
+      "url": "https://trustmrr.com/startup/getfunneled",
+      "website": "https://getfunneled.com",
+      "scraped_at": "2026-10-29T15:24:44.124281+00:00",
+      "extra": {
+        "slug": "getfunneled",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 29.518716445825667,
+        "onSale": true,
+        "description": "AI Native post click funnel experience for D2C brands Productized service offering that AI does 97% of the work for"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Anonymous startup",
+      "monthly_revenue": 53544.58938054217,
+      "mrr": 70133.27,
+      "total_revenue": 464385.4641567084,
+      "growth_30d": 80.25643550243038,
+      "category": null,
+      "url": "https://trustmrr.com/startup/unnamed-company-62",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:44.124285+00:00",
+      "extra": {
+        "slug": "unnamed-company-62",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -19.297188745545967,
+        "onSale": true,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Agent Media",
+      "monthly_revenue": 2844.49,
+      "mrr": 2184.66,
+      "total_revenue": 3040.61,
+      "growth_30d": 1428.227582872182,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/veloris-llc",
+      "website": "https://agent-media.ai",
+      "scraped_at": "2026-10-29T15:24:44.124289+00:00",
+      "extra": {
+        "slug": "veloris-llc",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 1411.4570361145647,
+        "onSale": true,
+        "description": "Short drama series from Claude, ChatGPT or Codex. Same cast every episode."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Static Forms",
+      "monthly_revenue": 1004,
+      "mrr": 1009,
+      "total_revenue": 9549.87451193697,
+      "growth_30d": -2.8073572120038723,
+      "category": "Developer Tools",
+      "url": "https://trustmrr.com/startup/static-forms",
+      "website": "https://www.staticforms.dev",
+      "scraped_at": "2026-10-29T15:24:44.124293+00:00",
+      "extra": {
+        "slug": "static-forms",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 7.0557029177718835,
+        "onSale": true,
+        "description": "The form backend that replies for you. Connect an HTML form to collect submissions without server code. Manage messages in a shared inbox, filter spam, receive files, and route submissions to email, w"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Anonymous startup",
+      "monthly_revenue": 12715.394650057866,
+      "mrr": 12625.25,
+      "total_revenue": 184377.65299149227,
+      "growth_30d": 4.5210580559439775,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/confidential-startup-72",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:44.124295+00:00",
+      "extra": {
+        "slug": "confidential-startup-72",
+        "paymentProvider": "paddle",
+        "growthMRR30d": -2.124154505106886,
+        "onSale": true,
+        "description": "AI assistant for social media comments and DMs on Facebook, Instagram and TikTok. It hides spam and negative comments, replies in the brand's voice using its own knowledge base, and opens a DM when a"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Volume Booster: Louder Sound",
+      "monthly_revenue": 442.8,
+      "mrr": 296.43,
+      "total_revenue": 981.99,
+      "growth_30d": 16.03165452544417,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/volumebooster",
+      "website": "https://apps.apple.com/us/app/volume-booster-louder-sound/id6785146600?uo=4",
+      "scraped_at": "2026-10-29T15:24:44.124297+00:00",
+      "extra": {
+        "slug": "volumebooster",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 61.5862632869992,
+        "onSale": true,
+        "description": "Volume Booster helps you make quiet videos and audio files louder directly on your iPhone or iPad. | About 3,000 downloads a month from App Store search. We have never spent money on ads. | No servers"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "LinkPost",
+      "monthly_revenue": 4253.390528159771,
+      "mrr": 4798.86,
+      "total_revenue": 179031.68263653343,
+      "growth_30d": -20.791958928249223,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/linkpost",
+      "website": "https://www.linkpost.gg",
+      "scraped_at": "2026-10-29T15:24:44.124307+00:00",
+      "extra": {
+        "slug": "linkpost",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -5.966325097265022,
+        "onSale": true,
+        "description": "LinkPost is part of LinkEmpire, offered as a complete portfolio for USD 99,000: three LinkedIn SaaS products (LinkPost, LinkHub, LinkMagnet), the LinkEarn self-paced course and shared distribution ass"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Anonymous startup",
+      "monthly_revenue": 5351.53,
+      "mrr": 4150.33,
+      "total_revenue": 6093.99,
+      "growth_30d": 620.7836112383156,
+      "category": null,
+      "url": "https://trustmrr.com/startup/private-venture-86",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:44.124318+00:00",
+      "extra": {
+        "slug": "private-venture-86",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 80.78948629376173,
+        "onSale": true,
+        "description": "Available on the App Store, the app monetizes through premium access and credit purchases, with RevenueCat providing purchase analytics. Growth opportunities include user acquisition, conversion optim"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "walldecor.io",
+      "monthly_revenue": 348,
+      "mrr": 0,
+      "total_revenue": 577,
+      "growth_30d": 1100,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/walldecor-io",
+      "website": "https://walldecor.io",
+      "scraped_at": "2026-10-29T15:24:44.124321+00:00",
+      "extra": {
+        "slug": "walldecor-io",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": true,
+        "description": "walldecor.io lets anyone preview wall decor on a photo of their own room before buying. The main hook is the free Wall Art Visualizer: upload a photo, drop in any artwork, and see it framed at its rea"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Savebase",
+      "monthly_revenue": 475.15,
+      "mrr": 62.33,
+      "total_revenue": 559.15,
+      "growth_30d": 5839.375,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/savebase",
+      "website": "https://savebase.space",
+      "scraped_at": "2026-10-29T15:24:44.124324+00:00",
+      "extra": {
+        "slug": "savebase",
+        "paymentProvider": "polar",
+        "growthMRR30d": 334.8837209302326,
+        "onSale": true,
+        "description": "Savebase brings saves from 11 social platforms and the web into one searchable library. Users organize with folders, tags, notes and reminders, transcribe eligible videos, and connect saved knowledge"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Anonymous startup",
+      "monthly_revenue": 29320.239999999998,
+      "mrr": 0,
+      "total_revenue": 67899.75,
+      "growth_30d": 209.54926421408234,
+      "category": null,
+      "url": "https://trustmrr.com/startup/stealth-company-87",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:44.124326+00:00",
+      "extra": {
+        "slug": "stealth-company-87",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 0,
+        "onSale": true,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Glance Switch",
+      "monthly_revenue": 1544.7597510807702,
+      "mrr": 0,
+      "total_revenue": 1638.8139694809786,
+      "growth_30d": 1542.4141068374977,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/glance-switch",
+      "website": "https://glanceswitch.com",
+      "scraped_at": "2026-10-29T15:24:44.124338+00:00",
+      "extra": {
+        "slug": "glance-switch",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 0,
+        "onSale": true,
+        "description": "Look at a screen and start typing, scrolling or using shortcuts. Glance Switch uses your webcam to switch to the screen, window or split pane you're facing, with no click first. Native apps for macOS"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "PDF Vault",
+      "monthly_revenue": 9524.27,
+      "mrr": 2223,
+      "total_revenue": 65226.89,
+      "growth_30d": 10.103221734249974,
+      "category": "Marketplace",
+      "url": "https://trustmrr.com/startup/pdf-vault",
+      "website": "https://pdfvault.so",
+      "scraped_at": "2026-10-29T15:24:44.124342+00:00",
+      "extra": {
+        "slug": "pdf-vault",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -1.984126984126984,
+        "onSale": true,
+        "description": "PDF Vault is a done-for-you digital business-in-a-box. Members license ready-to-sell PDFs that come with a hosted sales page, and they keep 100% of their sales. It earns money two ways: one-time licen"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "helumi",
+      "monthly_revenue": 1614.7832640350628,
+      "mrr": 578.1,
+      "total_revenue": 1686.1688935840396,
+      "growth_30d": 2162.0564870513354,
+      "category": "Productivity",
+      "url": "https://trustmrr.com/startup/helumi",
+      "website": "https://www.helumi.app",
+      "scraped_at": "2026-10-29T15:24:44.124345+00:00",
+      "extra": {
+        "slug": "helumi",
+        "paymentProvider": "dodopayment",
+        "growthMRR30d": 0,
+        "onSale": true,
+        "description": "a drive in finder. your files live in the cloud, take almost zero space on your mac, and open instantly."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Linkerflow",
+      "monthly_revenue": 660,
+      "mrr": 964.33,
+      "total_revenue": 16479.91,
+      "growth_30d": -14.948453608247423,
+      "category": "Marketing",
+      "url": "https://trustmrr.com/startup/linkerflow",
+      "website": "https://www.linkerflow.io",
+      "scraped_at": "2026-10-29T15:24:44.124348+00:00",
+      "extra": {
+        "slug": "linkerflow",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -11.312078479460455,
+        "onSale": true,
+        "description": "Linkerflow is a CMS contextual internal linking tool. Building link between pages and maintaining link health with a weekly report. A"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Knightvision",
+      "monthly_revenue": 34665.03,
+      "mrr": 7936.99,
+      "total_revenue": 167884.53798062418,
+      "growth_30d": 6.985671568797555,
+      "category": "Artificial Intelligence",
+      "url": "https://trustmrr.com/startup/knightvision",
+      "website": "https://whop.com/knightvision",
+      "scraped_at": "2026-10-29T15:24:44.124350+00:00",
+      "extra": {
+        "slug": "knightvision",
+        "paymentProvider": "whop",
+        "growthMRR30d": 2246.3714798756228,
+        "onSale": true,
+        "description": "AI-image & video-generation platform."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Store Stock Checker",
+      "monthly_revenue": 15992.49647501801,
+      "mrr": 15900,
+      "total_revenue": 15992.49647501801,
+      "growth_30d": null,
+      "category": "Analytics",
+      "url": "https://trustmrr.com/startup/store-stock-checker",
+      "website": "https://www.storestockchecker.com",
+      "scraped_at": "2026-10-29T15:24:44.124353+00:00",
+      "extra": {
+        "slug": "store-stock-checker",
+        "paymentProvider": "stripe",
+        "growthMRR30d": null,
+        "onSale": true,
+        "description": "Realtime Apple Store stock checking."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Carry: Save ChatGPT, Claude & Grok to Markdown Automatically",
+      "monthly_revenue": 531,
+      "mrr": 0,
+      "total_revenue": 649,
+      "growth_30d": 350,
+      "category": "Utilities",
+      "url": "https://trustmrr.com/startup/carry",
+      "website": "https://carry.md",
+      "scraped_at": "2026-10-29T15:24:44.124366+00:00",
+      "extra": {
+        "slug": "carry",
+        "paymentProvider": "polar",
+        "growthMRR30d": 0,
+        "onSale": true,
+        "description": "Carry automatically saves ChatGPT, Claude & Grok chats, Claude Projects & files to your Obsidian vault as Markdown. 14-day trial."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "isMalicious",
+      "monthly_revenue": 1725.206650280943,
+      "mrr": 1896.26,
+      "total_revenue": 15669.205569952903,
+      "growth_30d": -1.1790732864609386,
+      "category": "Security",
+      "url": "https://trustmrr.com/startup/ismalicious",
+      "website": "https://www.ismalicious.com",
+      "scraped_at": "2026-10-29T15:24:44.124371+00:00",
+      "extra": {
+        "slug": "ismalicious",
+        "paymentProvider": "stripe",
+        "growthMRR30d": 1.0621954987191262,
+        "onSale": true,
+        "description": "isMalicious is a suite of tools of cyberthreats intelligence, SIEM threatl intelligence API, STIX / TAXII, OpenCTI, MCP server."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Vidoo",
+      "monthly_revenue": 4785.21,
+      "mrr": 1019.41,
+      "total_revenue": 131591.11,
+      "growth_30d": 768.2700682247059,
+      "category": null,
+      "url": "https://trustmrr.com/startup/vidoo",
+      "website": "https://play.google.com/store/apps/details?id=com.kling.ai.app",
+      "scraped_at": "2026-10-29T15:24:44.124373+00:00",
+      "extra": {
+        "slug": "vidoo",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": -86.83051920368959,
+        "onSale": true,
+        "description": "A mobile generative AI video creation tool turning prompts and photos into realistic videos with built-in subscription and credit monetization."
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "ReplyCurrent",
+      "monthly_revenue": 225,
+      "mrr": 225,
+      "total_revenue": 2305.73,
+      "growth_30d": 0,
+      "category": "SaaS",
+      "url": "https://trustmrr.com/startup/reply-current",
+      "website": "https://www.replycurrent.com",
+      "scraped_at": "2026-10-29T15:24:44.124376+00:00",
+      "extra": {
+        "slug": "reply-current",
+        "paymentProvider": "stripe",
+        "growthMRR30d": -17.88321167883212,
+        "onSale": true,
+        "description": "ReplyCurrent is an AI customer support SaaS I built to help businesses answer customer questions automatically. You connect your website, help center, or documents, and it creates an AI chatbot that a"
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Anonymous startup",
+      "monthly_revenue": 35751.03,
+      "mrr": 34825.58,
+      "total_revenue": 2264324.79,
+      "growth_30d": -10.098501542363543,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/anonymous-startup-74",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:44.124378+00:00",
+      "extra": {
+        "slug": "anonymous-startup-74",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": -2.2044285141021107,
+        "onSale": true,
+        "description": null
+      }
+    },
+    {
+      "source": "trustmrr",
+      "board": "best_deals",
+      "name": "Anonymous startup",
+      "monthly_revenue": 497.71000000000004,
+      "mrr": 36.25,
+      "total_revenue": 689.48,
+      "growth_30d": 200,
+      "category": "Mobile Apps",
+      "url": "https://trustmrr.com/startup/hidden-business-58",
+      "website": null,
+      "scraped_at": "2026-10-29T15:24:44.124390+00:00",
+      "extra": {
+        "slug": "hidden-business-58",
+        "paymentProvider": "revenuecat",
+        "growthMRR30d": 284.00423728813564,
+        "onSale": true,
+        "description": "A consumer health app in a chronic-condition niche, live on iOS and Android and localized in 5 languages. Growth is fully organic from app store search, with no ad spend. There is no backend and no se"
+      }
+    }
+  ]
+}

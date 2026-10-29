@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demand Radar — 收入榜</title>
+  <meta name="theme-color" content="#0f1419" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="revenue">
+  <header>
+    <div class="header-top">
+      <h1>Demand Radar · 收入榜</h1>
+      <nav>
+        <a href="index.html" data-page="decisions">本周决策</a>
+        <a href="trends.html" data-page="trends">产品兴衰</a>
+        <a href="opportunities.html" data-page="opportunities">原始机会</a>
+        <a href="keywords.html" data-page="keywords">关键词</a>
+        <a href="waist.html" data-page="waist">腰部词</a>
+        <a href="revenue.html" data-page="revenue">收入榜</a>
+      </nav>
+    </div>
+    <div id="site-meta-bar" class="site-meta-bar">加载收入榜元数据…</div>
+  </header>
+  <main>
+    <p class="site-intro" id="revenue-intro">
+      公开收入/挂牌快照，供对标与灵感；<strong>不等于可投资结论或经审计财务</strong>。
+      TrustMRR 使用官方公开 discovery API（支付校验样本）；Acquire.com / Flippa 收入多为卖家自报；
+      BizPeel / GetLatka 完整报告常需订阅，此处仅为公开页可见部分。
+      立项仍以<a href="index.html">本周决策卡</a>为准。
+    </p>
+    <div class="filters">
+      <label>来源
+        <select id="f-source"><option value="">全部</option></select>
+      </label>
+      <label>榜单
+        <select id="f-board"><option value="">全部</option></select>
+      </label>
+      <label>搜索名称
+        <input type="search" id="f-q" placeholder="产品名…" autocomplete="off" />
+      </label>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>来源</th>
+          <th class="hide-sm">榜单</th>
+          <th>名称</th>
+          <th>月收</th>
+          <th>MRR</th>
+          <th class="hide-sm">30d 增长</th>
+          <th class="hide-sm">类目</th>
+          <th>链接</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </main>
+  <footer>Demand Radar · 收入榜公开快照 · 研究参考</footer>
+  <script type="module">
+    import {
+      loadJson,
+      setActiveNav,
+      renderRevenueMetaBar,
+      formatUsd,
+      formatGrowthPct,
+      revenueSourceLabel,
+      escapeHtml,
+    } from "./assets/app.js";
+
+    setActiveNav();
+    await renderRevenueMetaBar();
+
+    const snap = await loadJson("revenue_boards.json");
+    if (snap.intro) {
+      document.getElementById("revenue-intro").innerHTML = `${escapeHtml(snap.intro)} · 立项仍以<a href="index.html">本周决策卡</a>为准。`;
+    }
+
+    const rows = (snap.rows || []).slice();
+    const sourceSel = document.getElementById("f-source");
+    const boardSel = document.getElementById("f-board");
+
+    [...new Set(rows.map((r) => r.source).filter(Boolean))].sort().forEach((s) => {
+      const opt = document.createElement("option");
+      opt.value = s;
+      opt.textContent = revenueSourceLabel(s);
+      sourceSel.appendChild(opt);
+    });
+    [...new Set(rows.map((r) => r.board).filter(Boolean))].sort().forEach((b) => {
+      const opt = document.createElement("option");
+      opt.value = b;
+      opt.textContent = b;
+      boardSel.appendChild(opt);
+    });
+
+    function linkCell(r) {
+      const parts = [];
+      if (r.url) {
+        parts.push(
+          `<a href="${escapeHtml(r.url)}" target="_blank" rel="noopener">详情</a>`
+        );
+      }
+      if (r.website) {
+        parts.push(
+          `<a href="${escapeHtml(r.website)}" target="_blank" rel="noopener">官网</a>`
+        );
+      }
+      return parts.join(" · ") || "—";
+    }
+
+    function render() {
+      const src = sourceSel.value;
+      const board = boardSel.value;
+      const q = document.getElementById("f-q").value.trim().toLowerCase();
+      let filtered = rows.slice();
+      if (src) filtered = filtered.filter((r) => r.source === src);
+      if (board) filtered = filtered.filter((r) => r.board === board);
+      if (q) {
+        filtered = filtered.filter((r) =>
+          String(r.name || "")
+            .toLowerCase()
+            .includes(q)
+        );
+      }
+      filtered.sort((a, b) => (b.monthly_revenue ?? 0) - (a.monthly_revenue ?? 0));
+
+      document.getElementById("rows").innerHTML =
+        filtered
+          .map(
+            (r) => `
+        <tr>
+          <td class="meta">${escapeHtml(revenueSourceLabel(r.source))}</td>
+          <td class="meta hide-sm">${escapeHtml(r.board || "—")}</td>
+          <td>${escapeHtml(r.name || "—")}</td>
+          <td class="score">${formatUsd(r.monthly_revenue)}</td>
+          <td class="score">${formatUsd(r.mrr)}</td>
+          <td class="score hide-sm">${formatGrowthPct(r.growth_30d)}</td>
+          <td class="meta hide-sm">${escapeHtml(r.category || "—")}</td>
+          <td class="meta">${linkCell(r)}</td>
+        </tr>`
+          )
+          .join("") || "<tr><td colspan='8'>无匹配条目</td></tr>";
+    }
+
+    ["f-source", "f-board"].forEach((id) => {
+      document.getElementById(id).addEventListener("change", render);
+    });
+    document.getElementById("f-q").addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>

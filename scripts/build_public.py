@@ -35,10 +35,12 @@ STATIC_PAGES = (
     "keywords.html",
     "detail.html",
     "waist.html",
+    "revenue.html",
 )
 WEEK_DECISIONS_JSON = "week_decisions.json"
 MARKET_NARRATIVES_JSON = "market_narratives.json"
 WAIST_KEYWORDS_JSON = "waist_keywords.json"
+REVENUE_BOARDS_JSON = "revenue_boards.json"
 
 
 def _evidence_summary(rating_notes: dict | None) -> list[str]:
@@ -201,6 +203,11 @@ def sync_waist_keywords(out_dirs: list[Path] | None = None) -> list[str]:
     return _sync_json_artifact(WAIST_KEYWORDS_JSON, out_dirs)
 
 
+def sync_revenue_boards(out_dirs: list[Path] | None = None) -> list[str]:
+    """Mirror data/revenue_boards.json into each public data directory."""
+    return _sync_json_artifact(REVENUE_BOARDS_JSON, out_dirs)
+
+
 def sync_pages_root() -> dict[str, list[str]]:
     """Copy static UI to repo root for branch-based GitHub Pages (Jekyll bypass)."""
     copied: dict[str, list[str]] = {"html": [], "assets": [], "other": []}
@@ -253,12 +260,14 @@ def build_public(
     week_decisions = sync_week_decisions(dirs)
     market_narratives = sync_market_narratives(dirs)
     waist_keywords = sync_waist_keywords(dirs)
+    revenue_boards = sync_revenue_boards(dirs)
     root_sync = sync_pages_root() if sync_root else None
     return {
         "data": written,
         "week_decisions": week_decisions,
         "market_narratives": market_narratives,
         "waist_keywords": waist_keywords,
+        "revenue_boards": revenue_boards,
         "root_static": root_sync,
     }
 

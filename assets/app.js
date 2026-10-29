@@ -546,3 +546,49 @@ export async function renderWaistMetaBar() {
     el.textContent = "无法加载 waist_keywords.json";
   }
 }
+
+export function formatUsd(n) {
+  if (n == null || n === "" || Number.isNaN(Number(n))) return "—";
+  const v = Number(n);
+  const abs = Math.abs(v);
+  if (abs >= 1e9) return `$${(v / 1e9).toFixed(2)}B`;
+  if (abs >= 1e6) return `$${(v / 1e6).toFixed(2)}M`;
+  if (abs >= 1e4) return `$${(v / 1e3).toFixed(1)}K`;
+  if (abs >= 1e3) return `$${(v / 1e3).toFixed(2)}K`;
+  return `$${v.toFixed(2)}`;
+}
+
+export function formatGrowthPct(n) {
+  if (n == null || n === "" || Number.isNaN(Number(n))) return "—";
+  const v = Number(n);
+  const sign = v > 0 ? "+" : "";
+  return `${sign}${v.toFixed(1)}%`;
+}
+
+export const REVENUE_SOURCE_LABELS = {
+  trustmrr: "TrustMRR",
+  bizpeel: "BizPeel",
+  getlatka: "GetLatka",
+  acquire: "Acquire",
+  flippa: "Flippa",
+};
+
+export function revenueSourceLabel(source) {
+  const key = (source || "").toLowerCase();
+  return REVENUE_SOURCE_LABELS[key] || source || "—";
+}
+
+export async function renderRevenueMetaBar() {
+  const el = document.getElementById("site-meta-bar");
+  if (!el) return;
+  try {
+    const snap = await loadJson("revenue_boards.json");
+    let html = `快照 <strong>${escapeHtml(snap.as_of || "—")}</strong>（${escapeHtml(snap.timezone || "—")}）`;
+    html += ` · 条目 <strong>${snap.count ?? (snap.rows || []).length}</strong>`;
+    const srcs = (snap.sources || []).map(revenueSourceLabel).join("、");
+    if (srcs) html += ` · 源 ${escapeHtml(srcs)}`;
+    el.innerHTML = html;
+  } catch {
+    el.textContent = "无法加载 revenue_boards.json";
+  }
+}
