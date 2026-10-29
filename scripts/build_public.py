@@ -6,7 +6,9 @@ Weekly decision cards (周决策卡):
   2. Update ``data/week_decisions.json`` to match the schema (1 Go / 1 Watch / 1 Kill).
   3. Update ``data/market_narratives.json`` (see ``docs/market-narratives-schema.md``) for the
      产品兴衰 · 需求发散 layer.
-  4. Run ``python scripts/build_public.py`` — copies JSON to ``public/data/`` and ``data/``,
+  4. Update ``data/waist_keywords.json`` (see ``docs/waist-keywords-schema.md``) for the
+     腰部词 · 可抢位 20–30 discovery layer.
+  5. Run ``python scripts/build_public.py`` — copies JSON to ``public/data/`` and ``data/``,
      and syncs HTML/assets from ``public/`` to the repo root for branch-based Pages.
   Markdown in ``docs/`` is the human source of truth; JSON is what the static UI loads.
 """
@@ -32,9 +34,11 @@ STATIC_PAGES = (
     "decision.html",
     "keywords.html",
     "detail.html",
+    "waist.html",
 )
 WEEK_DECISIONS_JSON = "week_decisions.json"
 MARKET_NARRATIVES_JSON = "market_narratives.json"
+WAIST_KEYWORDS_JSON = "waist_keywords.json"
 
 
 def _evidence_summary(rating_notes: dict | None) -> list[str]:
@@ -192,6 +196,11 @@ def sync_market_narratives(out_dirs: list[Path] | None = None) -> list[str]:
     return _sync_json_artifact(MARKET_NARRATIVES_JSON, out_dirs)
 
 
+def sync_waist_keywords(out_dirs: list[Path] | None = None) -> list[str]:
+    """Mirror data/waist_keywords.json into each public data directory."""
+    return _sync_json_artifact(WAIST_KEYWORDS_JSON, out_dirs)
+
+
 def sync_pages_root() -> dict[str, list[str]]:
     """Copy static UI to repo root for branch-based GitHub Pages (Jekyll bypass)."""
     copied: dict[str, list[str]] = {"html": [], "assets": [], "other": []}
@@ -243,11 +252,13 @@ def build_public(
 
     week_decisions = sync_week_decisions(dirs)
     market_narratives = sync_market_narratives(dirs)
+    waist_keywords = sync_waist_keywords(dirs)
     root_sync = sync_pages_root() if sync_root else None
     return {
         "data": written,
         "week_decisions": week_decisions,
         "market_narratives": market_narratives,
+        "waist_keywords": waist_keywords,
         "root_static": root_sync,
     }
 

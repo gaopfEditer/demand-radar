@@ -1,0 +1,427 @@
+{
+  "week_id": "2026-W44",
+  "as_of": "2026-10-28",
+  "timezone": "Asia/Hong_Kong",
+  "title": "腰部词 · 可抢位 20–30",
+  "intro": "发现层：按《2026出海第一课：找词》口径筛 **1K–10K 月搜带、KD<40、信息意图** 的英文腰部词；首站目标排名约 **SERP 20–30**，不替代本周 Go/Watch/Kill。无 Semrush 实测时一律 band 描述 + 未验证，禁止编造绝对搜索量。",
+  "method_checklist": [
+    {
+      "step": "1",
+      "title": "Google Trends",
+      "rule": "词根 → 过去 7 天相关查询/主题飙升 → 切 12 个月确认非假飙升；跳过品牌/新闻/球赛。"
+    },
+    {
+      "step": "2",
+      "title": "Semrush（美国库）",
+      "rule": "月搜卡在 1K–10K（腰部），KD < 40，意图偏信息类，CPC 高优先。"
+    },
+    {
+      "step": "3",
+      "title": "SERP 缺口",
+      "rule": "前十若有注册不到一年、低 DR 新站 → 可抢；若全被 Grammarly 级大站占满 → 放弃。"
+    },
+    {
+      "step": "4",
+      "title": "Similarweb 循环",
+      "rule": "拿最新站反查 NEW/上涨词，词找站 ↔ 站找词循环补长尾。"
+    },
+    {
+      "step": "5",
+      "title": "排名目标",
+      "rule": "首站 realistic 目标 SERP 20–30，非硬冲 #1 头词。"
+    }
+  ],
+  "source_refs": [
+    {
+      "label": "yanhua1010 · 2026出海第一课：找词",
+      "url": "https://x.com/yanhua1010/status/2115296994289987695"
+    },
+    {
+      "label": "本栏字段规格",
+      "url": "https://github.com/gaopfEditer/demand-radar/blob/main/docs/waist-keywords-schema.md"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "w44-waist-browserbase-alternatives",
+      "keyword": "browserbase alternatives",
+      "support_keywords": [
+        "browserbase vs steel",
+        "browserbase pricing comparison",
+        "best browserbase alternative 2026"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "预期腰部（1K–10K/US）；绝对月搜未开 Semrush → 未验证",
+      "kd_band_note": "目标 KD<40；未实测 Semrush KD → 未验证",
+      "cpc_signal": "云浏览器/Agent 基础设施，商业调研意图，CPC 预期偏高 → 未验证",
+      "trends_check": {
+        "window_7d": "alternatives 类查询随 Browserbase 融资与竞品文增多而活跃（相对）",
+        "window_12m": "2026 年多篇 alternatives 长文上线，非单日新闻尖峰",
+        "status": "unverified",
+        "note": "US Google Trends UI 本轮未打开（429）；用公开 alternatives 文密度作弱替代"
+      },
+      "serp_gap": {
+        "low_dr_new_site": true,
+        "big_site_monopoly": false,
+        "summary": "前十多为厂商自推对比文（Deck/Kernel/Anchor 等），独立站缺可复现 Playwright 基准与按页成本算术 → 腰部长尾页可抢 20–30 位"
+      },
+      "similarweb_loop_note": "可从 webscraping.cc、deck.co 等新锐内容站反查上涨词补「pricing / vs」长尾",
+      "verdict": "pursue",
+      "why": "对齐 W44 Go：商业调研意图 + SERP 厂商文多、独立基准少",
+      "mvp_angle": "Independent comparison + pricing calculator 子页，链主枢纽",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives",
+      "evidence_urls": [
+        "https://deck.co/blog/4-browserbase-alternatives-to-consider-in-2026",
+        "https://www.kernel.sh/ai-library/browserbase-alternatives-2026",
+        "https://webscraping.cc/blog/browserbase-alternatives/"
+      ],
+      "status": "unverified"
+    },
+    {
+      "id": "w44-waist-cloud-browser-pricing",
+      "keyword": "cloud browser automation pricing",
+      "support_keywords": [
+        "browserless pricing vs browserbase",
+        "managed playwright session cost",
+        "browser hour pricing calculator"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "定价长尾，预期 1K–10K 带；Semrush 未测",
+      "kd_band_note": "信息+商业混合，目标 KD<40；未验证",
+      "cpc_signal": "直接触达付费预算决策者 → 高 CPC 优先（未验证）",
+      "trends_check": {
+        "window_7d": "随云浏览器品类融资新闻有联动（相对）",
+        "window_12m": "Playwright 份额上升（Brandwave）支撑品类长期需求",
+        "status": "verified",
+        "note": "12m 用 Brandwave share-of-search 作相对替代，非 Trends"
+      },
+      "serp_gap": {
+        "low_dr_new_site": true,
+        "big_site_monopoly": false,
+        "summary": "定价页分散在各厂商官网，缺少第三方「按页/按 GB 统一算术」页"
+      },
+      "similarweb_loop_note": "Creati 榜单上 Browserbase/Firecrawl 流量可反查「pricing」着陆长尾",
+      "verdict": "pursue",
+      "why": "与 Go 卡 monetization 备路径「成本计算器」一致，易做工具页抢腰位",
+      "mvp_angle": "Cloud Browser Cost Calculator（并发×会话×代理 GB）",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives",
+      "evidence_urls": [
+        "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools",
+        "https://browserbase.com/blog/series-b-and-beyond/"
+      ],
+      "status": "unverified"
+    },
+    {
+      "id": "w44-waist-steel-vs-browserbase",
+      "keyword": "steel.dev vs browserbase",
+      "support_keywords": [
+        "steel browser api pricing",
+        "browserbase vs steel cold start",
+        "open source browser api steel"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "品牌对比长尾，预期腰部带；未验证绝对量",
+      "kd_band_note": "对比词通常 KD 中等；目标 <40，Semrush 未测",
+      "cpc_signal": "选型意图，Affiliate 友好（未验证 CPC）",
+      "trends_check": {
+        "window_7d": "Steel 作为 Browserbase 替代在 alternatives 文中频现",
+        "window_12m": "非单周假飙升",
+        "status": "unverified",
+        "note": "无 Trends 截图"
+      },
+      "serp_gap": {
+        "low_dr_new_site": true,
+        "big_site_monopoly": false,
+        "summary": "多为厂商或联盟列表，缺独立 CDP 连接基准"
+      },
+      "similarweb_loop_note": "Steel 文档站 / GitHub  star 增长可反查「vs browserbase」",
+      "verdict": "pursue",
+      "why": "W44 支撑词簇，适合单页 deep comparison 抢 20–30",
+      "mvp_angle": "Steel vs Browserbase：Pricing & Cold Start（含 connectOverCDP 片段）",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives",
+      "evidence_urls": [
+        "https://webscraping.cc/blog/browserbase-alternatives/",
+        "https://browser-use.com/posts/best-browser-infrastructure-for-ai-agents"
+      ],
+      "status": "unverified"
+    },
+    {
+      "id": "w44-waist-hyperbrowser-pricing",
+      "keyword": "hyperbrowser pricing",
+      "support_keywords": [
+        "hyperbrowser credits explained",
+        "hyperbrowser vs browserbase",
+        "hyperbrowser stealth pricing"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "厂商定价词，预期 1K–10K；未验证",
+      "kd_band_note": "品牌+定价，KD 可能略高；需 Semrush 确认 → 未验证",
+      "cpc_signal": "商业意图明确（未验证）",
+      "trends_check": {
+        "window_7d": "出现在云浏览器对比文内",
+        "window_12m": "品类上升期",
+        "status": "unverified",
+        "note": "仅内容密度观察"
+      },
+      "serp_gap": {
+        "low_dr_new_site": true,
+        "big_site_monopoly": false,
+        "summary": "官方定价页 + 零散博客，缺 credits/stealth 拆解"
+      },
+      "similarweb_loop_note": "Hyperbrowser 若 Similarweb NEW 上榜，可循环补 concurrent 相关词",
+      "verdict": "watch",
+      "why": "可做支撑页，但品牌词占比高，先验证 KD 再升 pursue",
+      "mvp_angle": "Hyperbrowser Pricing Explained（Credits, Stealth, Concurrent）",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives",
+      "evidence_urls": [
+        "https://deck.co/blog/4-browserbase-alternatives-to-consider-in-2026"
+      ],
+      "status": "unverified"
+    },
+    {
+      "id": "w44-waist-playwright-cloud-browser",
+      "keyword": "playwright cloud browser",
+      "support_keywords": [
+        "playwright connectOverCDP cloud",
+        "run playwright in the cloud",
+        "playwright remote browser session"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "Playwright 份额上升（Brandwave verified）；绝对搜量 band 未验证",
+      "kd_band_note": "教程+工具混合，目标 KD<40；未验证",
+      "cpc_signal": "开发者基础设施（未验证）",
+      "trends_check": {
+        "window_7d": "与 Agent/MCP 教程联动",
+        "window_12m": "Playwright share 13% → 16.4%（Brandwave）",
+        "status": "verified",
+        "note": "12m 相对份额 verified；主词 Trends 未开"
+      },
+      "serp_gap": {
+        "low_dr_new_site": true,
+        "big_site_monopoly": false,
+        "summary": "官方 Playwright 文档强，但「接云浏览器 CDP」实操聚合少"
+      },
+      "similarweb_loop_note": "Playwright 生态新站（教程站）可反查 rising 修饰词",
+      "verdict": "pursue",
+      "why": "匹配用户 Playwright 栈，教程页易拿 20–30 再内链到对比枢纽",
+      "mvp_angle": "Playwright on Browserbase / Steel / Kernel (CDP Connect Guide)",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives",
+      "evidence_urls": [
+        "https://gobrandwave.com/demand/global-en/categories/browser-automation-tools"
+      ],
+      "status": "unverified"
+    },
+    {
+      "id": "w44-waist-browserless-vs-browserbase",
+      "keyword": "browserless vs browserbase",
+      "support_keywords": [
+        "browserless io pricing",
+        "browserless playwright",
+        "self hosted browserless vs cloud"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "legacy vs 新云浏览器对比，预期腰部；未验证",
+      "kd_band_note": "未验证",
+      "cpc_signal": "迁移/选型（未验证）",
+      "trends_check": {
+        "window_7d": "alternatives 文常并列 Browserless",
+        "window_12m": "Browserless 仍常见但 Browser Use/Browserbase 叙事更热",
+        "status": "unverified",
+        "note": "无 Trends"
+      },
+      "serp_gap": {
+        "low_dr_new_site": true,
+        "big_site_monopoly": false,
+        "summary": "缺「已有 Playwright 脚本迁移」逐步对照"
+      },
+      "similarweb_loop_note": "Browserless 老站流量结构可反查 still-ranking 长尾",
+      "verdict": "pursue",
+      "why": "W44 支撑词，迁移意图清晰",
+      "mvp_angle": "Browserless vs Browserbase for Existing Playwright Scripts",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives",
+      "evidence_urls": [
+        "https://webscraping.cc/blog/browserbase-alternatives/"
+      ],
+      "status": "unverified"
+    },
+    {
+      "id": "w44-waist-browserbase-proxy-bandwidth",
+      "keyword": "browserbase proxy bandwidth cost",
+      "support_keywords": [
+        "browserbase proxy pricing per gb",
+        "browserbase bandwidth calculator",
+        "cloud browser proxy cost per page"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "极长尾商业 pain，预期 1K 级；未验证",
+      "kd_band_note": "长尾 KD 预期低；未验证",
+      "cpc_signal": "直接对应账单痛点（未验证）",
+      "trends_check": {
+        "window_7d": "融资/降价博文后讨论代理费",
+        "window_12m": "非新闻单峰",
+        "status": "unverified",
+        "note": "来自 W44 卡 pain 点叙事"
+      },
+      "serp_gap": {
+        "low_dr_new_site": true,
+        "big_site_monopoly": false,
+        "summary": "几乎无第三方「按页算术」专页"
+      },
+      "similarweb_loop_note": "Reddit/IH 讨论可人工补词，Similarweb 未用",
+      "verdict": "pursue",
+      "why": "超具体 pain，适合计算器子页抢腰位",
+      "mvp_angle": "Browserbase Proxy Bandwidth Cost per Page (Math)",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives",
+      "evidence_urls": [
+        "https://browserbase.com/blog/series-b-and-beyond/"
+      ],
+      "status": "unverified"
+    },
+    {
+      "id": "w44-waist-firecrawl-vs-scraping-api",
+      "keyword": "firecrawl vs browser automation",
+      "support_keywords": [
+        "when to use firecrawl instead of playwright",
+        "scraping api vs cloud browser",
+        "firecrawl vs browserbase for agents"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "品类交叉对比，预期腰部；未验证",
+      "kd_band_note": "未验证",
+      "cpc_signal": "Agent 买家选型（未验证）",
+      "trends_check": {
+        "window_7d": "Firecrawl 增长叙事在 PH/融资文出现",
+        "window_12m": "Firecrawl GitHub/融资 verified 上升",
+        "status": "verified",
+        "note": "产品增长来自 W44 卡 verified 来源"
+      },
+      "serp_gap": {
+        "low_dr_new_site": true,
+        "big_site_monopoly": false,
+        "summary": "「何时不必上云浏览器」决策文少"
+      },
+      "similarweb_loop_note": "Firecrawl 博客/榜单站反查 vs 类词",
+      "verdict": "watch",
+      "why": "与 Go 卡「周边内容」一致，但竞争文档站变多",
+      "mvp_angle": "When You Don't Need a Cloud Browser (Firecrawl / Scraping API Instead)",
+      "linked_card_id": "2026-W44-go-browserbase-alternatives",
+      "evidence_urls": [
+        "https://www.firecrawl.dev/blog/firecrawl-v2-series-a-announcement",
+        "https://www.producthunt.com/categories/browser-automation"
+      ],
+      "status": "unverified"
+    },
+    {
+      "id": "w44-waist-coderabbit-vs-greptile",
+      "keyword": "coderabbit vs greptile",
+      "support_keywords": [
+        "greptile alternatives",
+        "coderabbit pricing breakdown",
+        "ai pull request review comparison"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "AI code review 对比，预期腰部；Semrush 未测",
+      "kd_band_note": "品类竞争激烈，KD 可能 >40 → watch 直至实测",
+      "cpc_signal": "B2B seat 订阅（未验证）",
+      "trends_check": {
+        "window_7d": "融资新闻后对比文增多",
+        "window_12m": "CodeRabbit 融资 verified，非假飙升",
+        "status": "verified",
+        "note": "Business Wire 融资 verified"
+      },
+      "serp_gap": {
+        "low_dr_new_site": true,
+        "big_site_monopoly": false,
+        "summary": "厂商互踩文多，盲测协议少；可抢 20–30 但非 Go"
+      },
+      "similarweb_loop_note": "Greptile content library 反查 rising 对比词",
+      "verdict": "watch",
+      "why": "对齐 W44 Watch 卡：可做腰位页，但不升 Go",
+      "mvp_angle": "CodeRabbit vs Greptile: Precision vs Repo-Wide Context",
+      "linked_card_id": "2026-W44-watch-ai-code-review",
+      "evidence_urls": [
+        "https://www.greptile.com/content-library/best-ai-code-review-tools",
+        "https://www.businesswire.com/news/home/20260812311754/en/CodeRabbit-Raises-%24143-Million-at-%241.5-Billion-Valuation-and-Introduces-Agentic-Change-Management"
+      ],
+      "status": "unverified"
+    },
+    {
+      "id": "w44-waist-best-ai-code-review-tools",
+      "keyword": "best ai code review tools",
+      "support_keywords": [
+        "qodo vs coderabbit",
+        "ai code review for github",
+        "pull request bot comparison"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "Watch 卡主词；绝对量未验证",
+      "kd_band_note": "头部分散但列表站多，KD 可能偏高 → 未验证",
+      "cpc_signal": "高（B2B）未验证",
+      "trends_check": {
+        "window_7d": "融资/产品更新驱动",
+        "window_12m": "品类资金密集",
+        "status": "unverified",
+        "note": "无 Trends"
+      },
+      "serp_gap": {
+        "low_dr_new_site": false,
+        "big_site_monopoly": true,
+        "summary": "Martian/Greptile/厂商榜占前排，新站难进前十；腰位 20–30 仍可能但 ROI 低于云浏览器簇"
+      },
+      "similarweb_loop_note": "repowise/levelop 等对比站可反查长尾",
+      "verdict": "watch",
+      "why": "W44 Watch 主词：可做，但 SERP 军备竞赛强",
+      "mvp_angle": "Best AI Code Review Tools (2026): Who They're For（轻量博客）",
+      "linked_card_id": "2026-W44-watch-ai-code-review",
+      "evidence_urls": [
+        "https://repowise.dev/blog/comparisons/best-ai-code-review-tools",
+        "https://levelop.dev/blog/best-ai-code-review-tools-2026-coderabbit-greptile-qodo-compared"
+      ],
+      "status": "unverified"
+    },
+    {
+      "id": "w44-waist-cursor-ai-skip-demo",
+      "keyword": "cursor ai",
+      "support_keywords": [
+        "cursor ai free",
+        "cursor ai pricing",
+        "cursor vs claude code"
+      ],
+      "band": "waist_1k_10k",
+      "target_rank_band": "20-30",
+      "volume_band_note": "品牌导航向；即使量在腰部带也不做 Go",
+      "kd_band_note": "品牌词 KD 通常高；未验证",
+      "cpc_signal": "品牌/下载意图为主",
+      "trends_check": {
+        "window_7d": "demand-radar 标注 is_rising",
+        "window_12m": "品牌长期高位",
+        "status": "verified",
+        "note": "keywords.json rising 标签 verified"
+      },
+      "serp_gap": {
+        "low_dr_new_site": false,
+        "big_site_monopoly": true,
+        "summary": "官网、媒体、巨头占满；独立站不应 pursue"
+      },
+      "similarweb_loop_note": "仅作 Kill 示范，不循环扩词",
+      "verdict": "skip",
+      "why": "W44 Kill：rising ≠ 可做腰部站",
+      "mvp_angle": "（不做）仅文档示范脏品牌词",
+      "linked_card_id": "2026-W44-kill-cursor-ai",
+      "evidence_urls": [
+        "https://gaopfEditer.github.io/demand-radar/data/keywords.json"
+      ],
+      "status": "verified"
+    }
+  ]
+}

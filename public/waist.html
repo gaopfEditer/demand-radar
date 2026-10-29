@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demand Radar — 腰部词</title>
+  <meta name="theme-color" content="#0f1419" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="assets/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="waist">
+  <header>
+    <div class="header-top">
+      <h1>Demand Radar · 腰部词</h1>
+      <nav>
+        <a href="index.html" data-page="decisions">本周决策</a>
+        <a href="trends.html" data-page="trends">产品兴衰</a>
+        <a href="opportunities.html" data-page="opportunities">原始机会</a>
+        <a href="keywords.html" data-page="keywords">关键词</a>
+        <a href="waist.html" data-page="waist">腰部词</a>
+      </nav>
+    </div>
+    <div id="site-meta-bar" class="site-meta-bar">加载腰部词元数据…</div>
+  </header>
+  <main>
+    <p class="demo-notice">
+      <strong>未验证边界：</strong>无 Semrush 实测时，候选均为 band 描述 + <code>status: unverified</code>；不编造绝对月搜/KD。拍板仍以<a href="index.html">本周决策三卡</a>为准。
+    </p>
+    <div id="waist-root">
+      <p class="meta">加载 waist_keywords.json…</p>
+    </div>
+  </main>
+  <footer>Demand Radar · 腰部发现层 · 目标 SERP 20–30</footer>
+  <script type="module">
+    import {
+      loadJson,
+      setActiveNav,
+      renderWaistMetaBar,
+      renderWaistKeywords,
+    } from "./assets/app.js";
+
+    setActiveNav();
+    await renderWaistMetaBar();
+
+    try {
+      const waist = await loadJson("waist_keywords.json");
+      document.getElementById("waist-root").innerHTML = renderWaistKeywords(waist, {
+        view: "table",
+      });
+    } catch (e) {
+      document.getElementById("waist-root").innerHTML =
+        `<p class="meta">无法加载 waist_keywords.json：${e.message}</p>`;
+    }
+  </script>
+</body>
+</html>

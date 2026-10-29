@@ -321,6 +321,41 @@ tbody tr:hover { background: rgba(91, 159, 212, 0.06); }
 .narrative-refs { margin: 0.35rem 0 0; font-size: 0.82rem; }
 .narratives-more { margin: 0.85rem 0 0; font-size: 0.9rem; }
 
+.waist-keywords { margin-top: 0.5rem; }
+.waist-keywords h2 { margin: 0 0 0.5rem; font-size: 1.15rem; }
+.waist-method { margin-bottom: 1.25rem; border-left: 3px solid var(--accent); }
+.waist-checklist {
+  margin: 0 0 0.75rem;
+  padding-left: 1.25rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+}
+.waist-checklist li { margin-bottom: 0.45rem; }
+.waist-source-refs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.88rem;
+}
+.waist-table-wrap { overflow-x: auto; }
+.waist-table { font-size: 0.82rem; }
+.waist-kw { font-family: ui-monospace, "Cascadia Code", monospace; color: var(--accent); }
+.waist-support { margin-top: 0.35rem; }
+.waist-refs { word-break: break-all; }
+.waist-verdict.waist-pursue { background: rgba(61, 214, 140, 0.22); color: var(--green); }
+.waist-verdict.waist-watch { background: rgba(240, 180, 41, 0.22); color: var(--amber); }
+.waist-verdict.waist-skip { background: rgba(240, 113, 120, 0.22); color: var(--red); }
+.waist-card.verdict-pursue { border-left: 4px solid var(--green); }
+.waist-card.verdict-watch { border-left: 4px solid var(--amber); }
+.waist-card.verdict-skip { border-left: 4px solid var(--red); }
+.waist-card-head h2 {
+  margin: 0.35rem 0 0;
+  font-size: 1.05rem;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+}
+.waist-cards { display: flex; flex-direction: column; gap: 1rem; }
+.waist-inline-link { font-size: 0.88rem; margin-left: 0.35rem; }
+
 @media (max-width: 640px) {
   .hide-sm { display: none; }
 }
