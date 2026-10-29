@@ -363,3 +363,183 @@ export function renderMarketNarratives(narratives, { compact = false, maxPerSect
       ${moreLink}
     </section>`;
 }
+
+const WAIST_VERDICT_ORDER = { pursue: 0, watch: 1, skip: 2 };
+
+export function waistVerdictBadge(verdict) {
+  const key = (verdict || "").toLowerCase();
+  const cls =
+    key === "pursue"
+      ? "waist-pursue"
+      : key === "watch"
+        ? "waist-watch"
+        : key === "skip"
+          ? "waist-skip"
+          : "";
+  const label =
+    { pursue: "Pursue", watch: "Watch", skip: "Skip" }[key] || escapeHtml(verdict);
+  return `<span class="badge verdict-badge waist-verdict ${cls}">${label}</span>`;
+}
+
+function renderMethodChecklist(items) {
+  if (!items?.length) return "";
+  const lis = items
+    .map(
+      (m) =>
+        `<li><strong>${escapeHtml(m.step)}. ${escapeHtml(m.title)}</strong> — ${escapeHtml(m.rule)}</li>`
+    )
+    .join("");
+  return `<ol class="waist-checklist">${lis}</ol>`;
+}
+
+function renderSourceRefs(refs) {
+  if (!refs?.length) return "";
+  const links = refs
+    .map(
+      (r) =>
+        `<li><a href="${escapeHtml(r.url)}" target="_blank" rel="noopener">${escapeHtml(r.label)}</a></li>`
+    )
+    .join("");
+  return `<ul class="waist-source-refs">${links}</ul>`;
+}
+
+function renderWaistCandidateRow(c) {
+  const support = (c.support_keywords || [])
+    .map((k) => `<span class="kw-tag">${escapeHtml(k)}</span>`)
+    .join("");
+  const urls = (c.evidence_urls || [])
+    .map(
+      (u, i) =>
+        `<a href="${escapeHtml(u)}" target="_blank" rel="noopener">证据${c.evidence_urls.length > 1 ? i + 1 : ""}</a>`
+    )
+    .join(" ");
+  const cardLink = c.linked_card_id
+    ? `<a href="decision.html?id=${encodeURIComponent(c.linked_card_id)}">周卡</a>`
+    : "—";
+  const serp = c.serp_gap || {};
+  const serpFlags = [
+    serp.low_dr_new_site === true ? "低DR新站" : "",
+    serp.big_site_monopoly === true ? "大站垄断" : "",
+  ]
+    .filter(Boolean)
+    .join(" · ") || "—";
+  return `
+    <tr class="waist-row verdict-row-${escapeHtml((c.verdict || "").toLowerCase())}">
+      <td>
+        <strong class="waist-kw">${escapeHtml(c.keyword)}</strong>
+        ${support ? `<div class="kw-tags waist-support">${support}</div>` : ""}
+      </td>
+      <td>${escapeHtml(c.target_rank_band || "—")}</td>
+      <td><code>${escapeHtml(c.band || "—")}</code></td>
+      <td class="hide-sm">${escapeHtml(c.volume_band_note || "—")}</td>
+      <td class="hide-sm">${escapeHtml(c.kd_band_note || "—")}</td>
+      <td>${escapeHtml(serpFlags)}<br /><span class="meta">${escapeHtml(serp.summary || "")}</span></td>
+      <td>${waistVerdictBadge(c.verdict)} ${evidenceStatusTag(c.status)}</td>
+      <td class="hide-sm">${escapeHtml(c.mvp_angle || "—")}</td>
+      <td>${cardLink}<br /><span class="meta waist-refs">${urls}</span></td>
+    </tr>`;
+}
+
+function renderWaistCandidateCard(c) {
+  const support = (c.support_keywords || [])
+    .map((k) => `<span class="kw-tag">${escapeHtml(k)}</span>`)
+    .join("");
+  const urls = (c.evidence_urls || [])
+    .map(
+      (u) =>
+        `<li><a href="${escapeHtml(u)}" target="_blank" rel="noopener">${escapeHtml(u)}</a></li>`
+    )
+    .join("");
+  const tc = c.trends_check || {};
+  const serp = c.serp_gap || {};
+  const cardLink = c.linked_card_id
+    ? `<a href="decision.html?id=${encodeURIComponent(c.linked_card_id)}">关联周决策卡 →</a>`
+    : "";
+  return `
+    <article class="card waist-card verdict-${escapeHtml((c.verdict || "").toLowerCase())}" id="${escapeHtml(c.id)}">
+      <div class="waist-card-head">
+        ${waistVerdictBadge(c.verdict)}
+        ${evidenceStatusTag(c.status)}
+        <h2>${escapeHtml(c.keyword)}</h2>
+        <p class="meta">目标位 <strong>${escapeHtml(c.target_rank_band)}</strong> · ${escapeHtml(c.band)}</p>
+      </div>
+      ${support ? `<div class="kw-tags">${support}</div>` : ""}
+      <p>${escapeHtml(c.why)}</p>
+      <p class="meta"><strong>MVP：</strong>${escapeHtml(c.mvp_angle)}</p>
+      <div class="decision-section">
+        <h3>Trends（7d / 12m）</h3>
+        <p class="meta">${escapeHtml(tc.window_7d || "—")} / ${escapeHtml(tc.window_12m || "—")} ${evidenceStatusTag(tc.status)}</p>
+        ${tc.note ? `<p class="meta">${escapeHtml(tc.note)}</p>` : ""}
+      </div>
+      <div class="decision-section">
+        <h3>SERP 缺口</h3>
+        <p>${escapeHtml(serp.summary || "—")}</p>
+      </div>
+      ${c.similarweb_loop_note ? `<p class="meta"><strong>Similarweb 循环：</strong>${escapeHtml(c.similarweb_loop_note)}</p>` : ""}
+      ${urls ? `<ul class="serp-refs">${urls}</ul>` : ""}
+      ${cardLink ? `<p class="card-link">${cardLink}</p>` : ""}
+    </article>`;
+}
+
+/**
+ * @param {object} waist - waist_keywords.json
+ * @param {{ view?: 'table' | 'cards' }} opts
+ */
+export function renderWaistKeywords(waist, { view = "table" } = {}) {
+  if (!waist) return "";
+  const sorted = [...(waist.candidates || [])].sort(
+    (a, b) =>
+      (WAIST_VERDICT_ORDER[a.verdict] ?? 9) - (WAIST_VERDICT_ORDER[b.verdict] ?? 9)
+  );
+
+  const checklist = renderMethodChecklist(waist.method_checklist);
+  const sources = renderSourceRefs(waist.source_refs);
+
+  const body =
+    view === "cards"
+      ? `<div class="waist-cards">${sorted.map(renderWaistCandidateCard).join("")}</div>`
+      : `<div class="waist-table-wrap">
+          <table class="waist-table">
+            <thead>
+              <tr>
+                <th>关键词</th>
+                <th>目标位</th>
+                <th>Band</th>
+                <th class="hide-sm">量级</th>
+                <th class="hide-sm">KD</th>
+                <th>SERP</th>
+                <th>结论</th>
+                <th class="hide-sm">MVP 角度</th>
+                <th>链接</th>
+              </tr>
+            </thead>
+            <tbody>${sorted.map(renderWaistCandidateRow).join("")}</tbody>
+          </table>
+        </div>`;
+
+  return `
+    <section class="waist-keywords">
+      <h2>${escapeHtml(waist.title || "腰部词")}</h2>
+      ${waist.intro ? `<p class="site-intro">${escapeHtml(waist.intro)}</p>` : ""}
+      <div class="narrative-panel waist-method">
+        <h3>方法 checklist</h3>
+        ${checklist}
+        ${sources ? `<h3>来源</h3>${sources}` : ""}
+      </div>
+      ${body}
+    </section>`;
+}
+
+export async function renderWaistMetaBar() {
+  const el = document.getElementById("site-meta-bar");
+  if (!el) return;
+  try {
+    const waist = await loadJson("waist_keywords.json");
+    let html = `批次 <strong>${escapeHtml(waist.week_id)}</strong> · 截止 <strong>${escapeHtml(waist.as_of)}</strong>（${escapeHtml(waist.timezone)}）`;
+    html += ` · 候选 <strong>${(waist.candidates || []).length}</strong>`;
+    html += ` · 目标位 <strong>20–30</strong>`;
+    el.innerHTML = html;
+  } catch {
+    el.textContent = "无法加载 waist_keywords.json";
+  }
+}
