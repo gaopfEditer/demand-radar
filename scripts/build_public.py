@@ -7,7 +7,7 @@ Weekly decision cards (周决策卡):
   3. Update ``data/market_narratives.json`` (see ``docs/market-narratives-schema.md``) for the
      产品兴衰 · 需求发散 layer.
   4. Update ``data/waist_keywords.json`` (see ``docs/waist-keywords-schema.md``) for the
-     腰部词 · 可抢位 20–30 discovery layer.
+     腰部词 · 可抢位 10–20 discovery layer.
   5. Run ``python scripts/build_public.py`` — copies JSON to ``public/data/`` and ``data/``,
      and syncs HTML/assets from ``public/`` to the repo root for branch-based Pages.
   Markdown in ``docs/`` is the human source of truth; JSON is what the static UI loads.

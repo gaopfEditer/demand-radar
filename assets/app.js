@@ -537,7 +537,10 @@ export async function renderWaistMetaBar() {
     const waist = await loadJson("waist_keywords.json");
     let html = `批次 <strong>${escapeHtml(waist.week_id)}</strong> · 截止 <strong>${escapeHtml(waist.as_of)}</strong>（${escapeHtml(waist.timezone)}）`;
     html += ` · 候选 <strong>${(waist.candidates || []).length}</strong>`;
-    html += ` · 目标位 <strong>20–30</strong>`;
+    const rankRaw =
+      (waist.candidates || []).map((c) => c.target_rank_band).find(Boolean) || "10-20";
+    const rankDisplay = String(rankRaw).replace("-", "–");
+    html += ` · 目标位 <strong>${escapeHtml(rankDisplay)}</strong>`;
     el.innerHTML = html;
   } catch {
     el.textContent = "无法加载 waist_keywords.json";

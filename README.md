@@ -124,6 +124,12 @@ streamlit run dashboard/app.py
 3. 同步更新 `data/market_narratives.json`（上升/衰退/替代叙事/相对需求信号，见 `docs/market-narratives-schema.md`）。
 4. 运行 `python scripts/build_public.py`（同步 JSON 到 `public/data/`，并把 `public/` 下 HTML/静态资源复制到仓库根目录）。
 
+**腰部词发现层（SERP 目标位 10–20，不替代周卡）：**
+
+- 字段规格：`docs/waist-keywords-schema.md` · 数据 `data/waist_keywords.json` · 页面 `waist.html`
+- 可脚本化流水线（Composer → Trends → Semrush US → Similarweb → 需求串 → 产品包）：[`docs/keyword-discovery-pipeline.md`](docs/keyword-discovery-pipeline.md)
+- Mock 试跑：`python -m pipeline.run_waist_discovery --mock`（阶段 0 写出 `exports/waist_expanded.json`）
+
 根目录与 `public/` 双份 HTML/数据供 branch Pages 与 Actions 部署；`.nojekyll` 避免 Jekyll 覆盖静态站。
 
 - **预期地址**：<https://gaopfEditer.github.io/demand-radar/>
@@ -171,7 +177,7 @@ S=\sum_i w_i \frac{r_i}{5}\times 100
 ├── schemas/
 ├── storage/
 ├── dashboard/app.py
-├── docs/                # 周决策卡 Markdown + schema
+├── docs/                # 周决策卡 / 腰部词 / 发现流水线 schema
 ├── public/              # GitHub Pages 静态 UI（Actions 部署源）
 ├── scripts/build_public.py
 ├── exports/
