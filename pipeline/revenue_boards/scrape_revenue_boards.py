@@ -168,6 +168,7 @@ def scrape_trustmrr() -> list[dict[str, Any]]:
     ):
         ingest(snap.get(key) or [], board)
 
+    enrich_trustmrr_rows(out)
     print(f"[trustmrr] rows={len(out)} (public discovery + marketplace snapshot)")
     return out
 
@@ -177,6 +178,150 @@ def enrich_trustmrr_markdown(slug: str) -> str:
     r = SESSION.get(f"https://trustmrr.com/startup/{slug}.md", timeout=30)
     r.raise_for_status()
     return r.text
+
+
+def _trustmrr_markdown_section(md: str, heading: str) -> str:
+    """Return body text under ``## {heading}`` until the next ``## `` heading."""
+    pat = rf"^##\s+{re.escape(heading)}\s*$"
+    m = re.search(pat, md, flags=re.MULTILINE | re.IGNORECASE)
+    if not m:
+        return ""
+    rest = md[m.end() :]
+    nxt = re.search(r"^##\s+", rest, flags=re.MULTILINE)
+    return rest[: nxt.start()] if nxt else rest
+
+
+def _trustmrr_profile_field(section: str, field: str) -> str | None:
+    for line in section.splitlines():
+        m = re.match(rf"^-\s+{re.escape(field)}:\s*(.+)$", line.strip())
+        if m:
+            return m.group(1).strip()
+    return None
+
+
+def _trustmrr_strip_md_link(text: str) -> str:
+    return re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", text).strip()
+
+
+def _trustmrr_section_bullets(section: str) -> list[str]:
+    out: list[str] = []
+    for line in section.splitlines():
+        m = re.match(r"^-\s+(.+)$", line.strip())
+        if not m:
+            continue
+        item = _trustmrr_strip_md_link(m.group(1).strip())
+        if item:
+            out.append(item)
+    return out
+
+
+def parse_trustmrr_markdown(md: str) -> dict[str, Any]:
+    """Parse public TrustMRR ``.md`` into ``long_description`` / ``features`` extras."""
+    result: dict[str, Any] = {}
+    profile = _trustmrr_markdown_section(md, "Profile")
+    md_desc = _trustmrr_profile_field(profile, "Description") if profile else None
+    if md_desc:
+        md_desc = _trustmrr_strip_md_link(md_desc)
+
+    insights = _trustmrr_markdown_section(md, "Startup Insights")
+    insight_parts: list[str] = []
+    feature_candidates: list[str] = []
+    skip_prefixes = (
+        "estimated user count",
+        "audience type",
+        "markets",
+        "x followers",
+    )
+    for bullet in _trustmrr_section_bullets(insights):
+        low = bullet.lower()
+        if any(low.startswith(p) for p in skip_prefixes):
+            continue
+        if low.startswith(("value proposition:", "problem solved:", "pricing model:")):
+            insight_parts.append(bullet)
+        else:
+            feature_candidates.append(bullet)
+
+    long_bits: list[str] = []
+    if md_desc:
+        long_bits.append(md_desc)
+    long_bits.extend(insight_parts)
+    if long_bits:
+        result["long_description"] = " ".join(long_bits).strip()
+
+    features: list[str] = []
+    for heading in ("Features", "Key features", "Key Features", "Product features"):
+        sec = _trustmrr_markdown_section(md, heading)
+        if sec:
+            features.extend(_trustmrr_section_bullets(sec))
+    if not features and feature_candidates:
+        features = feature_candidates
+    if features:
+        result["features"] = features[:24]
+    return result
+
+
+def fetch_website_meta_description(url: str) -> str | None:
+    """Best-effort ``meta description`` / ``og:description`` from startup website."""
+    try:
+        r = SESSION.get(url, timeout=20, allow_redirects=True)
+    except requests.RequestException as e:
+        print(f"[trustmrr] website meta fetch failed {url}: {e}", file=sys.stderr)
+        return None
+    if r.status_code >= 400:
+        return None
+    head = (r.text or "")[:8000].lower()
+    if "cf-browser-verification" in head or (
+        "just a moment" in head and "cloudflare" in head
+    ):
+        return None
+    soup = BeautifulSoup(r.text, "lxml")
+    for attrs in (
+        {"property": "og:description"},
+        {"name": "description"},
+        {"name": "twitter:description"},
+    ):
+        tag = soup.find("meta", attrs=attrs)
+        if tag and tag.get("content"):
+            t = str(tag["content"]).strip()
+            if t:
+                return t[:2000]
+    return None
+
+
+def enrich_trustmrr_rows(rows: list[dict[str, Any]]) -> None:
+    """Attach ``.md`` and optional website meta fields to TrustMRR row extras."""
+    md_cache: dict[str, dict[str, Any]] = {}
+    meta_cache: dict[str, str | None] = {}
+
+    for r in rows:
+        if r.get("source") != "trustmrr":
+            continue
+        extra = r.setdefault("extra", {})
+        slug = extra.get("slug")
+        if slug:
+            if slug not in md_cache:
+                try:
+                    md_text = enrich_trustmrr_markdown(str(slug))
+                    md_cache[slug] = parse_trustmrr_markdown(md_text)
+                    sleep()
+                except Exception as e:
+                    print(f"[trustmrr] markdown enrich failed slug={slug}: {e}", file=sys.stderr)
+                    md_cache[slug] = {}
+            parsed = md_cache.get(slug) or {}
+            if parsed.get("long_description"):
+                extra["long_description"] = parsed["long_description"]
+            if parsed.get("features"):
+                extra["features"] = parsed["features"]
+
+        website = r.get("website")
+        if website and not extra.get("website_meta_description"):
+            wkey = str(website).strip()
+            if wkey not in meta_cache:
+                meta_cache[wkey] = fetch_website_meta_description(wkey)
+                sleep(0.5, 1.2)
+            meta = meta_cache.get(wkey)
+            if meta:
+                extra["website_meta_description"] = meta
 
 
 # ---------- BizPeel (public HTML) ----------
