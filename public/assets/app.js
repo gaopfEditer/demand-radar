@@ -994,6 +994,7 @@ export async function ollamaGenerateDescription(baseUrl, model, row, { signal } 
     model: model || OLLAMA_DEFAULT_MODEL,
     prompt,
     stream: false,
+    think: false,
     options: { temperature: 0.35, num_predict: 220 },
   };
   const res = await fetch(`${url}/api/generate`, {
@@ -1171,6 +1172,36 @@ export function buildRevenueOllamaAnalysisPrompt(row, descriptionText = null) {
   return lines.join("\n");
 }
 
+function coerceOllamaAnalysisFieldValue(v) {
+  if (v == null) return "";
+  if (typeof v === "string") return v.trim();
+  if (Array.isArray(v)) {
+    return v
+      .map((item) => {
+        if (item == null) return "";
+        if (typeof item === "string") return item.trim();
+        if (typeof item === "object") {
+          try {
+            return JSON.stringify(item);
+          } catch {
+            return String(item);
+          }
+        }
+        return String(item).trim();
+      })
+      .filter(Boolean)
+      .join("；");
+  }
+  if (typeof v === "object") {
+    try {
+      return JSON.stringify(v);
+    } catch {
+      return String(v).trim();
+    }
+  }
+  return String(v).trim();
+}
+
 /** @returns {RevenueOllamaAnalysis | null} */
 export function parseOllamaAnalysisResponse(text) {
   if (!text) return null;
@@ -1190,8 +1221,9 @@ export function parseOllamaAnalysisResponse(text) {
 
   const pick = (...keys) => {
     for (const k of keys) {
-      const v = parsed[k];
-      if (typeof v === "string" && v.trim()) return v.trim();
+      if (!(k in parsed)) continue;
+      const coerced = coerceOllamaAnalysisFieldValue(parsed[k]);
+      if (coerced) return coerced;
     }
     return "";
   };
@@ -1213,7 +1245,8 @@ export async function ollamaGenerateAnalysis(baseUrl, model, row, descriptionTex
     model: model || OLLAMA_DEFAULT_MODEL,
     prompt,
     stream: false,
-    options: { temperature: 0.4, num_predict: 520 },
+    think: false,
+    options: { temperature: 0.4, num_predict: 800 },
   };
   const res = await fetch(`${url}/api/generate`, {
     method: "POST",
@@ -1226,7 +1259,10 @@ export async function ollamaGenerateAnalysis(baseUrl, model, row, descriptionTex
     throw new Error(`HTTP ${res.status}${detail ? `: ${detail.slice(0, 120)}` : ""}`);
   }
   const data = await res.json();
-  const parsed = parseOllamaAnalysisResponse(data.response);
+  let parsed = parseOllamaAnalysisResponse(data.response);
+  if (!parsed && data.thinking) {
+    parsed = parseOllamaAnalysisResponse(data.thinking);
+  }
   if (!parsed) throw new Error("could not parse analysis JSON");
   return parsed;
 }
