@@ -241,7 +241,12 @@
         return `<p class="revenue-analysis-msg revenue-analysis-msg--loading">正在生成分析…</p>`;
       }
       if (analysisErrors[key]) {
-        return `<p class="revenue-analysis-msg revenue-analysis-msg--error">无法生成分析（${escapeHtml(analysisErrors[key])}）。请确认 Ollama 已启动且 CORS/反代可用。</p>`;
+        const errMsg = analysisErrors[key];
+        const parseRelated = /parse analysis JSON|empty response/i.test(String(errMsg));
+        const hint = parseRelated
+          ? "常见原因：模型未在 response 中返回可解析 JSON（例如 qwen 等模型默认 thinking 占满 num_predict），或 JSON 字段为数组/对象。本页已请求 think:false；仍失败时请换模型或检查 Ollama 日志。从 GitHub Pages 访问时另需 CORS/反代。"
+          : "请确认 Ollama 已启动且可访问；从 GitHub Pages 访问时需配置 CORS/反代。";
+        return `<p class="revenue-analysis-msg revenue-analysis-msg--error">无法生成分析（${escapeHtml(errMsg)}）。${hint}</p>`;
       }
       return `<p class="revenue-analysis-msg meta">展开后将调用本机 Ollama 生成分析（仅首次）。</p>`;
     }
