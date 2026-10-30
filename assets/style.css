@@ -119,6 +119,57 @@ tbody tr:hover { background: rgba(91, 159, 212, 0.06); }
   font-style: italic;
   opacity: 0.85;
 }
+.revenue-name-cell .revenue-analysis {
+  margin-top: 0.35rem;
+  max-width: 26rem;
+  font-size: 0.8rem;
+}
+.revenue-name-cell .revenue-analysis summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 500;
+  list-style: none;
+  user-select: none;
+}
+.revenue-name-cell .revenue-analysis summary::-webkit-details-marker { display: none; }
+.revenue-name-cell .revenue-analysis summary::before {
+  content: "▸ ";
+  display: inline-block;
+  transition: transform 0.15s ease;
+}
+.revenue-name-cell .revenue-analysis[open] summary::before {
+  transform: rotate(90deg);
+}
+.revenue-analysis-body {
+  margin-top: 0.35rem;
+  padding: 0.45rem 0.55rem;
+  border-left: 2px solid var(--border);
+  color: var(--muted);
+  line-height: 1.45;
+}
+.revenue-analysis-field + .revenue-analysis-field {
+  margin-top: 0.55rem;
+}
+.revenue-analysis-field h4 {
+  margin: 0 0 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #a8b8d0;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.revenue-analysis-field p {
+  margin: 0;
+  white-space: pre-wrap;
+}
+.revenue-analysis-msg--loading {
+  font-style: italic;
+  color: var(--amber);
+}
+.revenue-analysis-msg--error {
+  color: var(--red);
+  font-size: 0.78rem;
+}
 .ollama-config {
   margin: 0 0 1rem;
   padding: 0.75rem 1rem;

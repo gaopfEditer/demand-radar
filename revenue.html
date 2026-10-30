@@ -49,6 +49,7 @@
       <div class="ollama-config-body">
         <p class="ollama-config-note">
           配置本机 Ollama 后，页面加载时会为缺少或过短的条目生成一行产品描述，并缓存在浏览器。
+          拓展分析（同类 / 上下游 / 亮点）仅在展开某条目时按需调用 Ollama，结果同样缓存在浏览器。
           从 GitHub Pages（<code>github.io</code>）访问时，浏览器可能因 CORS 无法直连
           <code>localhost</code>；请在本仓库根目录用静态服务器打开、使用同源反代，或设置
           <code>OLLAMA_ORIGINS</code> 允许站点来源。未配置或连接失败时仍显示 API 原始描述。
@@ -64,7 +65,7 @@
         <div class="ollama-config-actions">
           <button type="button" id="ollama-save">保存设置</button>
           <button type="button" id="ollama-regenerate">立即生成/补全</button>
-          <button type="button" id="ollama-clear-cache">清除描述缓存</button>
+          <button type="button" id="ollama-clear-cache">清除 Ollama 缓存</button>
         </div>
         <span id="ollama-status" class="ollama-status" role="status" aria-live="polite"></span>
       </div>
@@ -106,8 +107,13 @@
       OLLAMA_DEFAULT_BASE_URL,
       OLLAMA_DEFAULT_MODEL,
       loadOllamaDescriptionCache,
-      clearOllamaDescriptionCache,
+      clearOllamaRevenueCaches,
       enrichRevenueDescriptionsWithOllama,
+      revenueRowKey,
+      loadOllamaAnalysisCache,
+      ollamaCachedAnalysis,
+      fetchRevenueAnalysisWithOllama,
+      REVENUE_ANALYSIS_LABELS,
     } from "./assets/app.js";
 
     setActiveNav();
@@ -120,7 +126,12 @@
 
     const rows = (snap.rows || []).slice();
     let aiDescCache = loadOllamaDescriptionCache();
+    let analysisCache = loadOllamaAnalysisCache();
     let ollamaLoading = false;
+    /** @type {Set<string>} */
+    const analysisLoadingKeys = new Set();
+    /** @type {Record<string, string>} */
+    const analysisErrors = {};
     const statusEl = document.getElementById("ollama-status");
     const baseUrlInput = document.getElementById("ollama-base-url");
     const modelInput = document.getElementById("ollama-model");
@@ -168,23 +179,85 @@
       return parts.join(" · ") || "—";
     }
 
+    function analysisBodyHtml(r) {
+      const key = revenueRowKey(r);
+      const cached = ollamaCachedAnalysis(r, analysisCache);
+      if (cached) {
+        const blocks = ["tongLei", "shangXiaYou", "liangDian"]
+          .map((field) => {
+            const text = cached[field];
+            if (!text) return "";
+            const label = REVENUE_ANALYSIS_LABELS[field];
+            return `<div class="revenue-analysis-field"><h4>${escapeHtml(label)}</h4><p>${escapeHtml(text)}</p></div>`;
+          })
+          .filter(Boolean)
+          .join("");
+        return blocks || `<p class="revenue-analysis-msg meta">暂无分析内容。</p>`;
+      }
+      if (analysisLoadingKeys.has(key)) {
+        return `<p class="revenue-analysis-msg revenue-analysis-msg--loading">正在生成分析…</p>`;
+      }
+      if (analysisErrors[key]) {
+        return `<p class="revenue-analysis-msg revenue-analysis-msg--error">无法生成分析（${escapeHtml(analysisErrors[key])}）。请确认 Ollama 已启动且 CORS/反代可用。</p>`;
+      }
+      return `<p class="revenue-analysis-msg meta">展开后将调用本机 Ollama 生成分析（仅首次）。</p>`;
+    }
+
     function nameCell(r) {
       const title = escapeHtml(r.name || "—");
+      const rowKey = escapeHtml(revenueRowKey(r));
       const pending =
         ollamaLoading && needsOllamaDescription(r, aiDescCache);
+      let descHtml = "";
       if (pending) {
         const raw = revenueProductDescription(r);
         if (!raw) {
-          return `<span class="revenue-name">${title}</span><span class="revenue-desc revenue-desc--loading">生成描述中…</span>`;
+          descHtml = `<span class="revenue-desc revenue-desc--loading">生成描述中…</span>`;
         }
       }
-      const full = revenueDisplayDescription(r, aiDescCache);
-      if (!full) return title;
-      const preview = escapeHtml(truncateText(full, 140));
-      const tip = escapeHtml(full);
-      const fromAi = revenueDescriptionIsFromOllama(r, aiDescCache);
-      const cls = fromAi ? "revenue-desc revenue-desc--ollama" : "revenue-desc";
-      return `<span class="revenue-name">${title}</span><span class="${cls}" title="${tip}">${preview}</span>`;
+      if (!descHtml) {
+        const full = revenueDisplayDescription(r, aiDescCache);
+        if (full) {
+          const preview = escapeHtml(truncateText(full, 140));
+          const tip = escapeHtml(full);
+          const fromAi = revenueDescriptionIsFromOllama(r, aiDescCache);
+          const cls = fromAi ? "revenue-desc revenue-desc--ollama" : "revenue-desc";
+          descHtml = `<span class="${cls}" title="${tip}">${preview}</span>`;
+        }
+      }
+      const analysisHtml = `
+        <details class="revenue-analysis" data-row-key="${rowKey}">
+          <summary>拓展分析</summary>
+          <div class="revenue-analysis-body">${analysisBodyHtml(r)}</div>
+        </details>`;
+      return `<span class="revenue-name">${title}</span>${descHtml}${analysisHtml}`;
+    }
+
+    async function onAnalysisDetailsToggle(detailsEl) {
+      if (!detailsEl.open) return;
+      const key = detailsEl.dataset.rowKey;
+      if (!key) return;
+      const row = rows.find((r) => revenueRowKey(r) === key);
+      if (!row) return;
+      if (ollamaCachedAnalysis(row, analysisCache)) return;
+      if (analysisLoadingKeys.has(key)) return;
+
+      analysisLoadingKeys.add(key);
+      delete analysisErrors[key];
+      detailsEl.querySelector(".revenue-analysis-body").innerHTML = analysisBodyHtml(row);
+      const result = await fetchRevenueAnalysisWithOllama(row, {
+        cache: analysisCache,
+        config: getEffectiveOllamaConfig(),
+        descriptionCache: aiDescCache,
+      });
+      analysisLoadingKeys.delete(key);
+      if (result.status === "cached" || result.status === "done") {
+        analysisCache = loadOllamaAnalysisCache();
+        delete analysisErrors[key];
+      } else {
+        analysisErrors[key] = result.message || "未知错误";
+      }
+      detailsEl.querySelector(".revenue-analysis-body").innerHTML = analysisBodyHtml(row);
     }
 
     function render() {
@@ -284,12 +357,22 @@
     });
 
     document.getElementById("ollama-clear-cache").addEventListener("click", async () => {
-      clearOllamaDescriptionCache();
+      clearOllamaRevenueCaches();
       aiDescCache = {};
-      setOllamaStatus("描述缓存已清除。", "ok");
+      analysisCache = {};
+      analysisLoadingKeys.clear();
+      for (const k of Object.keys(analysisErrors)) delete analysisErrors[k];
+      setOllamaStatus("描述与分析缓存已清除。", "ok");
       render();
       await runOllamaEnrichment();
     });
+
+    document.getElementById("rows").addEventListener("toggle", (ev) => {
+      const t = ev.target;
+      if (t instanceof HTMLDetailsElement && t.classList.contains("revenue-analysis")) {
+        onAnalysisDetailsToggle(t);
+      }
+    }, true);
 
     render();
     await runOllamaEnrichment();
