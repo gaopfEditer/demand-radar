@@ -44,6 +44,31 @@
         <input type="search" id="f-q" placeholder="产品名…" autocomplete="off" />
       </label>
     </div>
+    <details class="ollama-config" id="ollama-config">
+      <summary>Ollama 本地描述增强（可选）</summary>
+      <div class="ollama-config-body">
+        <p class="ollama-config-note">
+          配置本机 Ollama 后，页面加载时会为缺少或过短的条目生成一行产品描述，并缓存在浏览器。
+          从 GitHub Pages（<code>github.io</code>）访问时，浏览器可能因 CORS 无法直连
+          <code>localhost</code>；请在本仓库根目录用静态服务器打开、使用同源反代，或设置
+          <code>OLLAMA_ORIGINS</code> 允许站点来源。未配置或连接失败时仍显示 API 原始描述。
+        </p>
+        <div class="ollama-config-fields">
+          <label>Ollama Base URL
+            <input type="url" id="ollama-base-url" placeholder="http://localhost:11434" autocomplete="off" />
+          </label>
+          <label>模型（可覆盖默认）
+            <input type="text" id="ollama-model" placeholder="qwen3.5:latest" autocomplete="off" />
+          </label>
+        </div>
+        <div class="ollama-config-actions">
+          <button type="button" id="ollama-save">保存设置</button>
+          <button type="button" id="ollama-regenerate">立即生成/补全</button>
+          <button type="button" id="ollama-clear-cache">清除描述缓存</button>
+        </div>
+        <span id="ollama-status" class="ollama-status" role="status" aria-live="polite"></span>
+      </div>
+    </details>
     <table>
       <thead>
         <tr>
@@ -72,6 +97,17 @@
       escapeHtml,
       truncateText,
       revenueProductDescription,
+      revenueDisplayDescription,
+      revenueDescriptionIsFromOllama,
+      needsOllamaDescription,
+      getOllamaConfig,
+      getEffectiveOllamaConfig,
+      saveOllamaConfig,
+      OLLAMA_DEFAULT_BASE_URL,
+      OLLAMA_DEFAULT_MODEL,
+      loadOllamaDescriptionCache,
+      clearOllamaDescriptionCache,
+      enrichRevenueDescriptionsWithOllama,
     } from "./assets/app.js";
 
     setActiveNav();
@@ -83,6 +119,24 @@
     }
 
     const rows = (snap.rows || []).slice();
+    let aiDescCache = loadOllamaDescriptionCache();
+    let ollamaLoading = false;
+    const statusEl = document.getElementById("ollama-status");
+    const baseUrlInput = document.getElementById("ollama-base-url");
+    const modelInput = document.getElementById("ollama-model");
+
+    function setOllamaStatus(text, kind = "") {
+      statusEl.textContent = text;
+      statusEl.className = "ollama-status" + (kind ? ` ollama-status--${kind}` : "");
+    }
+
+    function hydrateOllamaForm() {
+      const stored = getOllamaConfig();
+      baseUrlInput.value = stored.baseUrl || OLLAMA_DEFAULT_BASE_URL;
+      modelInput.value = stored.model || OLLAMA_DEFAULT_MODEL;
+    }
+    hydrateOllamaForm();
+
     const sourceSel = document.getElementById("f-source");
     const boardSel = document.getElementById("f-board");
 
@@ -116,11 +170,21 @@
 
     function nameCell(r) {
       const title = escapeHtml(r.name || "—");
-      const full = revenueProductDescription(r);
+      const pending =
+        ollamaLoading && needsOllamaDescription(r, aiDescCache);
+      if (pending) {
+        const raw = revenueProductDescription(r);
+        if (!raw) {
+          return `<span class="revenue-name">${title}</span><span class="revenue-desc revenue-desc--loading">生成描述中…</span>`;
+        }
+      }
+      const full = revenueDisplayDescription(r, aiDescCache);
       if (!full) return title;
       const preview = escapeHtml(truncateText(full, 140));
       const tip = escapeHtml(full);
-      return `<span class="revenue-name">${title}</span><span class="revenue-desc" title="${tip}">${preview}</span>`;
+      const fromAi = revenueDescriptionIsFromOllama(r, aiDescCache);
+      const cls = fromAi ? "revenue-desc revenue-desc--ollama" : "revenue-desc";
+      return `<span class="revenue-name">${title}</span><span class="${cls}" title="${tip}">${preview}</span>`;
     }
 
     function render() {
@@ -132,7 +196,7 @@
       if (board) filtered = filtered.filter((r) => r.board === board);
       if (q) {
         filtered = filtered.filter((r) => {
-          const hay = [r.name, revenueProductDescription(r)]
+          const hay = [r.name, revenueDisplayDescription(r, aiDescCache)]
             .filter(Boolean)
             .join(" ")
             .toLowerCase();
@@ -163,7 +227,72 @@
       document.getElementById(id).addEventListener("change", render);
     });
     document.getElementById("f-q").addEventListener("input", render);
+
+    async function runOllamaEnrichment() {
+      const config = getEffectiveOllamaConfig();
+      ollamaLoading = true;
+      render();
+      setOllamaStatus("正在连接 Ollama…", "loading");
+      const result = await enrichRevenueDescriptionsWithOllama(rows, {
+        cache: aiDescCache,
+        config,
+        onProgress: ({ done, total, generated }) => {
+          setOllamaStatus(
+            `正在生成描述… (${done}/${total}${generated ? `，已完成 ${generated}` : ""})`,
+            "loading"
+          );
+          render();
+        },
+        onRowDone: () => {
+          render();
+        },
+      });
+      ollamaLoading = false;
+      aiDescCache = loadOllamaDescriptionCache();
+      if (result.status === "error") {
+        setOllamaStatus(
+          `Ollama 不可用（${result.message || "未知错误"}）；已回退为 API 原始描述。若从 Pages 访问，请用本地静态服务或配置 CORS/反代。`,
+          "error"
+        );
+      } else if (result.status === "skipped") {
+        setOllamaStatus("");
+      } else if ((result.generated ?? 0) > 0) {
+        setOllamaStatus(
+          `已通过 Ollama 生成 ${result.generated} 条描述（已写入本地缓存）。`,
+          "ok"
+        );
+      } else {
+        setOllamaStatus("描述已就绪（缓存命中或无需生成）。", "ok");
+      }
+      render();
+    }
+
+    document.getElementById("ollama-save").addEventListener("click", () => {
+      saveOllamaConfig({
+        baseUrl: baseUrlInput.value,
+        model: modelInput.value,
+      });
+      setOllamaStatus("设置已保存。", "ok");
+    });
+
+    document.getElementById("ollama-regenerate").addEventListener("click", async () => {
+      saveOllamaConfig({
+        baseUrl: baseUrlInput.value,
+        model: modelInput.value,
+      });
+      await runOllamaEnrichment();
+    });
+
+    document.getElementById("ollama-clear-cache").addEventListener("click", async () => {
+      clearOllamaDescriptionCache();
+      aiDescCache = {};
+      setOllamaStatus("描述缓存已清除。", "ok");
+      render();
+      await runOllamaEnrichment();
+    });
+
     render();
+    await runOllamaEnrichment();
   </script>
 </body>
 </html>
