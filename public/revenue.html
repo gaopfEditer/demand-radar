@@ -70,6 +70,8 @@
       formatGrowthPct,
       revenueSourceLabel,
       escapeHtml,
+      truncateText,
+      revenueProductDescription,
     } from "./assets/app.js";
 
     setActiveNav();
@@ -112,6 +114,15 @@
       return parts.join(" · ") || "—";
     }
 
+    function nameCell(r) {
+      const title = escapeHtml(r.name || "—");
+      const full = revenueProductDescription(r);
+      if (!full) return title;
+      const preview = escapeHtml(truncateText(full, 140));
+      const tip = escapeHtml(full);
+      return `<span class="revenue-name">${title}</span><span class="revenue-desc" title="${tip}">${preview}</span>`;
+    }
+
     function render() {
       const src = sourceSel.value;
       const board = boardSel.value;
@@ -120,11 +131,13 @@
       if (src) filtered = filtered.filter((r) => r.source === src);
       if (board) filtered = filtered.filter((r) => r.board === board);
       if (q) {
-        filtered = filtered.filter((r) =>
-          String(r.name || "")
-            .toLowerCase()
-            .includes(q)
-        );
+        filtered = filtered.filter((r) => {
+          const hay = [r.name, revenueProductDescription(r)]
+            .filter(Boolean)
+            .join(" ")
+            .toLowerCase();
+          return hay.includes(q);
+        });
       }
       filtered.sort((a, b) => (b.monthly_revenue ?? 0) - (a.monthly_revenue ?? 0));
 
@@ -135,7 +148,7 @@
         <tr>
           <td class="meta">${escapeHtml(revenueSourceLabel(r.source))}</td>
           <td class="meta hide-sm">${escapeHtml(r.board || "—")}</td>
-          <td>${escapeHtml(r.name || "—")}</td>
+          <td class="revenue-name-cell">${nameCell(r)}</td>
           <td class="score">${formatUsd(r.monthly_revenue)}</td>
           <td class="score">${formatUsd(r.mrr)}</td>
           <td class="score hide-sm">${formatGrowthPct(r.growth_30d)}</td>

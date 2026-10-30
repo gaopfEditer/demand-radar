@@ -565,6 +565,26 @@ export function formatGrowthPct(n) {
   return `${sign}${v.toFixed(1)}%`;
 }
 
+/** One-line preview; full string unchanged when within maxLen. */
+export function truncateText(text, maxLen = 140) {
+  if (text == null) return "";
+  const s = String(text);
+  if (s.length <= maxLen) return s;
+  return `${s.slice(0, maxLen - 1).trimEnd()}…`;
+}
+
+/** Product blurb from row.extra.description or top-level row.description. */
+export function revenueProductDescription(row) {
+  if (!row || typeof row !== "object") return null;
+  for (const c of [row.extra?.description, row.description]) {
+    if (typeof c === "string") {
+      const t = c.trim();
+      if (t) return t;
+    }
+  }
+  return null;
+}
+
 export const REVENUE_SOURCE_LABELS = {
   trustmrr: "TrustMRR",
   bizpeel: "BizPeel",
