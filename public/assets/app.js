@@ -635,6 +635,8 @@ export function saveOllamaConfig({ baseUrl, model }) {
   return payload;
 }
 
+export const OLLAMA_ANALYSIS_CACHE_STORAGE_KEY = "demand-radar.ollama.analysis";
+
 export function clearOllamaDescriptionCache() {
   localStorage.removeItem(OLLAMA_DESC_CACHE_STORAGE_KEY);
   localStorage.setItem(
@@ -878,6 +880,15 @@ export function toggleRevenueFavorite(rowKey) {
   return set.has(rowKey);
 }
 
+export function clearOllamaAnalysisCache() {
+  localStorage.removeItem(OLLAMA_ANALYSIS_CACHE_STORAGE_KEY);
+}
+
+export function clearOllamaRevenueCaches() {
+  clearOllamaDescriptionCache();
+  clearOllamaAnalysisCache();
+}
+
 /** Stable cache key: source + slug, else source + name. */
 export function revenueRowKey(row) {
   if (!row || typeof row !== "object") return "";
@@ -1082,6 +1093,189 @@ export async function enrichRevenueDescriptionsWithOllama(rows, options = {}) {
 
   return { status: "done", generated, failed };
 }
+
+/** @typedef {{ tongLei?: string, shangXiaYou?: string, liangDian?: string }} RevenueOllamaAnalysis */
+
+export function loadOllamaAnalysisCache() {
+  try {
+    const raw = localStorage.getItem(OLLAMA_ANALYSIS_CACHE_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+export function persistOllamaAnalysisCache(cache) {
+  localStorage.setItem(OLLAMA_ANALYSIS_CACHE_STORAGE_KEY, JSON.stringify(cache));
+}
+
+/** @returns {RevenueOllamaAnalysis | null} */
+export function ollamaCachedAnalysis(row, cache = null) {
+  const key = revenueRowKey(row);
+  if (!key) return null;
+  const store = cache ?? loadOllamaAnalysisCache();
+  const v = store[key];
+  if (!v || typeof v !== "object") return null;
+  const out = {
+    tongLei: typeof v.tongLei === "string" ? v.tongLei.trim() : "",
+    shangXiaYou: typeof v.shangXiaYou === "string" ? v.shangXiaYou.trim() : "",
+    liangDian: typeof v.liangDian === "string" ? v.liangDian.trim() : "",
+  };
+  if (!out.tongLei && !out.shangXiaYou && !out.liangDian) return null;
+  return out;
+}
+
+function buildRevenueOllamaContextLines(row, descriptionOverride = null) {
+  const raw =
+    descriptionOverride != null
+      ? String(descriptionOverride).trim() || null
+      : revenueProductDescription(row);
+  const lines = [
+    `Product name: ${row.name || "Unknown"}`,
+  ];
+  if (row.source) lines.push(`Listing source: ${row.source}`);
+  if (row.board) lines.push(`Board: ${row.board}`);
+  if (row.category) lines.push(`Category: ${row.category}`);
+  const mrr = formatUsdForPrompt(row.mrr);
+  const monthly = formatUsdForPrompt(row.monthly_revenue);
+  if (mrr) lines.push(`MRR: ${mrr}`);
+  if (monthly) lines.push(`Monthly revenue: ${monthly}`);
+  if (row.growth_30d != null && !Number.isNaN(Number(row.growth_30d))) {
+    lines.push(`30d growth: ${formatGrowthPct(row.growth_30d)}`);
+  }
+  if (row.website) lines.push(`Website: ${row.website}`);
+  if (row.url) lines.push(`Listing URL: ${row.url}`);
+  const tags = row.extra?.tags || row.tags;
+  if (Array.isArray(tags) && tags.length) {
+    lines.push(`Tags: ${tags.slice(0, 12).join(", ")}`);
+  }
+  if (raw) lines.push(`Description: ${raw}`);
+  return lines;
+}
+
+export function buildRevenueOllamaAnalysisPrompt(row, descriptionText = null) {
+  const lines = [
+    "You analyze indie/SaaS products on a revenue leaderboard for a Chinese-speaking founder audience.",
+    "Using ONLY the context below (do not invent revenue figures), write concise Simplified Chinese copy for three angles.",
+    "Reply with a single JSON object only — no markdown fences, no extra text.",
+    'Keys must be exactly: "同类", "上下游", "亮点".',
+    "- 同类: similar or competing products (short paragraph or bullet-style in one string)",
+    "- 上下游: upstream/downstream products or services in the value chain",
+    "- 亮点: key selling points / differentiation",
+    "",
+    "Context:",
+    ...buildRevenueOllamaContextLines(row, descriptionText),
+  ];
+  return lines.join("\n");
+}
+
+/** @returns {RevenueOllamaAnalysis | null} */
+export function parseOllamaAnalysisResponse(text) {
+  if (!text) return null;
+  let raw = String(text).trim();
+  const fence = raw.match(/```(?:json)?\s*([\s\S]*?)```/i);
+  if (fence) raw = fence[1].trim();
+  const start = raw.indexOf("{");
+  const end = raw.lastIndexOf("}");
+  if (start >= 0 && end > start) raw = raw.slice(start, end + 1);
+  let parsed;
+  try {
+    parsed = JSON.parse(raw);
+  } catch {
+    return null;
+  }
+  if (!parsed || typeof parsed !== "object") return null;
+
+  const pick = (...keys) => {
+    for (const k of keys) {
+      const v = parsed[k];
+      if (typeof v === "string" && v.trim()) return v.trim();
+    }
+    return "";
+  };
+
+  const out = {
+    tongLei: pick("同类", "tongLei", "peers", "competitors"),
+    shangXiaYou: pick("上下游", "shangXiaYou", "upstream_downstream", "chain"),
+    liangDian: pick("亮点", "liangDian", "highlights", "selling_points"),
+  };
+  if (!out.tongLei && !out.shangXiaYou && !out.liangDian) return null;
+  return out;
+}
+
+export async function ollamaGenerateAnalysis(baseUrl, model, row, descriptionText, { signal } = {}) {
+  const url = normalizeOllamaBaseUrl(baseUrl);
+  if (!url) throw new Error("missing base URL");
+  const prompt = buildRevenueOllamaAnalysisPrompt(row, descriptionText);
+  const body = {
+    model: model || OLLAMA_DEFAULT_MODEL,
+    prompt,
+    stream: false,
+    options: { temperature: 0.4, num_predict: 520 },
+  };
+  const res = await fetch(`${url}/api/generate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+    signal,
+  });
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new Error(`HTTP ${res.status}${detail ? `: ${detail.slice(0, 120)}` : ""}`);
+  }
+  const data = await res.json();
+  const parsed = parseOllamaAnalysisResponse(data.response);
+  if (!parsed) throw new Error("could not parse analysis JSON");
+  return parsed;
+}
+
+/**
+ * On-demand: generate 同类 / 上下游 / 亮点 for one row. Updates analysis localStorage cache.
+ * @returns {{ status: 'done' | 'cached' | 'error', analysis?: RevenueOllamaAnalysis, message?: string }}
+ */
+export async function fetchRevenueAnalysisWithOllama(row, options = {}) {
+  const { cache: externalCache, config: externalConfig, descriptionCache, signal } = options;
+  const config = externalConfig ?? getEffectiveOllamaConfig();
+  if (!config.baseUrl) {
+    return { status: "error", message: "no-url" };
+  }
+
+  const cache = externalCache ?? loadOllamaAnalysisCache();
+  const existing = ollamaCachedAnalysis(row, cache);
+  if (existing) return { status: "cached", analysis: existing };
+
+  const key = revenueRowKey(row);
+  if (!key) return { status: "error", message: "invalid row" };
+
+  const descCache = descriptionCache ?? loadOllamaDescriptionCache();
+  const descriptionText = revenueDisplayDescription(row, descCache);
+
+  try {
+    const analysis = await ollamaGenerateAnalysis(
+      config.baseUrl,
+      config.model,
+      row,
+      descriptionText,
+      { signal }
+    );
+    cache[key] = analysis;
+    persistOllamaAnalysisCache(cache);
+    return { status: "done", analysis };
+  } catch (err) {
+    return {
+      status: "error",
+      message: err instanceof Error ? err.message : String(err),
+    };
+  }
+}
+
+export const REVENUE_ANALYSIS_LABELS = {
+  tongLei: "同类",
+  shangXiaYou: "上下游",
+  liangDian: "亮点",
+};
 
 export const REVENUE_SOURCE_LABELS = {
   trustmrr: "TrustMRR",
