@@ -587,6 +587,10 @@ export function revenueProductDescription(row) {
 
 export const OLLAMA_CONFIG_STORAGE_KEY = "demand-radar.ollama.config";
 export const OLLAMA_DESC_CACHE_STORAGE_KEY = "demand-radar.ollama.descriptions";
+export const OLLAMA_GENERATION_STORE_KEY = "demand-radar.ollama.generation-store";
+export const REVENUE_FAVORITES_STORAGE_KEY = "demand-radar.revenue.favorites";
+export const OLLAMA_ARCHIVE_AFTER_DAYS = 30;
+export const OLLAMA_DEFAULT_ACTIVITY_DAYS = 7;
 export const OLLAMA_DEFAULT_BASE_URL = "http://localhost:11434";
 /** Matches typical `ollama list` tag (e.g. qwen3.5:latest). */
 export const OLLAMA_DEFAULT_MODEL = "qwen3.5:latest";
@@ -633,6 +637,245 @@ export function saveOllamaConfig({ baseUrl, model }) {
 
 export function clearOllamaDescriptionCache() {
   localStorage.removeItem(OLLAMA_DESC_CACHE_STORAGE_KEY);
+  localStorage.setItem(
+    OLLAMA_GENERATION_STORE_KEY,
+    JSON.stringify({ version: 1, active: {}, archived: {} })
+  );
+}
+
+/** Local calendar date `YYYY-MM-DD` for day buckets. */
+export function localDateKey(date = new Date()) {
+  const d = date instanceof Date ? date : new Date(date);
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+function shiftLocalDateKey(dayKey, deltaDays) {
+  const [y, m, d] = dayKey.split("-").map((n) => Number(n));
+  const dt = new Date(y, m - 1, d);
+  dt.setDate(dt.getDate() + deltaDays);
+  return localDateKey(dt);
+}
+
+function emptyGenerationStore() {
+  return { version: 1, active: {}, archived: {} };
+}
+
+function normalizeGenerationRecord(value, fallbackName = "") {
+  if (typeof value === "string") {
+    const text = value.trim();
+    if (!text) return null;
+    return { text, productName: fallbackName, updatedAt: Date.now() };
+  }
+  if (!value || typeof value !== "object") return null;
+  const text = String(value.text ?? value.description ?? "").trim();
+  if (!text) return null;
+  return {
+    text,
+    productName: String(value.productName || fallbackName || "").trim(),
+    updatedAt: Number(value.updatedAt) || Date.now(),
+  };
+}
+
+let generationStoreLoaded = false;
+
+export function loadGenerationStore() {
+  let store = emptyGenerationStore();
+  try {
+    const raw = localStorage.getItem(OLLAMA_GENERATION_STORE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed === "object") {
+        store = {
+          version: 1,
+          active: parsed.active && typeof parsed.active === "object" ? parsed.active : {},
+          archived:
+            parsed.archived && typeof parsed.archived === "object" ? parsed.archived : {},
+        };
+      }
+    }
+  } catch {
+    store = emptyGenerationStore();
+  }
+
+  if (!generationStoreLoaded) {
+    generationStoreLoaded = true;
+    store = migrateLegacyOllamaDescriptionCache(store);
+  }
+  return store;
+}
+
+export function saveGenerationStore(store) {
+  localStorage.setItem(OLLAMA_GENERATION_STORE_KEY, JSON.stringify(store));
+}
+
+export function migrateLegacyOllamaDescriptionCache(store = null) {
+  const next = store ?? loadGenerationStore();
+  let legacy = null;
+  try {
+    const raw = localStorage.getItem(OLLAMA_DESC_CACHE_STORAGE_KEY);
+    if (raw) legacy = JSON.parse(raw);
+  } catch {
+    legacy = null;
+  }
+  if (!legacy || typeof legacy !== "object" || !Object.keys(legacy).length) {
+    return next;
+  }
+  const day = localDateKey();
+  if (!next.active[day]) next.active[day] = {};
+  for (const [key, value] of Object.entries(legacy)) {
+    if (!key) continue;
+    const rec = normalizeGenerationRecord(value);
+    if (rec) next.active[day][key] = rec;
+  }
+  localStorage.removeItem(OLLAMA_DESC_CACHE_STORAGE_KEY);
+  saveGenerationStore(next);
+  return next;
+}
+
+/** Move day buckets older than {@link OLLAMA_ARCHIVE_AFTER_DAYS} into `archived` (not deleted). */
+export function runOllamaArchiveMaintenance(store = null, { persist = true } = {}) {
+  const next = store ?? loadGenerationStore();
+  const cutoff = shiftLocalDateKey(localDateKey(), -OLLAMA_ARCHIVE_AFTER_DAYS);
+  let moved = false;
+  for (const day of Object.keys(next.active)) {
+    if (day >= cutoff) continue;
+    next.archived[day] = { ...(next.archived[day] || {}), ...(next.active[day] || {}) };
+    delete next.active[day];
+    moved = true;
+  }
+  if (moved && persist) saveGenerationStore(next);
+  return next;
+}
+
+export function flattenStoreDescriptions(store) {
+  const best = new Map();
+  const scan = (buckets) => {
+    for (const day of Object.keys(buckets || {}).sort()) {
+      for (const [key, raw] of Object.entries(buckets[day] || {})) {
+        const rec = normalizeGenerationRecord(raw);
+        if (!rec || !key) continue;
+        const prev = best.get(key);
+        if (!prev || rec.updatedAt >= prev.updatedAt) {
+          best.set(key, rec);
+        }
+      }
+    }
+  };
+  scan(store.archived);
+  scan(store.active);
+  const flat = {};
+  for (const [key, rec] of best) flat[key] = rec.text;
+  return flat;
+}
+
+export function setOllamaDescriptionForRow(row, text, store = null) {
+  const trimmed = String(text || "").trim();
+  const key = revenueRowKey(row);
+  if (!key || !trimmed) return store ?? loadGenerationStore();
+  const next = store ?? loadGenerationStore();
+  runOllamaArchiveMaintenance(next, { persist: false });
+  const day = localDateKey();
+  if (!next.active[day]) next.active[day] = {};
+  next.active[day][key] = {
+    text: trimmed,
+    productName: String(row.name || "").trim(),
+    updatedAt: Date.now(),
+  };
+  saveGenerationStore(next);
+  return next;
+}
+
+/**
+ * List locally cached Ollama description rows for the data-management UI.
+ * @returns {{ day: string, archived: boolean, items: Array<{ key, productName, text, updatedAt }> }[]}
+ */
+export function listOllamaGenerationRecords(options = {}) {
+  const {
+    days = OLLAMA_DEFAULT_ACTIVITY_DAYS,
+    includeArchived = false,
+    query = "",
+  } = options;
+  const store = runOllamaArchiveMaintenance(loadGenerationStore());
+  const q = String(query || "")
+    .trim()
+    .toLowerCase();
+  const cutoff =
+    days == null || days === "all"
+      ? null
+      : shiftLocalDateKey(localDateKey(), -(Number(days) || OLLAMA_DEFAULT_ACTIVITY_DAYS));
+
+  const groups = new Map();
+
+  const ingest = (buckets, archived) => {
+    for (const day of Object.keys(buckets || {}).sort().reverse()) {
+      if (cutoff && day < cutoff) continue;
+      for (const [key, raw] of Object.entries(buckets[day] || {})) {
+        const rec = normalizeGenerationRecord(raw);
+        if (!rec) continue;
+        const hay = `${rec.productName} ${key} ${rec.text}`.toLowerCase();
+        if (q && !hay.includes(q)) continue;
+        if (!groups.has(day)) {
+          groups.set(day, { day, archived, items: [] });
+        }
+        groups.get(day).items.push({
+          key,
+          productName: rec.productName || key.split(":").slice(1).join(":") || key,
+          text: rec.text,
+          updatedAt: rec.updatedAt,
+        });
+      }
+    }
+  };
+
+  ingest(store.active, false);
+  if (includeArchived) ingest(store.archived, true);
+
+  return [...groups.values()]
+    .filter((g) => g.items.length)
+    .sort((a, b) => (a.day < b.day ? 1 : -1));
+}
+
+export function restoreArchivedOllamaDay(dayKey) {
+  const store = loadGenerationStore();
+  const bucket = store.archived?.[dayKey];
+  if (!bucket) return false;
+  store.active[dayKey] = { ...(store.active[dayKey] || {}), ...bucket };
+  delete store.archived[dayKey];
+  saveGenerationStore(store);
+  return true;
+}
+
+export function loadRevenueFavorites() {
+  try {
+    const raw = localStorage.getItem(REVENUE_FAVORITES_STORAGE_KEY);
+    if (!raw) return new Set();
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return new Set();
+    return new Set(parsed.filter((k) => typeof k === "string" && k));
+  } catch {
+    return new Set();
+  }
+}
+
+export function saveRevenueFavorites(favorites) {
+  const list = favorites instanceof Set ? [...favorites] : favorites;
+  localStorage.setItem(REVENUE_FAVORITES_STORAGE_KEY, JSON.stringify(list));
+}
+
+export function isRevenueFavorite(rowKey, favorites = null) {
+  const set = favorites ?? loadRevenueFavorites();
+  return set.has(rowKey);
+}
+
+export function toggleRevenueFavorite(rowKey) {
+  const set = loadRevenueFavorites();
+  if (set.has(rowKey)) set.delete(rowKey);
+  else set.add(rowKey);
+  saveRevenueFavorites(set);
+  return set.has(rowKey);
 }
 
 /** Stable cache key: source + slug, else source + name. */
@@ -645,18 +888,20 @@ export function revenueRowKey(row) {
 }
 
 export function loadOllamaDescriptionCache() {
-  try {
-    const raw = localStorage.getItem(OLLAMA_DESC_CACHE_STORAGE_KEY);
-    if (!raw) return {};
-    const parsed = JSON.parse(raw);
-    return parsed && typeof parsed === "object" ? parsed : {};
-  } catch {
-    return {};
-  }
+  const store = runOllamaArchiveMaintenance(loadGenerationStore());
+  return flattenStoreDescriptions(store);
 }
 
 export function persistOllamaDescriptionCache(cache) {
-  localStorage.setItem(OLLAMA_DESC_CACHE_STORAGE_KEY, JSON.stringify(cache));
+  if (!cache || typeof cache !== "object") return;
+  const store = loadGenerationStore();
+  const day = localDateKey();
+  if (!store.active[day]) store.active[day] = {};
+  for (const [key, value] of Object.entries(cache)) {
+    const rec = normalizeGenerationRecord(value);
+    if (rec) store.active[day][key] = rec;
+  }
+  saveGenerationStore(store);
 }
 
 export function ollamaCachedDescription(row, cache = null) {
@@ -813,7 +1058,7 @@ export async function enrichRevenueDescriptionsWithOllama(rows, options = {}) {
       try {
         const text = await ollamaGenerateDescription(config.baseUrl, config.model, row);
         cache[key] = text;
-        persistOllamaDescriptionCache(cache);
+        setOllamaDescriptionForRow(row, text);
         generated += 1;
         if (typeof onRowDone === "function") onRowDone(key, text, row);
       } catch (err) {
