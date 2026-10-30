@@ -585,6 +585,248 @@ export function revenueProductDescription(row) {
   return null;
 }
 
+export const OLLAMA_CONFIG_STORAGE_KEY = "demand-radar.ollama.config";
+export const OLLAMA_DESC_CACHE_STORAGE_KEY = "demand-radar.ollama.descriptions";
+export const OLLAMA_DEFAULT_MODEL = "llama3.2";
+/** Descriptions shorter than this may be expanded via Ollama when configured. */
+export const OLLAMA_SHORT_DESCRIPTION_LEN = 80;
+
+export function normalizeOllamaBaseUrl(url) {
+  const t = String(url || "").trim();
+  if (!t) return "";
+  return t.replace(/\/+$/, "");
+}
+
+export function getOllamaConfig() {
+  try {
+    const raw = localStorage.getItem(OLLAMA_CONFIG_STORAGE_KEY);
+    if (!raw) return { baseUrl: "", model: "" };
+    const parsed = JSON.parse(raw);
+    return {
+      baseUrl: normalizeOllamaBaseUrl(parsed.baseUrl),
+      model: String(parsed.model || "").trim(),
+    };
+  } catch {
+    return { baseUrl: "", model: "" };
+  }
+}
+
+export function saveOllamaConfig({ baseUrl, model }) {
+  const payload = {
+    baseUrl: normalizeOllamaBaseUrl(baseUrl),
+    model: String(model || "").trim(),
+  };
+  localStorage.setItem(OLLAMA_CONFIG_STORAGE_KEY, JSON.stringify(payload));
+  return payload;
+}
+
+export function clearOllamaDescriptionCache() {
+  localStorage.removeItem(OLLAMA_DESC_CACHE_STORAGE_KEY);
+}
+
+/** Stable cache key: source + slug, else source + name. */
+export function revenueRowKey(row) {
+  if (!row || typeof row !== "object") return "";
+  const source = String(row.source || "unknown");
+  const slug = row.extra?.slug;
+  if (slug) return `${source}:${slug}`;
+  return `${source}:${String(row.name || "").trim() || "unnamed"}`;
+}
+
+export function loadOllamaDescriptionCache() {
+  try {
+    const raw = localStorage.getItem(OLLAMA_DESC_CACHE_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
+}
+
+export function persistOllamaDescriptionCache(cache) {
+  localStorage.setItem(OLLAMA_DESC_CACHE_STORAGE_KEY, JSON.stringify(cache));
+}
+
+export function ollamaCachedDescription(row, cache = null) {
+  const key = revenueRowKey(row);
+  if (!key) return null;
+  const store = cache ?? loadOllamaDescriptionCache();
+  const v = store[key];
+  if (typeof v === "string") {
+    const t = v.trim();
+    if (t) return t;
+  }
+  return null;
+}
+
+/** Display text: Ollama cache when present, else API/raw description. */
+export function revenueDisplayDescription(row, aiCache = null) {
+  const ai = ollamaCachedDescription(row, aiCache);
+  if (ai) return ai;
+  return revenueProductDescription(row);
+}
+
+export function revenueDescriptionIsFromOllama(row, aiCache = null) {
+  return Boolean(ollamaCachedDescription(row, aiCache));
+}
+
+export function needsOllamaDescription(row, cache = null) {
+  const key = revenueRowKey(row);
+  if (!key) return false;
+  const store = cache ?? loadOllamaDescriptionCache();
+  if (ollamaCachedDescription(row, store)) return false;
+  const raw = revenueProductDescription(row);
+  if (!raw) return true;
+  return raw.length < OLLAMA_SHORT_DESCRIPTION_LEN;
+}
+
+function formatUsdForPrompt(n) {
+  const s = formatUsd(n);
+  return s === "—" ? null : s;
+}
+
+export function buildRevenueOllamaPrompt(row) {
+  const raw = revenueProductDescription(row);
+  const lines = [
+    "You write concise, factual one-line product blurbs for a revenue leaderboard.",
+    "Use English. No hype, no invented metrics. Max ~200 characters.",
+    "",
+    `Product name: ${row.name || "Unknown"}`,
+  ];
+  if (row.source) lines.push(`Listing source: ${row.source}`);
+  if (row.board) lines.push(`Board: ${row.board}`);
+  if (row.category) lines.push(`Category: ${row.category}`);
+  const mrr = formatUsdForPrompt(row.mrr);
+  const monthly = formatUsdForPrompt(row.monthly_revenue);
+  if (mrr) lines.push(`MRR: ${mrr}`);
+  if (monthly) lines.push(`Monthly revenue: ${monthly}`);
+  if (row.growth_30d != null && !Number.isNaN(Number(row.growth_30d))) {
+    lines.push(`30d growth: ${formatGrowthPct(row.growth_30d)}`);
+  }
+  if (row.website) lines.push(`Website: ${row.website}`);
+  if (row.url) lines.push(`Listing URL: ${row.url}`);
+  const tags = row.extra?.tags || row.tags;
+  if (Array.isArray(tags) && tags.length) {
+    lines.push(`Tags: ${tags.slice(0, 12).join(", ")}`);
+  }
+  if (raw) {
+    lines.push("", `Existing short blurb (expand/improve if needed): ${raw}`);
+  } else {
+    lines.push("", "No existing blurb — infer likely product purpose from the fields above only.");
+  }
+  lines.push("", "Reply with the blurb only, no quotes or prefix.");
+  return lines.join("\n");
+}
+
+export async function ollamaGenerateDescription(baseUrl, model, row, { signal } = {}) {
+  const url = normalizeOllamaBaseUrl(baseUrl);
+  if (!url) throw new Error("missing base URL");
+  const prompt = buildRevenueOllamaPrompt(row);
+  const body = {
+    model: model || OLLAMA_DEFAULT_MODEL,
+    prompt,
+    stream: false,
+    options: { temperature: 0.35, num_predict: 220 },
+  };
+  const res = await fetch(`${url}/api/generate`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+    signal,
+  });
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new Error(`HTTP ${res.status}${detail ? `: ${detail.slice(0, 120)}` : ""}`);
+  }
+  const data = await res.json();
+  const text = String(data.response || "").trim();
+  if (!text) throw new Error("empty response");
+  return text.replace(/^["']|["']$/g, "").trim();
+}
+
+async function mapWithConcurrency(items, limit, fn) {
+  const results = new Array(items.length);
+  let idx = 0;
+  async function worker() {
+    while (idx < items.length) {
+      const i = idx++;
+      results[i] = await fn(items[i], i);
+    }
+  }
+  const workers = Array.from({ length: Math.min(limit, items.length) }, () => worker());
+  await Promise.all(workers);
+  return results;
+}
+
+/**
+ * Generate missing/short descriptions via local Ollama. Updates localStorage cache.
+ * @returns {{ status: string, generated?: number, failed?: number, message?: string }}
+ */
+export async function enrichRevenueDescriptionsWithOllama(rows, options = {}) {
+  const {
+    onProgress,
+    onRowDone,
+    concurrency = 2,
+    cache: externalCache,
+    config: externalConfig,
+  } = options;
+
+  const config = externalConfig ?? getOllamaConfig();
+  if (!config.baseUrl) {
+    return { status: "skipped", reason: "no-url" };
+  }
+
+  const cache = externalCache ?? loadOllamaDescriptionCache();
+  const todo = (rows || []).filter((r) => needsOllamaDescription(r, cache));
+  if (!todo.length) {
+    return { status: "done", generated: 0, failed: 0 };
+  }
+
+  let generated = 0;
+  let failed = 0;
+  let aborted = false;
+
+  const report = () => {
+    if (typeof onProgress === "function") {
+      onProgress({ done: generated + failed, total: todo.length, generated, failed });
+    }
+  };
+
+  report();
+
+  try {
+    await mapWithConcurrency(todo, concurrency, async (row) => {
+      if (aborted) return;
+      const key = revenueRowKey(row);
+      try {
+        const text = await ollamaGenerateDescription(config.baseUrl, config.model, row);
+        cache[key] = text;
+        persistOllamaDescriptionCache(cache);
+        generated += 1;
+        if (typeof onRowDone === "function") onRowDone(key, text, row);
+      } catch (err) {
+        failed += 1;
+        if (generated === 0 && failed === 1) {
+          aborted = true;
+          throw err;
+        }
+      } finally {
+        report();
+      }
+    });
+  } catch (err) {
+    return {
+      status: "error",
+      generated,
+      failed,
+      message: err instanceof Error ? err.message : String(err),
+    };
+  }
+
+  return { status: "done", generated, failed };
+}
+
 export const REVENUE_SOURCE_LABELS = {
   trustmrr: "TrustMRR",
   bizpeel: "BizPeel",

@@ -114,6 +114,86 @@ tbody tr:hover { background: rgba(91, 159, 212, 0.06); }
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.revenue-name-cell .revenue-desc--ollama { color: #a8b8d0; }
+.revenue-name-cell .revenue-desc--loading {
+  font-style: italic;
+  opacity: 0.85;
+}
+.ollama-config {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(26, 35, 50, 0.55);
+  font-size: 0.88rem;
+}
+.ollama-config summary {
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text);
+}
+.ollama-config-body {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.ollama-config-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.ollama-config-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: flex-end;
+}
+.ollama-config-fields label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.ollama-config-fields input {
+  min-width: 14rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.88rem;
+}
+.ollama-config-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.ollama-config-actions button {
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.ollama-config-actions button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.ollama-status {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.ollama-status--loading { color: var(--amber); }
+.ollama-status--error { color: var(--red); }
+.ollama-status--ok { color: var(--green); }
 .badge {
   display: inline-block;
   padding: 0.15rem 0.45rem;
