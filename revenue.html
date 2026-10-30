@@ -43,6 +43,10 @@
       <label>搜索名称
         <input type="search" id="f-q" placeholder="产品名…" autocomplete="off" />
       </label>
+      <label class="filter-check">
+        <input type="checkbox" id="f-favorites" />
+        仅收藏
+      </label>
     </div>
     <details class="ollama-config" id="ollama-config">
       <summary>Ollama 本地描述增强（可选）</summary>
@@ -70,9 +74,40 @@
         <span id="ollama-status" class="ollama-status" role="status" aria-live="polite"></span>
       </div>
     </details>
+    <details class="ollama-config revenue-data-mgmt" id="revenue-data-mgmt">
+      <summary>数据管理（本地 Ollama 生成缓存）</summary>
+      <div class="ollama-config-body">
+        <p class="ollama-config-note">
+          本机生成的描述按<strong>自然日</strong>分桶保存；下方默认展示<strong>最近 7 天</strong>的生成记录。
+          满 <strong>30 天</strong> 会自动<strong>归档</strong>——归档表示从默认列表隐藏，<strong>不会删除</strong>，勾选「显示已归档」仍可查看；可对某一天执行「移回活跃」以便再次出现在默认视图中。
+          收藏星标与 Ollama 连接设置独立保存，均只在当前浏览器。
+        </p>
+        <div class="revenue-data-mgmt-controls">
+          <label>按产品名搜索
+            <input type="search" id="dm-q" placeholder="产品名…" autocomplete="off" />
+          </label>
+          <label>时间范围
+            <select id="dm-days">
+              <option value="7" selected>最近 7 天</option>
+              <option value="14">最近 14 天</option>
+              <option value="30">最近 30 天</option>
+              <option value="all">全部（含 30 天内活跃桶）</option>
+            </select>
+          </label>
+          <label class="filter-check">
+            <input type="checkbox" id="dm-archived" />
+            显示已归档
+          </label>
+          <button type="button" id="dm-refresh">刷新列表</button>
+        </div>
+        <div id="dm-summary" class="revenue-data-mgmt-summary"></div>
+        <div id="dm-list" class="revenue-data-mgmt-list"></div>
+      </div>
+    </details>
     <table>
       <thead>
         <tr>
+          <th class="revenue-star-col" aria-label="收藏"></th>
           <th>来源</th>
           <th class="hide-sm">榜单</th>
           <th>名称</th>
@@ -114,6 +149,13 @@
       ollamaCachedAnalysis,
       fetchRevenueAnalysisWithOllama,
       REVENUE_ANALYSIS_LABELS,
+      loadRevenueFavorites,
+      isRevenueFavorite,
+      toggleRevenueFavorite,
+      listOllamaGenerationRecords,
+      restoreArchivedOllamaDay,
+      OLLAMA_DEFAULT_ACTIVITY_DAYS,
+      OLLAMA_ARCHIVE_AFTER_DAYS,
     } from "./assets/app.js";
 
     setActiveNav();
@@ -127,6 +169,7 @@
     const rows = (snap.rows || []).slice();
     let aiDescCache = loadOllamaDescriptionCache();
     let analysisCache = loadOllamaAnalysisCache();
+    let favoriteKeys = loadRevenueFavorites();
     let ollamaLoading = false;
     /** @type {Set<string>} */
     const analysisLoadingKeys = new Set();
@@ -203,6 +246,13 @@
       return `<p class="revenue-analysis-msg meta">展开后将调用本机 Ollama 生成分析（仅首次）。</p>`;
     }
 
+    function starCell(r) {
+      const key = revenueRowKey(r);
+      const on = isRevenueFavorite(key, favoriteKeys);
+      const label = on ? "取消收藏" : "收藏";
+      return `<button type="button" class="revenue-star${on ? " revenue-star--on" : ""}" data-row-key="${escapeHtml(key)}" aria-pressed="${on ? "true" : "false"}" title="${label}">${on ? "★" : "☆"}</button>`;
+    }
+
     function nameCell(r) {
       const title = escapeHtml(r.name || "—");
       const rowKey = escapeHtml(revenueRowKey(r));
@@ -264,9 +314,13 @@
       const src = sourceSel.value;
       const board = boardSel.value;
       const q = document.getElementById("f-q").value.trim().toLowerCase();
+      const favoritesOnly = document.getElementById("f-favorites").checked;
       let filtered = rows.slice();
       if (src) filtered = filtered.filter((r) => r.source === src);
       if (board) filtered = filtered.filter((r) => r.board === board);
+      if (favoritesOnly) {
+        filtered = filtered.filter((r) => isRevenueFavorite(revenueRowKey(r), favoriteKeys));
+      }
       if (q) {
         filtered = filtered.filter((r) => {
           const hay = [r.name, revenueDisplayDescription(r, aiDescCache)]
@@ -283,6 +337,7 @@
           .map(
             (r) => `
         <tr>
+          <td class="revenue-star-col">${starCell(r)}</td>
           <td class="meta">${escapeHtml(revenueSourceLabel(r.source))}</td>
           <td class="meta hide-sm">${escapeHtml(r.board || "—")}</td>
           <td class="revenue-name-cell">${nameCell(r)}</td>
@@ -293,13 +348,79 @@
           <td class="meta">${linkCell(r)}</td>
         </tr>`
           )
-          .join("") || "<tr><td colspan='8'>无匹配条目</td></tr>";
+          .join("") || "<tr><td colspan='9'>无匹配条目</td></tr>";
+    }
+
+    function renderDataManagement() {
+      const daysSel = document.getElementById("dm-days").value;
+      const days = daysSel === "all" ? "all" : Number(daysSel) || OLLAMA_DEFAULT_ACTIVITY_DAYS;
+      const groups = listOllamaGenerationRecords({
+        days,
+        includeArchived: document.getElementById("dm-archived").checked,
+        query: document.getElementById("dm-q").value,
+      });
+      const totalItems = groups.reduce((n, g) => n + g.items.length, 0);
+      const favCount = favoriteKeys.size;
+      document.getElementById("dm-summary").textContent =
+        `共 ${totalItems} 条生成记录 · ${groups.length} 个日期桶 · 收藏 ${favCount} 条 · 自动归档阈值 ${OLLAMA_ARCHIVE_AFTER_DAYS} 天`;
+      const listEl = document.getElementById("dm-list");
+      if (!groups.length) {
+        listEl.innerHTML = `<p class="revenue-data-mgmt-empty">当前条件下无记录。尝试扩大时间范围或勾选「显示已归档」。</p>`;
+        return;
+      }
+      listEl.innerHTML = groups
+        .map((g) => {
+          const tag = g.archived ? `<span class="revenue-dm-tag revenue-dm-tag--archived">已归档</span>` : "";
+          const restoreBtn = g.archived
+            ? `<button type="button" class="revenue-dm-restore" data-day="${escapeHtml(g.day)}">移回活跃</button>`
+            : "";
+          const items = g.items
+            .map(
+              (it) =>
+                `<li><strong>${escapeHtml(it.productName)}</strong> <span class="meta">${escapeHtml(it.key)}</span><br /><span class="revenue-dm-text">${escapeHtml(truncateText(it.text, 220))}</span></li>`
+            )
+            .join("");
+          return `<section class="revenue-dm-day"><header><span>${escapeHtml(g.day)}</span> ${tag} ${restoreBtn}</header><ul>${items}</ul></section>`;
+        })
+        .join("");
     }
 
     ["f-source", "f-board"].forEach((id) => {
       document.getElementById(id).addEventListener("change", render);
     });
     document.getElementById("f-q").addEventListener("input", render);
+    document.getElementById("f-favorites").addEventListener("change", render);
+
+    document.getElementById("rows").addEventListener("click", (ev) => {
+      const btn = ev.target.closest(".revenue-star");
+      if (!btn) return;
+      const key = btn.getAttribute("data-row-key");
+      if (!key) return;
+      toggleRevenueFavorite(key);
+      favoriteKeys = loadRevenueFavorites();
+      render();
+      renderDataManagement();
+    });
+
+    ["dm-q", "dm-days", "dm-archived"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", renderDataManagement);
+      document.getElementById(id).addEventListener("change", renderDataManagement);
+    });
+    document.getElementById("dm-refresh").addEventListener("click", () => {
+      aiDescCache = loadOllamaDescriptionCache();
+      renderDataManagement();
+      render();
+    });
+    document.getElementById("dm-list").addEventListener("click", (ev) => {
+      const btn = ev.target.closest(".revenue-dm-restore");
+      if (!btn) return;
+      const day = btn.getAttribute("data-day");
+      if (day && restoreArchivedOllamaDay(day)) {
+        aiDescCache = loadOllamaDescriptionCache();
+        renderDataManagement();
+        render();
+      }
+    });
 
     async function runOllamaEnrichment() {
       const config = getEffectiveOllamaConfig();
@@ -375,7 +496,9 @@
     }, true);
 
     render();
+    renderDataManagement();
     await runOllamaEnrichment();
+    renderDataManagement();
   </script>
 </body>
 </html>

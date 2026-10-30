@@ -245,6 +245,138 @@ tbody tr:hover { background: rgba(91, 159, 212, 0.06); }
 .ollama-status--loading { color: var(--amber); }
 .ollama-status--error { color: var(--red); }
 .ollama-status--ok { color: var(--green); }
+.filter-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  cursor: pointer;
+  user-select: none;
+}
+.filter-check input { accent-color: var(--accent); }
+.revenue-star-col {
+  width: 2.25rem;
+  padding-left: 0.35rem;
+  padding-right: 0.15rem;
+  vertical-align: top;
+}
+.revenue-star {
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.15rem 0.25rem;
+  border-radius: 4px;
+}
+.revenue-star:hover,
+.revenue-star:focus-visible {
+  color: var(--amber);
+  outline: none;
+  background: rgba(240, 180, 41, 0.08);
+}
+.revenue-star--on { color: var(--amber); }
+.revenue-data-mgmt { margin-top: -0.35rem; }
+.revenue-data-mgmt-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  align-items: flex-end;
+}
+.revenue-data-mgmt-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.revenue-data-mgmt-controls input,
+.revenue-data-mgmt-controls select {
+  min-width: 10rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.88rem;
+}
+.revenue-data-mgmt-controls button {
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.revenue-data-mgmt-controls button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.revenue-data-mgmt-summary {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+.revenue-data-mgmt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-height: 22rem;
+  overflow: auto;
+}
+.revenue-data-mgmt-empty {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.revenue-dm-day {
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: rgba(15, 20, 25, 0.35);
+}
+.revenue-dm-day header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.45rem;
+  font-weight: 500;
+  font-size: 0.88rem;
+}
+.revenue-dm-day ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.85rem;
+}
+.revenue-dm-day li { margin-bottom: 0.45rem; }
+.revenue-dm-text { color: var(--muted); }
+.revenue-dm-tag {
+  font-size: 0.72rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.revenue-dm-tag--archived {
+  background: rgba(240, 180, 41, 0.15);
+  color: var(--amber);
+}
+.revenue-dm-restore {
+  margin-left: auto;
+  padding: 0.15rem 0.45rem;
+  font-size: 0.78rem;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+}
+.revenue-dm-restore:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
 .badge {
   display: inline-block;
   padding: 0.15rem 0.45rem;
