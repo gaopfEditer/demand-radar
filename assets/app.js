@@ -953,14 +953,35 @@ function formatUsdForPrompt(n) {
   return s === "—" ? null : s;
 }
 
-export function buildRevenueOllamaPrompt(row) {
-  const raw = revenueProductDescription(row);
-  const lines = [
-    "You write concise, factual one-line product blurbs for a revenue leaderboard.",
-    "Use English. No hype, no invented metrics. Max ~200 characters.",
-    "",
-    `Product name: ${row.name || "Unknown"}`,
-  ];
+function appendRevenueEnrichmentContextLines(lines, row) {
+  const extra = row.extra || {};
+  const total = formatUsdForPrompt(row.total_revenue);
+  if (total) lines.push(`Total revenue: ${total}`);
+  if (extra.paymentProvider) lines.push(`Payment provider: ${extra.paymentProvider}`);
+  if (extra.onSale != null) lines.push(`On sale: ${extra.onSale ? "yes" : "no"}`);
+  if (extra.growthMRR30d != null && !Number.isNaN(Number(extra.growthMRR30d))) {
+    lines.push(`30d MRR growth: ${formatGrowthPct(extra.growthMRR30d)}`);
+  }
+  const longDesc = extra.long_description;
+  if (typeof longDesc === "string" && longDesc.trim()) {
+    lines.push(`Long description: ${truncateText(longDesc.trim(), 1200)}`);
+  }
+  const features = extra.features;
+  if (Array.isArray(features) && features.length) {
+    lines.push(`Features: ${features.slice(0, 16).join("; ")}`);
+  }
+  const siteMeta = extra.website_meta_description;
+  if (typeof siteMeta === "string" && siteMeta.trim()) {
+    lines.push(`Site meta: ${truncateText(siteMeta.trim(), 400)}`);
+  }
+}
+
+function buildRevenueOllamaContextLines(row, descriptionOverride = null) {
+  const raw =
+    descriptionOverride != null
+      ? String(descriptionOverride).trim() || null
+      : revenueProductDescription(row);
+  const lines = [`Product name: ${row.name || "Unknown"}`];
   if (row.source) lines.push(`Listing source: ${row.source}`);
   if (row.board) lines.push(`Board: ${row.board}`);
   if (row.category) lines.push(`Category: ${row.category}`);
@@ -971,12 +992,25 @@ export function buildRevenueOllamaPrompt(row) {
   if (row.growth_30d != null && !Number.isNaN(Number(row.growth_30d))) {
     lines.push(`30d growth: ${formatGrowthPct(row.growth_30d)}`);
   }
+  appendRevenueEnrichmentContextLines(lines, row);
   if (row.website) lines.push(`Website: ${row.website}`);
   if (row.url) lines.push(`Listing URL: ${row.url}`);
   const tags = row.extra?.tags || row.tags;
   if (Array.isArray(tags) && tags.length) {
     lines.push(`Tags: ${tags.slice(0, 12).join(", ")}`);
   }
+  if (raw) lines.push(`Description: ${raw}`);
+  return lines;
+}
+
+export function buildRevenueOllamaPrompt(row) {
+  const raw = revenueProductDescription(row);
+  const lines = [
+    "You write concise, factual one-line product blurbs for a revenue leaderboard.",
+    "Use English. No hype, no invented metrics. Max ~200 characters.",
+    "",
+    ...buildRevenueOllamaContextLines(row),
+  ];
   if (raw) {
     lines.push("", `Existing short blurb (expand/improve if needed): ${raw}`);
   } else {
@@ -985,6 +1019,10 @@ export function buildRevenueOllamaPrompt(row) {
   lines.push("", "Reply with the blurb only, no quotes or prefix.");
   return lines.join("\n");
 }
+
+export const OLLAMA_REVENUE_ANALYSIS_TIMEOUT_MS = 45_000;
+export const OLLAMA_REVENUE_ANALYSIS_TIMEOUT_MESSAGE =
+  "生成超时（45s），请稍后重试或换更小模型 / Generation timed out (45s)";
 
 export async function ollamaGenerateDescription(baseUrl, model, row, { signal } = {}) {
   const url = normalizeOllamaBaseUrl(baseUrl);
@@ -1126,34 +1164,6 @@ export function ollamaCachedAnalysis(row, cache = null) {
   };
   if (!out.tongLei && !out.shangXiaYou && !out.liangDian) return null;
   return out;
-}
-
-function buildRevenueOllamaContextLines(row, descriptionOverride = null) {
-  const raw =
-    descriptionOverride != null
-      ? String(descriptionOverride).trim() || null
-      : revenueProductDescription(row);
-  const lines = [
-    `Product name: ${row.name || "Unknown"}`,
-  ];
-  if (row.source) lines.push(`Listing source: ${row.source}`);
-  if (row.board) lines.push(`Board: ${row.board}`);
-  if (row.category) lines.push(`Category: ${row.category}`);
-  const mrr = formatUsdForPrompt(row.mrr);
-  const monthly = formatUsdForPrompt(row.monthly_revenue);
-  if (mrr) lines.push(`MRR: ${mrr}`);
-  if (monthly) lines.push(`Monthly revenue: ${monthly}`);
-  if (row.growth_30d != null && !Number.isNaN(Number(row.growth_30d))) {
-    lines.push(`30d growth: ${formatGrowthPct(row.growth_30d)}`);
-  }
-  if (row.website) lines.push(`Website: ${row.website}`);
-  if (row.url) lines.push(`Listing URL: ${row.url}`);
-  const tags = row.extra?.tags || row.tags;
-  if (Array.isArray(tags) && tags.length) {
-    lines.push(`Tags: ${tags.slice(0, 12).join(", ")}`);
-  }
-  if (raw) lines.push(`Description: ${raw}`);
-  return lines;
 }
 
 export function buildRevenueOllamaAnalysisPrompt(row, descriptionText = null) {
@@ -1300,6 +1310,9 @@ export async function fetchRevenueAnalysisWithOllama(row, options = {}) {
     persistOllamaAnalysisCache(cache);
     return { status: "done", analysis };
   } catch (err) {
+    if (err instanceof Error && err.name === "AbortError") {
+      return { status: "error", message: OLLAMA_REVENUE_ANALYSIS_TIMEOUT_MESSAGE };
+    }
     return {
       status: "error",
       message: err instanceof Error ? err.message : String(err),

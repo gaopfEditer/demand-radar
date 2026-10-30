@@ -42,6 +42,6 @@ cp data/revenue_boards.json public/data/revenue_boards.json
 
 ## 数据源说明
 
-- **TrustMRR** — `GET https://trustmrr.com/api/ai/discovery` 等官方公开端点；完整分页榜需认证 API。
+- **TrustMRR** — `GET https://trustmrr.com/api/ai/discovery` 等官方公开端点；完整分页榜需认证 API。采集时会按 `slug`  polite 拉取 `https://trustmrr.com/startup/{slug}.md`，写入 `extra.long_description` / `extra.features`；若有 `website` 则尽力抓取 `extra.website_meta_description`（失败则跳过）。
 - **BizPeel / GetLatka** — 公开页可见部分；完整报告常需订阅。
 - **Acquire / Flippa** — 挂牌列表；收入多为卖家自报，非支付校验。

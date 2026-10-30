@@ -148,6 +148,7 @@
       loadOllamaAnalysisCache,
       ollamaCachedAnalysis,
       fetchRevenueAnalysisWithOllama,
+      OLLAMA_REVENUE_ANALYSIS_TIMEOUT_MS,
       REVENUE_ANALYSIS_LABELS,
       loadRevenueFavorites,
       isRevenueFavorite,
@@ -300,11 +301,19 @@
       analysisLoadingKeys.add(key);
       delete analysisErrors[key];
       detailsEl.querySelector(".revenue-analysis-body").innerHTML = analysisBodyHtml(row);
-      const result = await fetchRevenueAnalysisWithOllama(row, {
-        cache: analysisCache,
-        config: getEffectiveOllamaConfig(),
-        descriptionCache: aiDescCache,
-      });
+      const abortCtl = new AbortController();
+      const abortTimer = setTimeout(() => abortCtl.abort(), OLLAMA_REVENUE_ANALYSIS_TIMEOUT_MS);
+      let result;
+      try {
+        result = await fetchRevenueAnalysisWithOllama(row, {
+          cache: analysisCache,
+          config: getEffectiveOllamaConfig(),
+          descriptionCache: aiDescCache,
+          signal: abortCtl.signal,
+        });
+      } finally {
+        clearTimeout(abortTimer);
+      }
       analysisLoadingKeys.delete(key);
       if (result.status === "cached" || result.status === "done") {
         analysisCache = loadOllamaAnalysisCache();
