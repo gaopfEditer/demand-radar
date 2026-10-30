@@ -587,7 +587,9 @@ export function revenueProductDescription(row) {
 
 export const OLLAMA_CONFIG_STORAGE_KEY = "demand-radar.ollama.config";
 export const OLLAMA_DESC_CACHE_STORAGE_KEY = "demand-radar.ollama.descriptions";
-export const OLLAMA_DEFAULT_MODEL = "llama3.2";
+export const OLLAMA_DEFAULT_BASE_URL = "http://localhost:11434";
+/** Matches typical `ollama list` tag (e.g. qwen3.5:latest). */
+export const OLLAMA_DEFAULT_MODEL = "qwen3.5:latest";
 /** Descriptions shorter than this may be expanded via Ollama when configured. */
 export const OLLAMA_SHORT_DESCRIPTION_LEN = 80;
 
@@ -609,6 +611,15 @@ export function getOllamaConfig() {
   } catch {
     return { baseUrl: "", model: "" };
   }
+}
+
+/** Stored config with built-in defaults for auto-generation and UI prefill. */
+export function getEffectiveOllamaConfig() {
+  const stored = getOllamaConfig();
+  return {
+    baseUrl: stored.baseUrl || OLLAMA_DEFAULT_BASE_URL,
+    model: stored.model || OLLAMA_DEFAULT_MODEL,
+  };
 }
 
 export function saveOllamaConfig({ baseUrl, model }) {
@@ -772,7 +783,7 @@ export async function enrichRevenueDescriptionsWithOllama(rows, options = {}) {
     config: externalConfig,
   } = options;
 
-  const config = externalConfig ?? getOllamaConfig();
+  const config = externalConfig ?? getEffectiveOllamaConfig();
   if (!config.baseUrl) {
     return { status: "skipped", reason: "no-url" };
   }

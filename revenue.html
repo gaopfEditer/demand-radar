@@ -57,8 +57,8 @@
           <label>Ollama Base URL
             <input type="url" id="ollama-base-url" placeholder="http://localhost:11434" autocomplete="off" />
           </label>
-          <label>模型（可选）
-            <input type="text" id="ollama-model" placeholder="llama3.2" autocomplete="off" />
+          <label>模型（可覆盖默认）
+            <input type="text" id="ollama-model" placeholder="qwen3.5:latest" autocomplete="off" />
           </label>
         </div>
         <div class="ollama-config-actions">
@@ -101,11 +101,13 @@
       revenueDescriptionIsFromOllama,
       needsOllamaDescription,
       getOllamaConfig,
+      getEffectiveOllamaConfig,
       saveOllamaConfig,
+      OLLAMA_DEFAULT_BASE_URL,
+      OLLAMA_DEFAULT_MODEL,
       loadOllamaDescriptionCache,
       clearOllamaDescriptionCache,
       enrichRevenueDescriptionsWithOllama,
-      OLLAMA_DEFAULT_MODEL,
     } from "./assets/app.js";
 
     setActiveNav();
@@ -129,9 +131,9 @@
     }
 
     function hydrateOllamaForm() {
-      const cfg = getOllamaConfig();
-      baseUrlInput.value = cfg.baseUrl || "";
-      modelInput.value = cfg.model || "";
+      const stored = getOllamaConfig();
+      baseUrlInput.value = stored.baseUrl || OLLAMA_DEFAULT_BASE_URL;
+      modelInput.value = stored.model || OLLAMA_DEFAULT_MODEL;
     }
     hydrateOllamaForm();
 
@@ -169,7 +171,7 @@
     function nameCell(r) {
       const title = escapeHtml(r.name || "—");
       const pending =
-        ollamaLoading && needsOllamaDescription(r, aiDescCache) && getOllamaConfig().baseUrl;
+        ollamaLoading && needsOllamaDescription(r, aiDescCache);
       if (pending) {
         const raw = revenueProductDescription(r);
         if (!raw) {
@@ -227,11 +229,7 @@
     document.getElementById("f-q").addEventListener("input", render);
 
     async function runOllamaEnrichment() {
-      const config = getOllamaConfig();
-      if (!config.baseUrl) {
-        setOllamaStatus("");
-        return;
-      }
+      const config = getEffectiveOllamaConfig();
       ollamaLoading = true;
       render();
       setOllamaStatus("正在连接 Ollama…", "loading");
@@ -290,7 +288,7 @@
       aiDescCache = {};
       setOllamaStatus("描述缓存已清除。", "ok");
       render();
-      if (getOllamaConfig().baseUrl) await runOllamaEnrichment();
+      await runOllamaEnrichment();
     });
 
     render();
