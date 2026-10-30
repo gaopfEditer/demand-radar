@@ -101,6 +101,19 @@ th, td {
 th { color: var(--muted); font-weight: 500; font-size: 0.82rem; }
 tbody tr:hover { background: rgba(91, 159, 212, 0.06); }
 .meta { color: var(--muted); font-size: 0.85rem; }
+.revenue-name-cell .revenue-name { display: block; font-weight: 500; }
+.revenue-name-cell .revenue-desc {
+  display: block;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 400;
+  line-height: 1.35;
+  margin-top: 0.2rem;
+  max-width: 22rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .badge {
   display: inline-block;
   padding: 0.15rem 0.45rem;
