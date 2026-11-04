@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demand Radar — 周边机会</title>
+  <meta name="theme-color" content="#0f1419" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body data-page="peripheral">
+  <header>
+    <div class="header-top">
+      <h1>Demand Radar · 周边机会</h1>
+      <nav>
+        <a href="index.html" data-page="decisions">本周决策</a>
+        <a href="trends.html" data-page="trends">产品兴衰</a>
+        <a href="opportunities.html" data-page="opportunities">原始机会</a>
+        <a href="keywords.html" data-page="keywords">关键词</a>
+        <a href="waist.html" data-page="waist">腰部词</a>
+        <a href="revenue.html" data-page="revenue">收入榜</a>
+        <a href="peripheral.html" data-page="peripheral">周边机会</a>
+      </nav>
+    </div>
+    <div id="site-meta-bar" class="site-meta-bar">加载周边机会元数据…</div>
+  </header>
+  <main>
+    <p class="site-intro" id="intro">加载中…</p>
+    <p class="meta" id="mvp-hint"></p>
+    <div id="board" class="decision-board"><p class="meta">加载卡片…</p></div>
+  </main>
+  <footer>Demand Radar · 实验 A · 周边/补位 · 不对打整站</footer>
+  <script type="module">
+    import { loadJson, setActiveNav, escapeHtml, verdictBadge } from "./assets/app.js";
+    setActiveNav();
+    const data = await loadJson("peripheral_opportunity_cards.json");
+    const bar = document.getElementById("site-meta-bar");
+    bar.innerHTML = `实验 <strong>${escapeHtml(data.experiment || "—")}</strong> · as_of <strong>${escapeHtml(data.as_of || "—")}</strong> · ${escapeHtml(data.timezone || "")}`;
+    document.getElementById("intro").textContent = data.intro || data.title || "";
+    document.getElementById("mvp-hint").innerHTML = data.recommended_mvp
+      ? `<strong>建议下周 MVP：</strong>${escapeHtml(data.recommended_mvp)} · <a href="${escapeHtml(data.source_markdown || "#")}">源 Markdown</a>`
+      : "";
+    const order = { Go: 0, Watch: 1, Skip: 2 };
+    const cards = [...(data.cards || [])].sort(
+      (a, b) => (order[a.priority] ?? 9) - (order[b.priority] ?? 9)
+    );
+    document.getElementById("board").innerHTML = cards
+      .map((c) => {
+        const support = (c.support_kws || [])
+          .map((k) => `<span class="kw-tag">${escapeHtml(k)}</span>`)
+          .join("");
+        const v = c.priority === "Skip" ? "Kill" : c.priority;
+        return `<article class="decision-card verdict-${escapeHtml((v || "").toLowerCase())}">
+          <div class="decision-card-header">
+            <div>${verdictBadge(v)} <h2>${escapeHtml(c.opportunity_title)}</h2></div>
+            <p class="primary-kw">${escapeHtml(c.main_kw)}</p>
+          </div>
+          <p class="meta">锚点 <strong>${escapeHtml(c.anchor)}</strong> · 优先级 ${escapeHtml(c.priority)}</p>
+          <div class="decision-section"><h3>支撑词</h3><div class="kw-tags">${support}</div></div>
+          <div class="decision-section"><h3>变现</h3><p>${escapeHtml(c.monetization)}</p></div>
+          <div class="decision-section"><h3>7 天 MVP</h3><p>${escapeHtml(c.mvp_7d)}</p></div>
+          <div class="decision-section"><h3>Kill</h3><p>${escapeHtml(c.kill)}</p></div>
+          <div class="decision-section"><h3>30 天</h3><p class="meta">${escapeHtml(c.success_30d)}</p></div>
+          <div class="decision-section"><h3>证据备注</h3><p class="meta">${escapeHtml(c.evidence_notes)}</p></div>
+        </article>`;
+      })
+      .join("");
+  </script>
+</body>
+</html>

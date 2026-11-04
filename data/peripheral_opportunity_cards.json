@@ -1,0 +1,92 @@
+{
+  "week_id": "2026-W45",
+  "as_of": "2026-11-04",
+  "experiment": "A-peripheral-trustmrr",
+  "timezone": "Asia/Shanghai",
+  "title": "周边机会卡 · TrustMRR 锚点实验 A",
+  "intro": "从 TrustMRR 收入榜锚点产品发散「周边/补位」机会，不对打整站。优先序见 cards[].priority。",
+  "recommended_mvp": "HiddenRoles · ATS careers URL 检测器 + watchlist 教程站",
+  "source_markdown": "docs/peripheral-opportunity-cards-2026-11-04.md",
+  "cards": [
+    {
+      "anchor": "HiddenRoles",
+      "opportunity_title": "ATS careers URL 检测器 + 自建公司 watchlist 教程站",
+      "main_kw": "which ATS does this company use",
+      "support_kws": [
+        "greenhouse job board api",
+        "track company career page alerts",
+        "lever careers page json"
+      ],
+      "monetization": "Ads + $9-15/mo watchlist；备选 $19 Playwright 巡检模板包 / Affiliate",
+      "mvp_7d": "Next/静态 ATS 检测器 + 3-5 篇 API/告警 SEO + GitHub watchlist.yml 与 Python/Playwright cron 示例；不做职位大盘",
+      "kill": "30 天无展示/点击，或产品被迫做成全网职位聚合对打 HiddenRoles",
+      "success_30d": "≥8 索引页；GSC 展示≥800或点击≥40；检测器 UV≥250；waitlist≥30或付费意向≥5；外链/社区≥2",
+      "priority": "Go",
+      "evidence_notes": "TrustMRR as_of 2026-10-30 ~$26.8k/30d (bestjobs-hq)。已见 JobTailor/PageCrawl/Job Board Watcher 等付费监控同簇。SERP 有低 DR ATS checker 可插。栈契合 Playwright。"
+    },
+    {
+      "anchor": "Savebase",
+      "opportunity_title": "社媒/浏览器书签导出 → 本地 Markdown + MCP server 模板包",
+      "main_kw": "chatgpt mcp bookmarks",
+      "support_kws": [
+        "export twitter bookmarks",
+        "claude mcp bookmark server",
+        "x bookmarks to markdown"
+      ],
+      "monetization": "$19-29 模板包买断（主）；Ads（辅）；不做全平台托管 SaaS",
+      "mvp_7d": "Chrome 扩展导出 JSON/MD（先 X+浏览器书签）+ Python MCP 脚手架 + 5 篇接通教程；禁止 11 平台同步后端",
+      "kill": "导出路径被平台封死且无备方案；或 30 天 0 销售且教程无点击",
+      "success_30d": "点击≥60或展示≥1000；模板销售≥8或 GitHub★/fork≥25 + 询价≥10",
+      "priority": "Go",
+      "evidence_notes": "TrustMRR as_of 2026-10-30 ~$682/30d；Free 100 bookmarks 已见。ContextBolt/TweetsMash/GitHub MCP 证明信息意图。不做 Savebase 克隆。"
+    },
+    {
+      "anchor": "ihatepdf.cv",
+      "opportunity_title": "PDF 元数据剥离 + 发送前隐私清单（单工具站）",
+      "main_kw": "remove metadata from pdf",
+      "support_kws": [
+        "strip pdf metadata online",
+        "pdf privacy checklist before sending",
+        "exifr pdf author remove"
+      ],
+      "monetization": "Ads 为主；备选 $9 批量清理报告买断",
+      "mvp_7d": "pdf-lib/pdfjs 本地剥离元数据工具页 + 3-4 篇投递/合同场景 SEO；不做 60+ 工具箱",
+      "kill": "主词被锁死且无点击；或用户要完整认证级 redact 导致支撑成本爆",
+      "success_30d": "展示≥1200或点击≥50；工具 UV≥400；Ads 粗算可覆盖成本才升 Go",
+      "priority": "Watch",
+      "evidence_notes": "TrustMRR as_of 2026-10-30 收入约 $1.3k 量级；页面 Free/隐私叙事已见。visa 2MB 词更红；metadata 长尾相对可插但仍有 Scrubbr 等。"
+    },
+    {
+      "anchor": "ClipUtils",
+      "opportunity_title": "Discord 10MB / Email 25MB 精确体积视频压缩落地页",
+      "main_kw": "compress video for discord 10mb",
+      "support_kws": [
+        "compress video to 25mb email",
+        "browser video compressor no upload",
+        "ffmpeg wasm compress to size"
+      ],
+      "monetization": "Ads；备选 $9 批量队列买断；不做 Pro AI 套件",
+      "mvp_7d": "单页 ffmpeg.wasm 压到目标体积 + 4 个意图镜像页；验证 DevTools 无上传说明；不做 28+ 工具",
+      "kill": "RPM 过低或内存差评；或必须上 AI 功能才能留存",
+      "success_30d": "工具 UV≥800；主词有 GSC 展示；可估 Ads RPM",
+      "priority": "Watch",
+      "evidence_notes": "TrustMRR as_of 2026-10-30 ~$408/30d MRR~$333，在售。已见 Compress to Size。SERP 同质化严重（ShrinkVideo/Slimcast 等）→ Watch。"
+    },
+    {
+      "anchor": "FlipScan",
+      "opportunity_title": "eBay 费率/利润静态计算器（非 iOS 扫描、非 listing alert 重做）",
+      "main_kw": "ebay final value fee calculator",
+      "support_kws": [
+        "thrift flip profit calculator",
+        "ebay sold comps",
+        "reseller fee calculator 2026"
+      ],
+      "monetization": "理论 Ads/Affiliate；本周不投入",
+      "mvp_7d": "不启动。最多 2 天静态费率探针页；禁止 iOS/扫描/完整 alert 产品",
+      "kill": "本周直接 Skip；计算器与 scanner 红海，且禁完整 iOS 重做",
+      "success_30d": "不适用；探针 14 天点击<20 则确认放弃",
+      "priority": "Skip",
+      "evidence_notes": "TrustMRR as_of 2026-10-30 MRR~$300+（撰写日~$315，RevenueCat）。已见 $14.99/$49.99。同簇 listing alert。FlipIQ/Underpriced/费率站林立 → Skip。"
+    }
+  ]
+}
